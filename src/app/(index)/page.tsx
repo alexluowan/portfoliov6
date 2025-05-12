@@ -3,6 +3,8 @@
 
 import GridContainer from '@/components/GridContainer'
 import ProjectNav from '@/components/home/ProjectNav'
+import ProfileNav from '@/components/home/ProfileNav'
+
 import ProjectCard from '@/components/projects/ProjectCard'
 
 export default function Home() {
@@ -20,22 +22,33 @@ export default function Home() {
             {/* Sidebar */}
             <aside
                 className="
-          col-span-1
-          md:col-span-2
-          md:sticky md:top-0   /* only stick on md+ */
-          mt-4
-          bg-white
-        "
++   flex flex-col h-full
+    col-span-1
+    md:col-span-2
+    md:sticky md:top-0
+    mt-4
+    bg-white
+  "
             >
                 <p>Alex Luowan</p>
+
                 <p className="mt-4">
                     I’m Alex, a product and brand designer focusing on ✷ intuitive interaction flows,
                     ◎ cohesive visual identities, and ✺ inclusive design systems.
                 </p>
+
                 <div className="mt-4">
-                    <ProjectNav />
+                    <ProjectNav/>
+                </div>
+
+                {/* now this one will get pushed to the bottom */}
+                <div className="mt-auto">
+
+                    <ProfileNav/>
+
                 </div>
             </aside>
+
 
             {/* Main content */}
             <main
