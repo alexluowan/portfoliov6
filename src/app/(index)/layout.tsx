@@ -1,16 +1,7 @@
 import type {Metadata} from "next";
 import "../globals.css";
 import localFont from 'next/font/local'
-//
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-//
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
+
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -49,21 +40,13 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
+
         <body
             className={`${neuehaasunica.variable} ${neuehaasunica.variable} antialiased flex relative flex-col px-4 w-full`}
         >
         {children}
+
         </body>
         </html>
     );
 }
-
-// <div className="w-full flex items-center flex-col z-[200]">
-//     <div className="z-10 w-full h-full bg-[#ffffff] justify-center flex">
-//         <div
-//             className={`flex relative flex-col px-4 pb-8 w-full border-b border-solid shadow-xl max-w-8xl z-[9] text-padding md:px-3 border-neutral-800`}
-//         >
-//             {props.children}
-//         </div>
-//     </div>
-// </div>

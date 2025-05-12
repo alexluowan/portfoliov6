@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@studio-freight/lenis": "^1.0.42",
+    "clsx": "^2.1.1",
     "gsap": "^3.13.0",
     "motion": "^12.10.5",
     "next": "15.3.2",
