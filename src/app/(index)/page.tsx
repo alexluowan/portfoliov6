@@ -5,7 +5,6 @@ import GridContainer from '@/components/GridContainer'
 import ProjectNav from '@/components/home/ProjectNav'
 import ProfileNav from '@/components/home/ProfileNav'
 
-import ProjectCard from '@/components/projects/ProjectCard'
 
 export default function Home() {
     return (
