@@ -87,7 +87,7 @@ function ProjectCard({
                         <motion.span
                             key={i}
                             variants={badgeVariants}
-                            className="inline-block w-max whitespace-nowrap bg-white text-black text-xs font-medium px-2 py-1 shadow"
+                            className="inline-block w-max whitespace-nowrap bg-white text-black text-xs px-2 py-1 shadow"
                         >
                             {tag}
                         </motion.span>
