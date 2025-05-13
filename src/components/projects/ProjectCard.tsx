@@ -1,7 +1,7 @@
 // components/ProjectCard.tsx
 import Image from "next/image";
-import { memo, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { memo, useRef, useEffect, useState } from "react";
+import { motion, useAnimationControls } from "framer-motion";
 import clsx from "clsx";
 
 export type ProjectCardProps = {
@@ -33,6 +33,33 @@ function ProjectCard({
                          className,
                      }: ProjectCardProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
+    const [isMobile, setIsMobile] = useState(false);
+    const controls = useAnimationControls();
+
+    // Check if device is mobile
+    useEffect(() => {
+        const checkIsMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        // Run on mount
+        checkIsMobile();
+
+        // Add event listener for window resize
+        window.addEventListener("resize", checkIsMobile);
+
+        // Clean up
+        return () => window.removeEventListener("resize", checkIsMobile);
+    }, []);
+
+    // Set animation state based on mobile detection
+    useEffect(() => {
+        if (isMobile) {
+            controls.start("hover");
+        } else {
+            controls.start("rest");
+        }
+    }, [isMobile, controls]);
 
     // lazy-play video when in view
     useEffect(() => {
@@ -58,6 +85,7 @@ function ProjectCard({
             variants={containerVariants}
             initial="rest"
             whileHover="hover"
+            animate={isMobile ? "hover" : controls}
         >
             {/* Media */}
             {mediaSrc && mediaType === "video" ? (
@@ -87,6 +115,7 @@ function ProjectCard({
                         <motion.span
                             key={i}
                             variants={badgeVariants}
+                            animate={isMobile ? "hover" : undefined}
                             className="inline-block w-max whitespace-nowrap bg-white text-black text-xs px-2 py-1 shadow"
                         >
                             {tag}

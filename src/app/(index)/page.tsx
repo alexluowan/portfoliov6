@@ -81,27 +81,27 @@ export default function Home() {
                 <div className="flex flex-col gap-4">
                     <div>
                         <ProjectCard
-                            mediaSrc="/project-covers/figmaplugindock.jpg"
-                            mediaType="image"
-                            badges={['Figma', 'UX/UI – Feature Design']}
+                            mediaSrc="/project-covers/88risingsizzlereelmp4.mp4"
+                            mediaType="video"
+                            badges={['88rising', 'Product Design – Website Revamp']}
                         />
                     </div>
                     <div>
                         <ProjectCard
                             mediaSrc="/project-covers/figmaplugindock.jpg"
                             mediaType="image"
-                            badges={['Figma', 'UX/UI – Feature Design']}
+                            badges={['Figma', 'UX/UI – Personal Project']}
                         />
                     </div>
                     <ProjectCard
                         mediaSrc="/project-covers/figmaplugindock.jpg"
                         mediaType="image"
-                        badges={['Figma', 'UX/UI – Feature Design']}
+                        badges={['Wise', 'UI – Personal Project']}
                     />
                     <ProjectCard
                         mediaSrc="/project-covers/figmaplugindock.jpg"
                         mediaType="image"
-                        badges={['Figma', 'UX/UI – Feature Design']}
+                        badges={['Fondazione Prada', 'Interaction Design – Pre-exhibition Microsite']}
                     />
                     {/* …more ProjectCard components */}
                 </div>

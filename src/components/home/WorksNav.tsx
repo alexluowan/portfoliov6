@@ -5,11 +5,11 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const works = [
-    { label: 'Figma',            href: '/works/figma' },
     { label: '88rising',         href: '/works/88rising' },
+    { label: 'Figma',            href: '/works/figma' },
     { label: 'Wise',             href: '/works/wise' },
-    { label: 'Blaze.ai',         href: '/works/blaze-ai' },
     { label: 'Fondazione Prada', href: '/works/fondazione-prada' },
+    { label: 'Blaze.ai',         href: '/works/blaze-ai' },
 ]
 
 export default function WorksNav() {
