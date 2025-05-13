@@ -8,6 +8,7 @@ import GridContainer from '@/components/GridContainer'
 import ProjectNav from '@/components/home/WorksNav'
 import ProfileNav from '@/components/home/ProfileNav'
 import ProjectCard from '@/components/projects/ProjectCard'
+import Link from "next/link";
 
 export default function Home() {
     // 1) ref your scroll‐pane
@@ -80,13 +81,13 @@ export default function Home() {
             >
                 <div className="flex flex-col gap-4">
                     <div>
-                        <a href="/">
+                        <Link href="/">
                         <ProjectCard
                             mediaSrc="/project-covers/88risingthumbnail.mp4"
                             mediaType="video"
                             badges={['88rising', 'Product Design – Website Revamp']}
                         />
-                        </a>
+                        </Link>
                     </div>
                     <div>
                         <ProjectCard
