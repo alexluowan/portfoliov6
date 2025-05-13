@@ -99,7 +99,6 @@ export default function Home() {
                     key={images.map(i => `${i.initial.x}-${i.initial.y}`).join('_')}
                     images={images}
                     width="100%"
-                    height="100%"
                 />
             </div>
         </GridContainer>

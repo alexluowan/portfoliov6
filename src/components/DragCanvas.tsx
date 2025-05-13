@@ -13,13 +13,11 @@ type MediaItem = {
 interface DragCanvasProps {
     images?: MediaItem[]
     width?: string
-    height?: string
 }
 
 export default function DragCanvas({
                                        images = [],
                                        width = '100%',
-                                       height = '100%',
                                    }: DragCanvasProps) {
     const containerRef = useRef<HTMLDivElement>(null)
 
