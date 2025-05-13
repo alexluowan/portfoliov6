@@ -32,23 +32,6 @@ const neuehaasunica = localFont({
     variable: '--font-neuehaasunica',
 })
 
-const twklausanne = localFont({
-    src: [
-        {
-            path: './../fonts/twklausanne/TWKLausanne-400.woff',
-            weight: '400',
-            style: 'normal'
-
-        },
-        {
-            path: './../fonts/twklausanne/TWKLausanne-400Italic.woff',
-            weight: '400',
-            style: 'italic'
-
-        },
-    ],
-    variable: '--font-twklausanne',
-})
 
 export default function RootLayout({
                                        children,
@@ -59,7 +42,7 @@ export default function RootLayout({
         <html lang="en">
 
         <body
-            className={`${twklausanne.variable} ${twklausanne.variable} antialiased flex relative flex-col px-4 w-full`}
+            className={`${neuehaasunica.variable} ${neuehaasunica.variable} antialiased flex relative flex-col px-4 w-full`}
         >
         {children}
 

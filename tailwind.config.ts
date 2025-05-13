@@ -7,7 +7,7 @@ module.exports = {
         fontFamily: {
             display: ['ui-sans-serif'],
             sans: [
-                'neue-haas-unica',
+                'TWK Lausanne',
             ],
         },
         extend: {

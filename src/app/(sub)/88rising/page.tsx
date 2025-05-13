@@ -8,8 +8,8 @@ import GridContainer from '@/components/GridContainer'
 import ProjectNav from '@/components/home/WorksNav'
 import ProfileNav from '@/components/home/ProfileNav'
 import ProjectCard from '@/components/projects/ProjectCard'
-export default function Home() {
 
+export default function Home() {
     // 1) ref your scroll‐pane
     const mainRef = useRef<HTMLDivElement>(null)
 
@@ -51,7 +51,7 @@ export default function Home() {
         >
             {/* Sidebar */}
             <aside className="flex flex-col h-full col-span-1 md:col-span-2 md:sticky md:top-0 mt-4 bg-white">
-                <p>Alex Luowan</p>
+                <p>88rising</p>
                 <p className="mt-4">
                     I’m Alex, a product and brand designer focusing on ✷ intuitive interaction flows,
                     ◎ cohesive visual identities, and ✺ inclusive design systems.
@@ -80,7 +80,7 @@ export default function Home() {
             >
                 <div className="flex flex-col gap-4">
                     <div>
-                        <a href="./88rising">
+                        <a href="/">
                         <ProjectCard
                             mediaSrc="/project-covers/88risingthumbnail.mp4"
                             mediaType="video"
