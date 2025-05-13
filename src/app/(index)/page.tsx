@@ -81,7 +81,7 @@ export default function Home() {
                 <div className="flex flex-col gap-4">
                     <div>
                         <ProjectCard
-                            mediaSrc="/project-covers/88risingsizzlereelmp4.mp4"
+                            mediaSrc="/project-covers/88risingthumbnail.mp4"
                             mediaType="video"
                             badges={['88rising', 'Product Design – Website Revamp']}
                         />
@@ -94,14 +94,19 @@ export default function Home() {
                         />
                     </div>
                     <ProjectCard
-                        mediaSrc="/project-covers/figmaplugindock.jpg"
+                        mediaSrc="/project-covers/wisethumbnail.png"
                         mediaType="image"
                         badges={['Wise', 'UI – Personal Project']}
                     />
                     <ProjectCard
-                        mediaSrc="/project-covers/figmaplugindock.jpg"
-                        mediaType="image"
+                        mediaSrc="/project-covers/fondazioneprada.mp4"
+                        mediaType="video"
                         badges={['Fondazione Prada', 'Interaction Design – Pre-exhibition Microsite']}
+                    />
+                    <ProjectCard
+                        mediaSrc="/project-covers/freelance.png"
+                        mediaType="image"
+                        badges={['Freelance Work', 'Product & Brand Design - (2024 - Now)']}
                     />
                     {/* …more ProjectCard components */}
                 </div>
