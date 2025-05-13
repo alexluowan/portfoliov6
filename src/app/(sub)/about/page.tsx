@@ -71,7 +71,7 @@ export default function Home() {
                     <p>i was born in vancouver and grew up in surrey</p>
                     <p>i started in computer science but soon realized coding alone didn’t light me up so i switched to design full time</p>
                     <p>during the day i work on personal projects that excite me, sharpening my prototyping and problem solving skills while learning front-end development to bring ideas to life</p>
-                    <p>my design philosophy centers on clarity, elegance, and functional beauty crafting interfaces that feel intuitive and human</p>
+                    <p>my design philosophy centres on clarity, elegance, and functional beauty crafting interfaces that feel intuitive and human</p>
                     <p>in my free time i love fishing, working out, playing guitar and capturing moments with my camera, activities that recharge my creativity</p>
                     <p>hit me up if you’re down for coffee or a design jam, i’m always up for meeting new people</p>
                 </div>
