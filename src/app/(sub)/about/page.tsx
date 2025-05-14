@@ -1,7 +1,7 @@
 // app/page.tsx
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import Lenis from '@studio-freight/lenis'
 
 import GridContainer from '@/components/GridContainer'
@@ -9,41 +9,8 @@ import ProfileNav from '@/components/home/ProfileNav'
 import Link from 'next/link'
 import DragCanvas from '@/components/DragCanvas'
 
-// helper to get a random number between min (inclusive) and max (exclusive)
-function randomBetween(min: number, max: number) {
-    return Math.random() * (max - min) + min
-}
-
 export default function Home() {
-    // 1) hold our images array in state
-    const [images, setImages] = useState<
-        { src: string; alt: string; initial: { x: number; y: number } }[]
-    >([])
-
-    // 2) on each real page load/mount, generate fresh random positions
-    useEffect(() => {
-        const raw = [
-            { src: '/about-images/faceprofile.jpg', alt: 'my ugly face' },
-            { src: '/about-images/flyfishing.mp4', alt: 'out fishing' },
-            { src: '/about-images/designsprintbox.mp4', alt: 'the delulu' },
-            { src: '/about-images/Ree.mp4', alt: 'square breathing exercise' },
-
-
-
-        ]
-
-        const withRandom = raw.map(img => ({
-            ...img,
-            initial: {
-                x: randomBetween(20, 300),
-                y: randomBetween(20, 500),
-            },
-        }))
-
-        setImages(withRandom)
-    }, []) // empty deps = run only once on mount
-
-    // 3) Lenis scroll setup (unchanged)
+    // Lenis scroll ref & setup
     const mainRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
         if (!mainRef.current) return
@@ -56,8 +23,12 @@ export default function Home() {
         return () => lenis.destroy()
     }, [])
 
-    // 4) don’t render until our images state is populated
-    if (images.length === 0) return null
+    // just pass your raw media list
+    const mediaItems = [
+        { src: '/about-images/faceprofile.jpg',     alt: 'my ugly face' },
+        { src: '/about-images/flyfishing.mp4',      alt: 'out fishing' },
+        { src: '/about-images/designsprintbox.mp4', alt: 'the delulu' },
+    ]
 
     return (
         <GridContainer className="grid grid-cols-1 md:grid-cols-12 md:h-screen md:overflow-hidden gap-4">
@@ -67,7 +38,7 @@ export default function Home() {
                     <p>Alex Luowan</p>
                 </Link>
 
-                <div className="flex flex-col gap-4 mt-auto">
+                <div className="flex flex-col gap-4 mt-20 lg:mt-auto">
                     <p>i was born in vancouver and grew up in surrey</p>
                     <p>i started in computer science but soon realized coding alone didn’t light me up so i switched to design full time</p>
                     <p>during the day i work on personal projects that excite me, sharpening my prototyping and problem solving skills while learning front-end development to bring ideas to life</p>
@@ -81,7 +52,7 @@ export default function Home() {
                 </div>
             </div>
 
-            {/* Main DragCanvas + Lenis scroll container */}
+            {/* Main drag area */}
             <div
                 ref={mainRef}
                 className="
@@ -94,12 +65,7 @@ export default function Home() {
           flex flex-col h-full
         "
             >
-                <DragCanvas
-                    // 5) force a fresh mount of DragCanvas whenever `images` changes
-                    key={images.map(i => `${i.initial.x}-${i.initial.y}`).join('_')}
-                    images={images}
-                    width="100%"
-                />
+                <DragCanvas images={mediaItems} width="100%" />
             </div>
         </GridContainer>
     )
