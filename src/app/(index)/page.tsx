@@ -106,11 +106,11 @@ export default function Home() {
                         mediaType="video"
                         badges={['Fondazione Prada', 'Interaction Design – Pre-exhibition Microsite']}
                     />
-                    <ProjectCard
-                        mediaSrc="/project-covers/freelance.png"
-                        mediaType="image"
-                        badges={['Freelance Work', 'Product & Brand Design - (2024 - Now)']}
-                    />
+                    {/*<ProjectCard*/}
+                    {/*    mediaSrc="/project-covers/freelance.png"*/}
+                    {/*    mediaType="image"*/}
+                    {/*    badges={['Freelance Work', 'Product & Brand Design - (2024 - Now)']}*/}
+                    {/*/>*/}
                     {/* …more ProjectCard components */}
                 </div>
             </main>
