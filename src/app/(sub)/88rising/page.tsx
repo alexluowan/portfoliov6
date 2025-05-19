@@ -44,6 +44,19 @@ export default function Home() {
             setScrollY(event.scroll)
         })
 
+        // Add a resize handler to recalculate Lenis
+        const handleResize = () => {
+            lenis.resize()
+        }
+
+        // Call resize once to ensure proper initial calculation
+        setTimeout(() => {
+            lenis.resize()
+        }, 100)
+
+        // Add resize listener
+        window.addEventListener('resize', handleResize)
+
         // 3) start the RAF loop
         function raf(time: number) {
             lenis.raf(time)
@@ -53,7 +66,10 @@ export default function Home() {
         requestAnimationFrame(raf)
 
         // 4) cleanup
-        return () => lenis.destroy()
+        return () => {
+            lenis.destroy()
+            window.removeEventListener('resize', handleResize)
+        }
     }, [])
 
     // Calculate sidebar opacity based on scroll position and hover state
@@ -95,11 +111,11 @@ export default function Home() {
           col-span-1
           md:col-span-6
           md:col-start-4
-          /* remove native scrollbars for Lenis */
-          overflow-hidden
+          /* changed from overflow-hidden to overflow-auto for better fallback */
+          overflow-auto
           mt-4
           relative pb-4
-
+          h-full
         "
             >
 
@@ -170,7 +186,7 @@ export default function Home() {
                         <CaseStudyContent
                             subtitle=""
                             title="Behind the Beat — Waveform Release Calendar"
-                            description="A linear, waveform‑inspired timeline visualizes future drops at a glance. Fans can preview snippets and set reminders, closing the awareness gap that 62 % of survey respondents cited and boosting anticipation for new music."
+                            description="A linear, waveform‑inspired timeline visualizes future drops at a glance. Fans can preview snippets and set reminders, closing the awareness gap that 62 % of survey respondents cited and boosting anticipation for new music."
                             muxPlaybackId="6YLpD39o1x01Fl01m01zUbkoI6pY00ENM02LX3CrdPod027QA"
                             muxOptions={{
                                 accentColor: "#FF0000",
@@ -185,13 +201,13 @@ export default function Home() {
                         <CaseStudyContent
                             subtitle="explorations"
                             title="Pinpointing Nations with Lat-Long "
-                            description="We recast the landing page as a stripped-down world map. Each neon-red bar sits at the actual latitude of a region that feeds the 88rising roster, turning raw co-ordinates into a visual navigation system. By starting discovery with place and lighting up the local word for “rise” in each block—we remind fans that the label&apos;s heartbeat is pan-Asian, not platform-first."
+                            description="We recast the landing page as a stripped-down world map. Each neon-red bar sits at the actual latitude of a region that feeds the 88rising roster, turning raw co-ordinates into a visual navigation system. By starting discovery with place and lighting up the local word for rise in each block—we remind fans that the label&apos;s heartbeat is pan-Asian, not platform-first."
                             imageSrc="/work/88rising/exploration1.png"
                         />
                         <CaseStudyContent
                             subtitle=""
                             title="Unfiltered Artists Energy"
-                            description="Fans don&apos;t bond with stats, they bond with snapshots of real life. A backyard hose, a beat-up Rubik’s Cube, and Brian&apos;s sky-blue coat say more than any metric, turning casual scrollers into curious fans eager to dive into music, merch, and more."
+                            description="Fans don&apos;t bond with stats, they bond with snapshots of real life. A backyard hose, a beat-up Rubik&apos;s Cube, and Brian&apos;s sky-blue coat say more than any metric, turning casual scrollers into curious fans eager to dive into music, merch, and more."
                             imageSrc="/work/88rising/exploration2.png"
                         />
                     </div>
@@ -205,14 +221,14 @@ export default function Home() {
                     <CaseStudyContent
                         subtitle="Reflections"
                         title="Key Takeaways & Fixes"
-                        description="Seven weeks sounded roomy until we spent four hunting for the “perfect” brief and were left with just three to launch. That squeeze forced ruthless focus. We trimmed every nice-to-have and doubled down on what matters most to fans: stumbling onto their next favourite artist. The result? A story-first interface with crisp visuals, micro-interactions, and plain-spoken copy that sparks a real fan-artist connection. The sprint was a gut-check reminder that design isn’t linear; it’s about steering through detours and making every pixel earn its place."
+                        description="Seven weeks sounded roomy until we spent four hunting for the perfect brief and were left with just three to launch. That squeeze forced ruthless focus. We trimmed every nice-to-have and doubled down on what matters most to fans: stumbling onto their next favourite artist. The result? A story-first interface with crisp visuals, micro-interactions, and plain-spoken copy that sparks a real fan-artist connection. The sprint was a gut-check reminder that design isn&apos;t linear; it&apos;s about steering through detours and making every pixel earn its place."
                         imageSrc="/work/88rising/ripruss.png"
                         mediaAlt=""
                     />
                     <CaseStudyContent
                         subtitle="Reach out"
                         title="Want the inside scoop? Let&apos;s chat"
-                        description="Getting here was anything but linear. If you’d like the full story twists, turns, and aha moments let’s hop on a quick call :) "
+                        description="Getting here was anything but linear. If you&apos;d like the full story twists, turns, and aha moments let&apos;s hop on a quick call :) "
                         mediaAlt=""
                         muxPlaybackId="zXbKAQgr5YArc01ssVta1T4sRCeovGsk01pIerilmstCk"
                         muxOptions={{
@@ -222,9 +238,11 @@ export default function Home() {
                             loop: true,
                         }}
                     />
+                    <div className="bg-white h-[20rem]">
+                    </div>
                 </div>
             </main>
         </GridContainer>
+
     )
 }
-
