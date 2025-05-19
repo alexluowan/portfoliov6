@@ -172,6 +172,47 @@ export default function Home() {
                         />
                     </div>
 
+                    <div className="flex flex-col gap-y-[4rem]">
+                        <CaseStudyContent
+                            subtitle="explorations"
+                            title="Pinpointing Nations with Lat-Long "
+                            description="We recast the landing page as a stripped-down world map. Each neon-red bar sits at the actual latitude of a region that feeds the 88rising roster, turning raw co-ordinates into a visual navigation system. By starting discovery with place and lighting up the local word for “rise” in each block—we remind fans that the label’s heartbeat is pan-Asian, not platform-first."
+                            imageSrc="/work/88rising/exploration1.png"
+                        />
+                        <CaseStudyContent
+                            subtitle=""
+                            title="Unfiltered Artists Energy"
+                            description="Fans don’t bond with stats, they bond with snapshots of real life. A backyard hose, a beat-up Rubik’s Cube, and Brian’s sky-blue coat say more than any metric, turning casual scrollers into curious fans eager to dive into music, merch, and more."
+                            imageSrc="/work/88rising/exploration2.png"
+                        />
+                    </div>
+                    <CaseStudyContent
+                        subtitle="design principles"
+                        title="Based on the insights we gathered, we asked a simple question: what must this experience do for fans and for 88rising to truly win? Those answers became three guiding principles."
+                        description="We first considered the realities of a global, multi‑platform music ecosystem, balancing the needs of fans, artists, and the business before shaping the end‑to‑end experience."
+                        imageSrc="/work/88rising/designprinciples.svg"
+                        mediaAlt=""
+                    />
+                    <CaseStudyContent
+                        subtitle="Reflections"
+                        title="Key Takeaways & Fixes"
+                        description="Seven weeks sounded roomy until we spent four hunting for the “perfect” brief and were left with just three to launch. That squeeze forced ruthless focus. We trimmed every nice-to-have and doubled down on what matters most to fans: stumbling onto their next favourite artist. The result? A story-first interface with crisp visuals, micro-interactions, and plain-spoken copy that sparks a real fan-artist connection. The sprint was a gut-check reminder that design isn’t linear; it’s about steering through detours and making every pixel earn its place."
+                        imageSrc="/work/88rising/ripruss.png"
+                        mediaAlt=""
+                    />
+                    <CaseStudyContent
+                        subtitle="Reach out"
+                        title="Want the inside scoop? Let's chat"
+                        description="Getting here was anything but linear. If you’d like the full story twists, turns, and aha moments let’s hop on a quick call :) "
+                        mediaAlt=""
+                        muxPlaybackId="zXbKAQgr5YArc01ssVta1T4sRCeovGsk01pIerilmstCk"
+                        muxOptions={{
+                            accentColor: "#FF0000",
+                            autoPlay: true,
+                            muted: true,
+                            loop: true,
+                        }}
+                    />
                 </div>
             </main>
         </GridContainer>
