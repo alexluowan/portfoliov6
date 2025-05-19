@@ -9,9 +9,6 @@ import GridContainer from '@/components/GridContainer'
 import CaseStudyCard from "@/components/projects/CaseStudyCard";
 import CaseStudyContent from "@/components/projects/CaseStudyContent";
 
-function Footer() {
-    return null;
-}
 
 export default function Home() {
     // 1) ref your scroll‐pane
