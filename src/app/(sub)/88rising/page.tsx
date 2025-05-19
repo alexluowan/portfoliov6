@@ -2,26 +2,15 @@
 'use client'
 
 import {useEffect, useRef, useState} from 'react'
-import Lenis from '@studio-freight/lenis'
 
 import GridContainer from '@/components/GridContainer'
-// import Link from "next/link";
-import CaseStudyCard from "@/components/projects/CaseStudyCard";
-import CaseStudyContent from "@/components/projects/CaseStudyContent";
-
-// Add type for Lenis scroll event
-interface ScrollEvent {
-    scroll: number;
-    limit: number;
-    velocity: number;
-    direction: number;
-    progress: number;
-}
+import CaseStudyCard from "@/components/projects/CaseStudyCard"
+import CaseStudyContent from "@/components/projects/CaseStudyContent"
 
 export default function Home() {
-    // 1) ref your scroll‐pane
+    // Keep the main scroll container ref
     const mainRef = useRef<HTMLDivElement>(null)
-    // Add scroll tracking state
+    // Keep scroll tracking state for sidebar opacity
     const [scrollY, setScrollY] = useState<number>(0)
     // Track hover state
     const [isHovered, setIsHovered] = useState(false)
@@ -29,46 +18,41 @@ export default function Home() {
     useEffect(() => {
         if (!mainRef.current) return
 
-        // 2) init Lenis on that element
-        const lenis = new Lenis({
-            // tells Lenis to listen on your element instead of `window`
-            wrapper: mainRef.current,
-            // smooth scrolling
-            smoothWheel: true,
-            // you can tweak the easing
-            // easing: t => t,
-        })
-
-        // Add scroll event listener with proper typing
-        lenis.on('scroll', (event: ScrollEvent) => {
-            setScrollY(event.scroll)
-        })
-
-        // Add a resize handler to recalculate Lenis
-        const handleResize = () => {
-            lenis.resize()
+        // Simple scroll event listener for tracking scroll position
+        const handleScroll = () => {
+            if (mainRef.current) {
+                setScrollY(mainRef.current.scrollTop)
+            }
         }
 
-        // Call resize once to ensure proper initial calculation
-        setTimeout(() => {
-            lenis.resize()
-        }, 100)
+        // Add the scroll event listener
+        mainRef.current.addEventListener('scroll', handleScroll)
+
+        // Add CSS to hide scrollbar for WebKit browsers
+        const style = document.createElement('style')
+        style.textContent = `
+            /* Hide scrollbar for Chrome, Safari and Opera */
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+        `
+        document.head.appendChild(style)
+
+        // Add a resize handler (just in case you need it)
+        const handleResize = () => {
+            // Nothing to do but kept for possible future use
+        }
 
         // Add resize listener
         window.addEventListener('resize', handleResize)
 
-        // 3) start the RAF loop
-        function raf(time: number) {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
-        }
-
-        requestAnimationFrame(raf)
-
-        // 4) cleanup
+        // Cleanup
         return () => {
-            lenis.destroy()
+            if (mainRef.current) {
+                mainRef.current.removeEventListener('scroll', handleScroll)
+            }
             window.removeEventListener('resize', handleResize)
+            document.head.removeChild(style)
         }
     }, [])
 
@@ -78,14 +62,13 @@ export default function Home() {
     return (
         <GridContainer
             className="
-        grid
-        grid-cols-1
-        md:grid-cols-12
-        md:h-screen
-        /* remove native overflow so Lenis can take over */
-        md:overflow-hidden
-        gap-4
-      "
+                grid
+                grid-cols-1
+                md:grid-cols-12
+                md:h-screen
+                md:overflow-hidden
+                gap-4
+            "
         >
             {/* Sidebar with hover listeners */}
             <aside
@@ -108,17 +91,20 @@ export default function Home() {
             <main
                 ref={mainRef}
                 className="
-          col-span-1
-          md:col-span-6
-          md:col-start-4
-          /* changed from overflow-hidden to overflow-auto for better fallback */
-          overflow-auto
-          mt-4
-          relative pb-4
-          h-full
-        "
+                    col-span-1
+                    md:col-span-6
+                    md:col-start-4
+                    overflow-auto
+                    mt-4
+                    relative pb-4
+                    h-full
+                    scrollbar-hide
+                "
+                style={{
+                    scrollbarWidth: 'none',  /* Firefox */
+                    msOverflowStyle: 'none'  /* IE and Edge */
+                }}
             >
-
                 <div className="flex flex-col gap-y-[8rem]">
                     <CaseStudyCard
                         videoSrcWebm="/project-covers/88risingthumbnail.webm"
@@ -238,11 +224,8 @@ export default function Home() {
                             loop: true,
                         }}
                     />
-                    <div className="bg-white h-[20rem]">
-                    </div>
                 </div>
             </main>
         </GridContainer>
-
     )
 }
