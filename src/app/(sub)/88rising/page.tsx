@@ -1,7 +1,7 @@
 // app/page.tsx
 'use client'
 
-import {useEffect, useRef} from 'react'
+import {useEffect, useRef, useState} from 'react'
 import Lenis from '@studio-freight/lenis'
 
 import GridContainer from '@/components/GridContainer'
@@ -9,10 +9,22 @@ import GridContainer from '@/components/GridContainer'
 import CaseStudyCard from "@/components/projects/CaseStudyCard";
 import CaseStudyContent from "@/components/projects/CaseStudyContent";
 
+// Add type for Lenis scroll event
+interface ScrollEvent {
+    scroll: number;
+    limit: number;
+    velocity: number;
+    direction: number;
+    progress: number;
+}
 
 export default function Home() {
     // 1) ref your scroll‐pane
     const mainRef = useRef<HTMLDivElement>(null)
+    // Add scroll tracking state
+    const [scrollY, setScrollY] = useState<number>(0)
+    // Track hover state
+    const [isHovered, setIsHovered] = useState(false)
 
     useEffect(() => {
         if (!mainRef.current) return
@@ -27,6 +39,11 @@ export default function Home() {
             // easing: t => t,
         })
 
+        // Add scroll event listener with proper typing
+        lenis.on('scroll', (event: ScrollEvent) => {
+            setScrollY(event.scroll)
+        })
+
         // 3) start the RAF loop
         function raf(time: number) {
             lenis.raf(time)
@@ -38,6 +55,9 @@ export default function Home() {
         // 4) cleanup
         return () => lenis.destroy()
     }, [])
+
+    // Calculate sidebar opacity based on scroll position and hover state
+    const sidebarOpacity = isHovered ? 1 : Math.max(0.4, 1 - (scrollY / 400))
 
     return (
         <GridContainer
@@ -51,11 +71,16 @@ export default function Home() {
         gap-4
       "
         >
-            {/* Sidebar */}
-            <aside className="flex flex-col h-full col-span-1 md:col-span-2 md:sticky md:top-0 mt-4 bg-white">
+            {/* Sidebar with hover listeners */}
+            <aside
+                className="flex flex-col h-full col-span-1 md:col-span-2 md:sticky md:top-0 mt-4 bg-white transition-opacity duration-200 ease-out"
+                style={{ opacity: sidebarOpacity }}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+            >
                 <p>Alex Luowan</p>
                 <p className="mt-4">
-                    Turning 88rising’s website into a backstage pass for every fan.
+                    Turning 88rising's website into a backstage pass for every fan.
                 </p>
                 <div className="mt-4">
                 </div>
@@ -82,7 +107,7 @@ export default function Home() {
                     <CaseStudyCard
                         videoSrcWebm="/project-covers/88risingthumbnail.webm"
                         videoSrcMp4="/project-covers/88risingthumbnail.mp4"
-                        title="Reimagining 88rising’s website experience for fans to engage with their favourite artists and stay informed."
+                        title="Reimagining 88rising's website experience for fans to engage with their favourite artists and stay informed."
                         roles={['Product Designer', 'Prototyper', 'Facilitator']}
                         team={['Justin Yu', 'Luke Do', 'Claret Egwim', 'Terrence Xu']}
                         timeline="4 Weeks – 2023"
@@ -95,18 +120,6 @@ export default function Home() {
                         description="Fans struggle to discover new music and connect with artists because content is scattered across platforms. This fragmentation disengages fans, blocking immersion in the 88rising ecosystem and eroding brand loyalty. When discovery stalls, the mission of amplifying Asian voices stalls too."
                         imageSrc="/work/88rising/88risingchallenge.png"
                         mediaAlt="88rising logo with social media icons"
-                    />
-
-                    <CaseStudyContent
-                        subtitle="the business problem"
-                        title="Why 88rising Should Care"
-                        description="88rising shattered stereotypes, putting Asian voices on the global stage and racking up 3 B
-                    YouTube views in its first three years, but growth has crawled to just 0.43 B since as a discovery-poor
-                    web presence starves today’s rookies of the spotlight that fueled the early cultural wave, draining streams,
-                    ticket sales, and brand momentum."
-
-                        imageSrc="/work/88rising/statistics.svg"
-                        mediaAlt=""
                     />
 
                     <CaseStudyContent
@@ -214,3 +227,4 @@ export default function Home() {
         </GridContainer>
     )
 }
+
