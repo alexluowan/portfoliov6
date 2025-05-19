@@ -80,7 +80,7 @@ export default function Home() {
             >
                 <p>Alex Luowan</p>
                 <p className="mt-4">
-                    Turning 88rising's website into a backstage pass for every fan.
+                    Turning 88rising&apos;s website into a backstage pass for every fan.
                 </p>
                 <div className="mt-4">
                 </div>
@@ -107,7 +107,7 @@ export default function Home() {
                     <CaseStudyCard
                         videoSrcWebm="/project-covers/88risingthumbnail.webm"
                         videoSrcMp4="/project-covers/88risingthumbnail.mp4"
-                        title="Reimagining 88rising's website experience for fans to engage with their favourite artists and stay informed."
+                        title="Reimagining 88rising&apos;s website experience for fans to engage with their favourite artists and stay informed."
                         roles={['Product Designer', 'Prototyper', 'Facilitator']}
                         team={['Justin Yu', 'Luke Do', 'Claret Egwim', 'Terrence Xu']}
                         timeline="4 Weeks – 2023"
@@ -185,13 +185,13 @@ export default function Home() {
                         <CaseStudyContent
                             subtitle="explorations"
                             title="Pinpointing Nations with Lat-Long "
-                            description="We recast the landing page as a stripped-down world map. Each neon-red bar sits at the actual latitude of a region that feeds the 88rising roster, turning raw co-ordinates into a visual navigation system. By starting discovery with place and lighting up the local word for “rise” in each block—we remind fans that the label’s heartbeat is pan-Asian, not platform-first."
+                            description="We recast the landing page as a stripped-down world map. Each neon-red bar sits at the actual latitude of a region that feeds the 88rising roster, turning raw co-ordinates into a visual navigation system. By starting discovery with place and lighting up the local word for “rise” in each block—we remind fans that the label&apos;s heartbeat is pan-Asian, not platform-first."
                             imageSrc="/work/88rising/exploration1.png"
                         />
                         <CaseStudyContent
                             subtitle=""
                             title="Unfiltered Artists Energy"
-                            description="Fans don’t bond with stats, they bond with snapshots of real life. A backyard hose, a beat-up Rubik’s Cube, and Brian’s sky-blue coat say more than any metric, turning casual scrollers into curious fans eager to dive into music, merch, and more."
+                            description="Fans don&apos;t bond with stats, they bond with snapshots of real life. A backyard hose, a beat-up Rubik’s Cube, and Brian&apos;s sky-blue coat say more than any metric, turning casual scrollers into curious fans eager to dive into music, merch, and more."
                             imageSrc="/work/88rising/exploration2.png"
                         />
                     </div>
@@ -211,7 +211,7 @@ export default function Home() {
                     />
                     <CaseStudyContent
                         subtitle="Reach out"
-                        title="Want the inside scoop? Let's chat"
+                        title="Want the inside scoop? Let&apos;s chat"
                         description="Getting here was anything but linear. If you’d like the full story twists, turns, and aha moments let’s hop on a quick call :) "
                         mediaAlt=""
                         muxPlaybackId="zXbKAQgr5YArc01ssVta1T4sRCeovGsk01pIerilmstCk"
