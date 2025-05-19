@@ -23,7 +23,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
                                                          client,
                                                          tools,
                                                      }) => (
-    <div className="flex flex-col w-full max-w-[48.125rem] mx-auto">
+    <div className="flex flex-col w-full max-w-[48.125rem]">
         <div className="w-full">
             {imageSrc ? (
                 <img

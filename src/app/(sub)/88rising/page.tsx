@@ -77,8 +77,8 @@ export default function Home() {
 
         "
             >
-                <div className="flex flex-col gap-y-[8rem]">
 
+                <div className="flex flex-col gap-y-[8rem]">
                     <CaseStudyCard
                         videoSrcWebm="/project-covers/88risingthumbnail.webm"
                         videoSrcMp4="/project-covers/88risingthumbnail.mp4"
@@ -89,7 +89,6 @@ export default function Home() {
                         client="88rising (Mock)"
                         tools={['Figma', 'After Effects', 'Premiere Pro']}
                     />
-
                     <CaseStudyContent
                         subtitle="the challenge"
                         title="Difficulty In Discovering Artists and Content"
