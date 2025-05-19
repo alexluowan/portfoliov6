@@ -5,12 +5,8 @@ import {useEffect, useRef} from 'react'
 import Lenis from '@studio-freight/lenis'
 
 import GridContainer from '@/components/GridContainer'
-import ProjectNav from '@/components/home/WorksNav'
-import ProfileNav from '@/components/home/ProfileNav'
-import ProjectCard from '@/components/projects/ProjectCard'
-import Link from "next/link";
+// import Link from "next/link";
 import CaseStudyCard from "@/components/projects/CaseStudyCard";
-import Image from "next/image";
 import CaseStudyContent from "@/components/projects/CaseStudyContent";
 
 function Footer() {
