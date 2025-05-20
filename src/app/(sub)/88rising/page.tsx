@@ -161,7 +161,7 @@ export default function Home() {
                             subtitle=""
                             title="Adaptable Individuality - Immersive Artists Pages"
                             description="Each artist owns a bespoke space: stacked candid photos, bite‑sized bios, looping video backdrops, and quick links to songs and merch. The layout flexes to every vibe yet remains part of one cohesive system—deepening connection without confusion."
-                            muxPlaybackId="fH005AX8Ie92r77bFsSdK2ze5gKuf37EmG0102YKTUy6Ts"
+                            muxPlaybackId="Vv800mAA1uTn6UaqKOCNDA6kg9AssHIEqNqQ400NsdU004"
                             muxOptions={{
                                 accentColor: "#FF0000",
                                 autoPlay: true,
