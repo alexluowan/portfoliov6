@@ -6,6 +6,7 @@ import {useEffect, useRef, useState} from 'react'
 import GridContainer from '@/components/GridContainer'
 import CaseStudyCard from "@/components/projects/CaseStudyCard"
 import CaseStudyContent from "@/components/projects/CaseStudyContent"
+import Link from "next/link";
 
 export default function Home() {
     // Keep the main scroll container ref
@@ -77,7 +78,9 @@ export default function Home() {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
-                <p>Alex Luowan</p>
+                <Link href="/">
+                    <p>Alex Luowan</p>
+                </Link>
                 <p className="mt-4">
                     Turning 88rising&apos;s website into a backstage pass for every fan.
                 </p>
