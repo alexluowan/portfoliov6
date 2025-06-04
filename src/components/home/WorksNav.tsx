@@ -21,9 +21,9 @@ export interface Section {
 }
 
 interface WorksNavProps {
-    scrollContainerRef?: React.RefObject<HTMLDivElement>
-    sections?: Section[] // sections for case study pages
-    showTimeline?: boolean // whether to show as timeline navigation
+    scrollContainerRef?: React.RefObject<HTMLDivElement | null>
+    sections?: Section[]
+    showTimeline?: boolean
 }
 
 export default function WorksNav({
@@ -123,32 +123,37 @@ export default function WorksNav({
         )
     }
 
-    // Default works navigation (main portfolio page)
-    return (
-        <nav className="flex flex-col m-0 p-0">
-            <span className="text-sm m-0 p-0">works</span>
-            <ul className="flex flex-col m-0 p-0">
-                {defaultWorks.map(({ label, href }) => {
-                    const isActive = pathname === href
+    // Only show default works navigation on homepage
+    if (pathname === '/') {
+        return (
+            <nav className="flex flex-col m-0 p-0">
+                <span className="text-sm m-0 p-0">works</span>
+                <ul className="flex flex-col m-0 p-0">
+                    {defaultWorks.map(({ label, href }) => {
+                        const isActive = pathname === href
 
-                    return (
-                        <li key={href} className="m-0 p-0">
-                            <Link
-                                href={href}
-                                aria-current={isActive ? 'page' : undefined}
-                                className={
-                                    (isActive
-                                            ? 'inline-block bg-black text-white '
-                                            : 'inline-block text-gray-500 hover:bg-black hover:text-white'
-                                    ) + ' transition-colors m-0 p-0 pr-8 py-[1px]'
-                                }
-                            >
-                                {label}
-                            </Link>
-                        </li>
-                    )
-                })}
-            </ul>
-        </nav>
-    )
+                        return (
+                            <li key={href} className="m-0 p-0">
+                                <Link
+                                    href={href}
+                                    aria-current={isActive ? 'page' : undefined}
+                                    className={
+                                        (isActive
+                                                ? 'inline-block bg-black text-white '
+                                                : 'inline-block text-gray-500 hover:bg-black hover:text-white'
+                                        ) + ' transition-colors m-0 p-0 pr-8 py-[1px]'
+                                    }
+                                >
+                                    {label}
+                                </Link>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </nav>
+        )
+    }
+
+    // Return nothing for case study pages without timeline
+    return null
 }
