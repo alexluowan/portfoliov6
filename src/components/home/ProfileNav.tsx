@@ -6,8 +6,8 @@ import { usePathname } from 'next/navigation'
 
 const works = [
     { label: 'About',  href: './../about' },
-    { label: 'Resume', href: '/works/88rising' },
-    { label: 'Contact', href: '/works/wise' },
+    { label: 'Resume', href: '/resume.pdf'},
+    { label: 'Contact', href: 'mailto:aaluowan@gmail.com' },
 ]
 
 export default function ProfileNav() {
