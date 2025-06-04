@@ -91,6 +91,18 @@ export default function Home() {
                             />
                         </Link>
                     </div>
+                    <Link href="https://www.blaze.ai/">
+                    <ProjectCard
+                        mediaSrc="/project-covers/blazeaicontentdesigner.mp4"
+                        mediaType="video"
+                        badges={['Blaze.ai Templates', 'Visual Design']}
+                    />
+                    </Link>
+                    {/*<ProjectCard*/}
+                    {/*    mediaSrc="/project-covers/blazeaicontentdesigner"*/}
+                    {/*    mediaType="image"*/}
+                    {/*    badges={['Freelance Work', 'Product & Brand Design - (2024 - Now)']}*/}
+                    {/*/>*/}
                     <div>
                         <ProjectCard
                             mediaSrc="/project-covers/figmaplugindock.jpg"
@@ -113,12 +125,7 @@ export default function Home() {
                         </Link>
                     </div>
 
-                    {/*<ProjectCard*/}
-                    {/*    mediaSrc="/project-covers/freelance.png"*/}
-                    {/*    mediaType="image"*/}
-                    {/*    badges={['Freelance Work', 'Product & Brand Design - (2024 - Now)']}*/}
-                    {/*/>*/}
-                    {/* …more ProjectCard components */}
+
                 </div>
             </main>
         </GridContainer>
