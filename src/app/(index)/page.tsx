@@ -1,7 +1,7 @@
 // app/page.tsx
 'use client'
 
-import { useEffect, useRef } from 'react'
+import {useEffect, useRef} from 'react'
 import Lenis from '@studio-freight/lenis'
 
 import GridContainer from '@/components/GridContainer'
@@ -9,6 +9,7 @@ import ProjectNav from '@/components/home/WorksNav'
 import ProfileNav from '@/components/home/ProfileNav'
 import ProjectCard from '@/components/projects/ProjectCard'
 import Link from "next/link";
+
 export default function Home() {
 
     // 1) ref your scroll‐pane
@@ -32,6 +33,7 @@ export default function Home() {
             lenis.raf(time)
             requestAnimationFrame(raf)
         }
+
         requestAnimationFrame(raf)
 
         // 4) cleanup
@@ -58,10 +60,10 @@ export default function Home() {
                     ◎ cohesive visual identities, and ✺ inclusive design systems.
                 </p>
                 <div className="mt-4">
-                    <ProjectNav />
+                    <ProjectNav/>
                 </div>
                 <div className="mt-auto">
-                    <ProfileNav />
+                    <ProfileNav/>
                 </div>
             </aside>
 
@@ -82,11 +84,11 @@ export default function Home() {
                 <div className="flex flex-col gap-4">
                     <div>
                         <Link href="./88rising">
-                        <ProjectCard
-                            mediaSrc="/project-covers/88risingthumbnail.mp4"
-                            mediaType="video"
-                            badges={['88rising', 'Product Design – Website Revamp']}
-                        />
+                            <ProjectCard
+                                mediaSrc="/project-covers/88risingthumbnail.mp4"
+                                mediaType="video"
+                                badges={['88rising', 'Product Design – Website Revamp']}
+                            />
                         </Link>
                     </div>
                     <div>
@@ -101,11 +103,16 @@ export default function Home() {
                         mediaType="image"
                         badges={['Wise', 'UI – Personal Project']}
                     />
-                    <ProjectCard
-                        mediaSrc="/project-covers/fondazioneprada.mp4"
-                        mediaType="video"
-                        badges={['Fondazione Prada', 'Interaction Design – Pre-exhibition Microsite']}
-                    />
+                    <div>
+                        <Link href="./88rising">
+                            <ProjectCard
+                                mediaSrc="/project-covers/fondazioneprada.mp4"
+                                mediaType="video"
+                                badges={['Fondazione Prada', 'Interaction Design – Pre-exhibition Microsite']}
+                            />
+                        </Link>
+                    </div>
+
                     {/*<ProjectCard*/}
                     {/*    mediaSrc="/project-covers/freelance.png"*/}
                     {/*    mediaType="image"*/}
