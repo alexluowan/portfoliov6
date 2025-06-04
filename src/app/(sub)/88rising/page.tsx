@@ -126,12 +126,19 @@ export default function Home() {
                     </div>
                     <div className="flex flex-col gap-y-[8rem]">
 
-                        <div data-section="challenge">
+                        <div data-section="challenge" className="flex flex-col gap-y-[8rem]">
                             <CaseStudyContent
                                 subtitle="the challenge"
                                 title="Difficulty In Discovering Artists and Content"
                                 description="Fans struggle to discover new music and connect with artists because content is scattered across platforms. This fragmentation disengages fans, blocking immersion in the 88rising ecosystem and eroding brand loyalty. When discovery stalls, the mission of amplifying Asian voices stalls too."
                                 imageSrc="/work/88rising/88risingchallenge.png"
+                                mediaAlt="88rising logo with social media icons"
+                            />
+                            <CaseStudyContent
+                                subtitle="the business problem"
+                                title="Why 88rising Should Care"
+                                description="88rising racked up 3 B YouTube views in its first three years, yet has added only 0.43 B over the last four. A discovery‑poor web presence means new signings don’t get the reach early stars enjoyed, costing streams, ticket sales, and long‑term brand momentum."
+                                imageSrc="/work/88rising/statistics.svg"
                                 mediaAlt="88rising logo with social media icons"
                             />
                         </div>
@@ -223,7 +230,7 @@ export default function Home() {
                             />
                         </div>
 
-                        <div data-section="reflections">
+                        <div data-section="reflections" className="flex flex-col gap-y-[8rem]">
                             <CaseStudyContent
                                 subtitle="Reflections"
                                 title="Key Takeaways & Fixes"
@@ -231,20 +238,20 @@ export default function Home() {
                                 imageSrc="/work/88rising/ripruss.png"
                                 mediaAlt=""
                             />
+                            <CaseStudyContent
+                                subtitle="Reach out"
+                                title="Want the inside scoop? Let&apos;s chat"
+                                description="Getting here was anything but linear. If you&apos;d like the full story twists, turns, and aha moments let&apos;s hop on a quick call :) "
+                                mediaAlt=""
+                                muxPlaybackId="zXbKAQgr5YArc01ssVta1T4sRCeovGsk01pIerilmstCk"
+                                muxOptions={{
+                                    accentColor: "#FF0000",
+                                    autoPlay: true,
+                                    muted: true,
+                                    loop: true,
+                                }}
+                            />
                         </div>
-                        <CaseStudyContent
-                            subtitle="Reach out"
-                            title="Want the inside scoop? Let&apos;s chat"
-                            description="Getting here was anything but linear. If you&apos;d like the full story twists, turns, and aha moments let&apos;s hop on a quick call :) "
-                            mediaAlt=""
-                            muxPlaybackId="zXbKAQgr5YArc01ssVta1T4sRCeovGsk01pIerilmstCk"
-                            muxOptions={{
-                                accentColor: "#FF0000",
-                                autoPlay: true,
-                                muted: true,
-                                loop: true,
-                            }}
-                        />
                     </div>
                 </div>
             </main>
