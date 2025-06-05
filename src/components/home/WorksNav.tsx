@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react'
 // Default works for the main portfolio page
 const defaultWorks = [
     { label: '88rising', href: '/88rising' },
+    { label: 'Blaze.ai', href: 'https://www.blaze.ai/' },
     { label: 'Figma', href: '/works/figma' },
     { label: 'Wise', href: '/works/wise' },
     { label: 'Fondazione Prada', href: '/works/fondazione-prada' },
