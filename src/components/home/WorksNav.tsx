@@ -82,7 +82,7 @@ export default function WorksNav({
     // For timeline/section navigation (case study pages)
     if (showTimeline && sections.length > 0) {
         return (
-            <nav className="flex flex-col m-0 p-0">
+            <nav className="hidden md:flex flex-col m-0 p-0">
                 {/*<span className="text-sm m-0 p-0">Timeline</span>*/}
                 <ul className="flex flex-col m-0 p-0">
                     {sections.map(({ label, sectionId }) => {
@@ -126,7 +126,7 @@ export default function WorksNav({
     // Only show default works navigation on homepage
     if (pathname === '/') {
         return (
-            <nav className="flex flex-col m-0 p-0">
+            <nav className="hidden md:flex flex-col m-0 p-0">
                 <span className="text-sm m-0 p-0">works</span>
                 <ul className="flex flex-col m-0 p-0">
                     {defaultWorks.map(({ label, href }) => {
