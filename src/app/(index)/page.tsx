@@ -91,13 +91,13 @@ export default function Home() {
                             />
                         </Link>
                     </div>
-                    <Link href="https://www.blaze.ai/">
-                    <ProjectCard
-                        mediaSrc="/project-covers/blazeaicontentdesigner.mp4"
-                        mediaType="video"
-                        badges={['Blaze.ai Templates', 'Visual Design']}
-                    />
-                    </Link>
+                    {/*<Link href="https://www.blaze.ai/">*/}
+                    {/*<ProjectCard*/}
+                    {/*    mediaSrc="/project-covers/blazeaicontentdesigner.mp4"*/}
+                    {/*    mediaType="video"*/}
+                    {/*    badges={['Blaze.ai Templates', 'Visual Design']}*/}
+                    {/*/>*/}
+                    {/*</Link>*/}
                     {/*<ProjectCard*/}
                     {/*    mediaSrc="/project-covers/blazeaicontentdesigner"*/}
                     {/*    mediaType="image"*/}
