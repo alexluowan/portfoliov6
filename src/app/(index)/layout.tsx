@@ -1,7 +1,7 @@
 import type {Metadata} from "next";
 import "../globals.css";
 import localFont from 'next/font/local'
-
+import { Analytics } from "@vercel/analytics/next"
 
 export const metadata: Metadata = {
     title: "Alex Luowans Portfolio",
