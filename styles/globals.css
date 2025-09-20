@@ -23,6 +23,9 @@ body {
   font-family: "TWK Lausanne", Helvetica, sans-serif;
   font-size: 14px;
   line-height: 18px;
+  /* Improve mobile scrolling */
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -81,4 +84,42 @@ mux-player {
   /* Target a specific section by prefixing the CSS var with (top|center|bottom) */
   --center-controls: none;
   --bottom-play-button: none;
+}
+
+/* Mobile native scrolling */
+@media (max-width: 768px) {
+  html {
+    /* Enable momentum scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Ensure proper mobile scrolling */
+  body {
+    overflow-x: hidden;
+    position: relative;
+    /* Enable native scrolling */
+    overflow-y: auto;
+  }
+  
+  /* Mobile native scroll container */
+  .mobile-native-scroll {
+    /* Allow native scrolling on mobile */
+    height: auto;
+    overflow: visible;
+  }
+  
+  /* Ensure content flows naturally on mobile */
+  .mobile-native-scroll main {
+    /* Remove height constraints on mobile */
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  
+  /* Improve scroll container on desktop only */
+  @media (min-width: 769px) {
+    .scrollbar-hide {
+      -webkit-overflow-scrolling: touch;
+    }
+  }
 }

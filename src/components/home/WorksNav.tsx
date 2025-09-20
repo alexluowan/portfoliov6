@@ -37,9 +37,9 @@ export default function WorksNav({
     const [activeSection, setActiveSection] = useState(sections[0]?.sectionId || '')
 
     useEffect(() => {
-        if (!scrollContainerRef?.current || !showTimeline || sections.length === 0) return
+        if (!showTimeline || sections.length === 0) return
 
-        const scrollContainer = scrollContainerRef.current
+        const scrollContainer = scrollContainerRef?.current
 
         const handleScroll = () => {
             const sectionElements = sections.map(section => ({
@@ -48,21 +48,31 @@ export default function WorksNav({
             })).filter(section => section.element)
 
             let currentSection = sections[0]?.sectionId || ''
-            const containerHeight = scrollContainer.clientHeight
+            const isMobile = window.innerWidth < 768
+            const viewportHeight = window.innerHeight
 
             // Find which section is most visible
             for (const section of sectionElements) {
                 if (section.element) {
                     const rect = section.element.getBoundingClientRect()
-                    const containerRect = scrollContainer.getBoundingClientRect()
+                    
+                    if (isMobile) {
+                        // Mobile: use window viewport
+                        if (rect.top <= viewportHeight * 0.3 && rect.bottom > 0) {
+                            currentSection = section.id
+                        }
+                    } else {
+                        // Desktop: use container
+                        if (scrollContainer) {
+                            const containerRect = scrollContainer.getBoundingClientRect()
+                            const containerHeight = scrollContainer.clientHeight
+                            const elementTop = rect.top - containerRect.top
+                            const elementBottom = rect.bottom - containerRect.top
 
-                    // Calculate position relative to scroll container
-                    const elementTop = rect.top - containerRect.top
-                    const elementBottom = rect.bottom - containerRect.top
-
-                    // Check if section is in view (at least 30% from top of viewport)
-                    if (elementTop <= containerHeight * 0.3 && elementBottom > 0) {
-                        currentSection = section.id
+                            if (elementTop <= containerHeight * 0.3 && elementBottom > 0) {
+                                currentSection = section.id
+                            }
+                        }
                     }
                 }
             }
@@ -73,11 +83,37 @@ export default function WorksNav({
         // Initial check
         handleScroll()
 
-        // Add scroll listener
-        scrollContainer.addEventListener('scroll', handleScroll)
+        // Add appropriate scroll listener
+        const addScrollListener = () => {
+            if (window.innerWidth < 768) {
+                // Mobile: listen to window scroll
+                window.addEventListener('scroll', handleScroll)
+                if (scrollContainer) {
+                    scrollContainer.removeEventListener('scroll', handleScroll)
+                }
+            } else {
+                // Desktop: listen to container scroll
+                if (scrollContainer) {
+                    scrollContainer.addEventListener('scroll', handleScroll)
+                }
+                window.removeEventListener('scroll', handleScroll)
+            }
+        }
+
+        addScrollListener()
+
+        const handleResize = () => {
+            addScrollListener()
+        }
+
+        window.addEventListener('resize', handleResize)
 
         return () => {
-            scrollContainer.removeEventListener('scroll', handleScroll)
+            if (scrollContainer) {
+                scrollContainer.removeEventListener('scroll', handleScroll)
+            }
+            window.removeEventListener('scroll', handleScroll)
+            window.removeEventListener('resize', handleResize)
         }
     }, [scrollContainerRef, sections, showTimeline])
 

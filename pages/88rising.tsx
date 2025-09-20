@@ -32,12 +32,27 @@ export default function Rising88() {
         if (!currentRef) return
 
         const handleScroll = () => {
-            if (currentRef) {
-                setScrollY(currentRef.scrollTop)
+            // Use window scroll on mobile, container scroll on desktop
+            const scrollPosition = window.innerWidth < 768 ? window.scrollY : (currentRef?.scrollTop || 0)
+            setScrollY(scrollPosition)
+        }
+
+        // Add appropriate scroll listener based on screen size
+        const addScrollListener = () => {
+            if (window.innerWidth < 768) {
+                window.addEventListener('scroll', handleScroll)
+                if (currentRef) {
+                    currentRef.removeEventListener('scroll', handleScroll)
+                }
+            } else {
+                if (currentRef) {
+                    currentRef.addEventListener('scroll', handleScroll)
+                }
+                window.removeEventListener('scroll', handleScroll)
             }
         }
 
-        currentRef.addEventListener('scroll', handleScroll)
+        addScrollListener()
 
         const style = document.createElement('style')
         style.textContent = `
@@ -48,7 +63,7 @@ export default function Rising88() {
         document.head.appendChild(style)
 
         const handleResize = () => {
-            // Nothing to do but kept for possible future use
+            addScrollListener()
         }
 
         window.addEventListener('resize', handleResize)
@@ -57,6 +72,7 @@ export default function Rising88() {
             if (currentRef) {
                 currentRef.removeEventListener('scroll', handleScroll)
             }
+            window.removeEventListener('scroll', handleScroll)
             window.removeEventListener('resize', handleResize)
             document.head.removeChild(style)
         }
@@ -72,11 +88,13 @@ export default function Rising88() {
                 md:grid-cols-12
                 md:h-screen
                 md:overflow-hidden
+                min-h-screen
                 gap-4
+                mobile-native-scroll
             "
         >
             <aside
-                className="flex flex-col h-full col-span-1 md:col-span-2 md:sticky md:top-0 mt-4 bg-white transition-opacity duration-200 ease-out"
+                className="flex flex-col h-full col-span-1 md:col-span-2 md:sticky md:top-0 md:h-screen mt-4 bg-white transition-opacity duration-200 ease-out"
                 style={{opacity: sidebarOpacity}}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
@@ -104,11 +122,13 @@ export default function Rising88() {
                     col-span-1
                     md:col-span-9
                     md:col-start-4
-                    overflow-auto
+                    overflow-visible
+                    md:overflow-auto
                     mt-4
                     relative pb-4
-                    h-full
-                    scrollbar-hide
+                    h-auto
+                    md:h-screen
+                    md:scrollbar-hide
                 "
                 style={{
                     scrollbarWidth: 'none',
