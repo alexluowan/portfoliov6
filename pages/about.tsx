@@ -1,4 +1,4 @@
-// app/page.tsx
+// pages/about.tsx
 'use client'
 
 import { useEffect, useRef } from 'react'
@@ -9,7 +9,7 @@ import ProfileNav from '@/components/home/ProfileNav'
 import Link from 'next/link'
 import DragCanvas from '@/components/DragCanvas'
 
-export default function Home() {
+export default function About() {
     // Lenis scroll ref & setup
     const mainRef = useRef<HTMLDivElement>(null)
     useEffect(() => {
@@ -40,11 +40,11 @@ export default function Home() {
 
                 <div className="flex flex-col gap-4 mt-20 lg:mt-auto">
                     <p>i was born in vancouver and grew up in surrey</p>
-                    <p>i started in computer science but soon realized coding alone didn’t light me up so i switched to design full time</p>
+                    <p>i started in computer science but soon realized coding alone didn&apos;t light me up so i switched to design full time</p>
                     <p>during the day i work on personal projects that excite me, sharpening my prototyping and problem solving skills while learning front-end development to bring ideas to life</p>
                     <p>my design philosophy centres on clarity, elegance, and functional beauty crafting interfaces that feel intuitive and human</p>
                     <p>in my free time i love fishing, working out, playing guitar and capturing moments with my camera, activities that recharge my creativity</p>
-                    <p>hit me up if you’re down for coffee or a design jam, i’m always up for meeting new people</p>
+                    <p>hit me up if you&apos;re down for coffee or a design jam, i&apos;m always up for meeting new people</p>
                 </div>
 
                 <div className="mt-auto">

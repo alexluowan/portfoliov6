@@ -1,4 +1,4 @@
-// app/(sub)/88rising/page.tsx
+// pages/88rising.tsx
 'use client'
 
 import {useEffect, useRef, useState} from 'react'
@@ -8,7 +8,7 @@ import CaseStudyContent from "@/components/projects/CaseStudyContent"
 import WorksNav, {Section} from "@/components/home/WorksNav"
 import Link from "next/link"
 
-export default function Home() {
+export default function Rising88() {
     const mainRef = useRef<HTMLDivElement>(null)
     const [scrollY, setScrollY] = useState<number>(0)
     const [isHovered, setIsHovered] = useState(false)
@@ -25,15 +25,16 @@ export default function Home() {
     ]
 
     useEffect(() => {
-        if (!mainRef.current) return
+        const currentRef = mainRef.current
+        if (!currentRef) return
 
         const handleScroll = () => {
-            if (mainRef.current) {
-                setScrollY(mainRef.current.scrollTop)
+            if (currentRef) {
+                setScrollY(currentRef.scrollTop)
             }
         }
 
-        mainRef.current.addEventListener('scroll', handleScroll)
+        currentRef.addEventListener('scroll', handleScroll)
 
         const style = document.createElement('style')
         style.textContent = `
@@ -50,8 +51,8 @@ export default function Home() {
         window.addEventListener('resize', handleResize)
 
         return () => {
-            if (mainRef.current) {
-                mainRef.current.removeEventListener('scroll', handleScroll)
+            if (currentRef) {
+                currentRef.removeEventListener('scroll', handleScroll)
             }
             window.removeEventListener('resize', handleResize)
             document.head.removeChild(style)
@@ -137,7 +138,7 @@ export default function Home() {
                             <CaseStudyContent
                                 subtitle="the business problem"
                                 title="Why 88rising Should Care"
-                                description="88rising racked up 3 B YouTube views in its first three years, yet has added only 0.43 B over the last four. A discovery‑poor web presence means new signings don’t get the reach early stars enjoyed, costing streams, ticket sales, and long‑term brand momentum."
+                                description="88rising racked up 3 B YouTube views in its first three years, yet has added only 0.43 B over the last four. A discovery‑poor web presence means new signings don't get the reach early stars enjoyed, costing streams, ticket sales, and long‑term brand momentum."
                                 imageSrc="/work/88rising/statistics.svg"
                                 mediaAlt="88rising logo with social media icons"
                             />

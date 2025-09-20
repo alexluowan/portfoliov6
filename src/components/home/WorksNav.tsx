@@ -2,16 +2,16 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 
 // Default works for the main portfolio page
 const defaultWorks = [
     { label: '88rising', href: '/88rising' },
     // { label: 'Blaze.ai', href: 'https://www.blaze.ai/' },
-    { label: 'Figma', href: '/works/figma' },
-    { label: 'Wise', href: '/works/wise' },
-    { label: 'Fondazione Prada', href: '/works/fondazione-prada' },
+    { label: 'Figma', href: '/figma' },
+    { label: 'Wise', href: '/wise' },
+    { label: 'Fondazione Prada', href: '/fondazione' },
 ]
 
 // Type for section configuration
@@ -32,7 +32,8 @@ export default function WorksNav({
                                      sections = [],
                                      showTimeline = false
                                  }: WorksNavProps) {
-    const pathname = usePathname()
+    const router = useRouter()
+    const pathname = router.pathname
     const [activeSection, setActiveSection] = useState(sections[0]?.sectionId || '')
 
     useEffect(() => {

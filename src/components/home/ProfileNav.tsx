@@ -1,17 +1,18 @@
-// components/WorksNav.tsx
+// components/ProfileNav.tsx
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { useRouter } from 'next/router'
 
 const works = [
-    { label: 'About',  href: './../about' },
+    { label: 'About',  href: '/about' },
     { label: 'Resume', href: '/resume.pdf'},
     { label: 'Contact', href: 'mailto:aaluowan@gmail.com' },
 ]
 
 export default function ProfileNav() {
-    const pathname = usePathname() // e.g. "/works" or "/works/figma" or "/about"
+    const router = useRouter()
+    const pathname = router.pathname // e.g. "/works" or "/works/figma" or "/about"
 
     // if we’re on the about page, strip out About + Resume
     const filteredWorks =

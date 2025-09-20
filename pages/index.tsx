@@ -1,4 +1,4 @@
-// app/page.tsx
+// pages/index.tsx
 'use client'
 
 import {useEffect, useRef} from 'react'
@@ -56,7 +56,7 @@ export default function Home() {
             <aside className="flex flex-col h-full col-span-1 md:col-span-2 md:sticky md:top-0 mt-4 bg-white">
                 <p>Alex Luowan</p>
                 <p className="mt-4">
-                    I’m Alex, a product and brand designer focusing on ✷ intuitive interaction flows,
+                    I&apos;m Alex, a product and brand designer focusing on ✷ intuitive interaction flows,
                     ◎ cohesive visual identities, and ✺ inclusive design systems.
                 </p>
                 <div className="mt-4">
@@ -83,7 +83,7 @@ export default function Home() {
             >
                 <div className="flex flex-col gap-4">
                     <div>
-                        <Link href="./88rising">
+                        <Link href="/88rising">
                             <ProjectCard
                                 mediaSrc="/project-covers/88risingthumbnail.mp4"
                                 mediaType="video"
@@ -116,7 +116,7 @@ export default function Home() {
                         badges={['Wise', 'UI – Personal Project']}
                     />
                     <div>
-                        <Link href="./88rising">
+                        <Link href="/88rising">
                             <ProjectCard
                                 mediaSrc="/project-covers/fondazioneprada.mp4"
                                 mediaType="video"
