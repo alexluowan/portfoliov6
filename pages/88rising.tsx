@@ -2,10 +2,13 @@
 'use client'
 
 import {useEffect, useRef, useState} from 'react'
+import { motion } from 'framer-motion'
 import GridContainer from '@/components/GridContainer'
 import CaseStudyCard from "@/components/projects/CaseStudyCard"
 import CaseStudyContent from "@/components/projects/CaseStudyContent"
 import WorksNav, {Section} from "@/components/home/WorksNav"
+import AnimatedSection from "@/components/AnimatedSection"
+import { heroAnimation, fadeInUp, fadeInUpStagger } from "@/animations/animationVariants"
 import Link from "next/link"
 
 export default function Rising88() {
@@ -113,7 +116,12 @@ export default function Rising88() {
                 }}
             >
                 <div className="flex flex-col gap-y-[6rem]">
-                    <div data-section="hero">
+                    <motion.div 
+                        data-section="hero"
+                        variants={heroAnimation}
+                        initial="hidden"
+                        animate="visible"
+                    >
                         <CaseStudyCard
                             videoSrcWebm="/project-covers/88risingthumbnail.webm"
                             videoSrcMp4="/project-covers/88risingthumbnail.mp4"
@@ -124,10 +132,14 @@ export default function Rising88() {
                             client="88rising (Mock)"
                             tools={['Figma', 'After Effects', 'Premiere Pro']}
                         />
-                    </div>
+                    </motion.div>
                     <div className="flex flex-col gap-y-[8rem]">
 
-                        <div data-section="challenge" className="flex flex-col gap-y-[8rem]">
+                        <AnimatedSection 
+                            data-section="challenge" 
+                            className="flex flex-col gap-y-[8rem]"
+                            variants={fadeInUp}
+                        >
                             <CaseStudyContent
                                 subtitle="the challenge"
                                 title="Difficulty In Discovering Artists and Content"
@@ -142,9 +154,12 @@ export default function Rising88() {
                                 imageSrc="/work/88rising/statistics.svg"
                                 mediaAlt="88rising logo with social media icons"
                             />
-                        </div>
+                        </AnimatedSection>
 
-                        <div data-section="insight">
+                        <AnimatedSection 
+                            data-section="insight"
+                            variants={fadeInUp}
+                        >
                             <CaseStudyContent
                                 subtitle="the key insight"
                                 title="Identifying Core Frustrations"
@@ -152,9 +167,13 @@ export default function Rising88() {
                                 imageSrc="/work/88rising/research.svg"
                                 mediaAlt=""
                             />
-                        </div>
+                        </AnimatedSection>
 
-                        <div data-section="solution" className="flex flex-col gap-y-[4rem]">
+                        <AnimatedSection 
+                            data-section="solution" 
+                            className="flex flex-col gap-y-[4rem]"
+                            variants={fadeInUpStagger}
+                        >
                             <CaseStudyContent
                                 subtitle="Solution"
                                 title="Language-Driven Discovery"
@@ -204,9 +223,13 @@ export default function Rising88() {
                                     loop: true,
                                 }}
                             />
-                        </div>
+                        </AnimatedSection>
 
-                        <div data-section="explorations" className="flex flex-col gap-y-[4rem]">
+                        <AnimatedSection 
+                            data-section="explorations" 
+                            className="flex flex-col gap-y-[4rem]"
+                            variants={fadeInUp}
+                        >
                             <CaseStudyContent
                                 subtitle="explorations"
                                 title="Pinpointing Nations with Lat-Long "
@@ -219,9 +242,12 @@ export default function Rising88() {
                                 description="Fans don&apos;t bond with stats, they bond with snapshots of real life. A backyard hose, a beat-up Rubik&apos;s Cube, and Brian&apos;s sky-blue coat say more than any metric, turning casual scrollers into curious fans eager to dive into music, merch, and more."
                                 imageSrc="/work/88rising/exploration2.png"
                             />
-                        </div>
+                        </AnimatedSection>
 
-                        <div data-section="principles">
+                        <AnimatedSection 
+                            data-section="principles"
+                            variants={fadeInUp}
+                        >
                             <CaseStudyContent
                                 subtitle="design principles"
                                 title="Based on the insights we gathered, we asked a simple question: what must this experience do for fans and for 88rising to truly win? Those answers became three guiding principles."
@@ -229,9 +255,13 @@ export default function Rising88() {
                                 imageSrc="/work/88rising/designprinciples.svg"
                                 mediaAlt=""
                             />
-                        </div>
+                        </AnimatedSection>
 
-                        <div data-section="reflections" className="flex flex-col gap-y-[8rem]">
+                        <AnimatedSection 
+                            data-section="reflections" 
+                            className="flex flex-col gap-y-[8rem]"
+                            variants={fadeInUpStagger}
+                        >
                             <CaseStudyContent
                                 subtitle="Reflections"
                                 title="Key Takeaways & Fixes"
@@ -252,7 +282,7 @@ export default function Rising88() {
                                     loop: true,
                                 }}
                             />
-                        </div>
+                        </AnimatedSection>
                     </div>
                 </div>
             </main>

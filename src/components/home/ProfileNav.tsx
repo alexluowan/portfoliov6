@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 const works = [
-    { label: 'About',  href: '/about' },
+    // { label: 'About',  href: '/about' },  // Disabled for now
     { label: 'Resume', href: '/resume.pdf'},
     { label: 'Contact', href: 'mailto:aaluowan@gmail.com' },
 ]
@@ -14,10 +14,10 @@ export default function ProfileNav() {
     const router = useRouter()
     const pathname = router.pathname // e.g. "/works" or "/works/figma" or "/about"
 
-    // if we’re on the about page, strip out About + Resume
+    // if we're on the about page, strip out Resume (About is already disabled)
     const filteredWorks =
         pathname === '/about'
-            ? works.filter(w => !['About', 'Resume'].includes(w.label))
+            ? works.filter(w => !['Resume'].includes(w.label))
             : works
 
     // keep your existing active-path logic
