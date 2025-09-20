@@ -26,7 +26,7 @@ export default function CustomCursor() {
             translateX: '-50%',
             translateY: '-50%',
     }}
-    animate={{ scale: [1, 1.2, 1], transition: { duration: 0.6, loop: Infinity } }}
+    animate={{ scale: [1, 1.2, 1], transition: { duration: 0.6, repeat: Infinity } }}
     />
 );
 }
