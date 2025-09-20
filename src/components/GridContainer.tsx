@@ -21,7 +21,7 @@ export default function GridContainer({
             // forward all the motion+HTML props (initial, animate, exit, transition...)
             {...rest}
             className={twMerge(
-                'w-full z-10 grid grid-cols-12 grid-gap relative max-w-8xl',
+                'w-full z-10 grid grid-cols-12 grid-gap relative max-w-[1800px] mx-auto',
                 footerSpacing,
                 className
             )}
