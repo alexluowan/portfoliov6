@@ -11,7 +11,7 @@ const defaultWorks = [
     // { label: 'Blaze.ai', href: 'https://www.blaze.ai/' },
     { label: 'Figma', href: '/figma' },
     { label: 'Wise', href: '/wise' },
-    { label: 'Fondazione Prada', href: '/fondazione' },
+    // { label: 'Fondazione Prada', href: '/fondazione' },  // Disabled for now
 ]
 
 // Type for section configuration

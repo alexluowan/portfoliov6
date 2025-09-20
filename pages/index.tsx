@@ -115,15 +115,6 @@ export default function Home() {
                         mediaType="image"
                         badges={['Wise', 'UI – Personal Project']}
                     />
-                    <div>
-                        <Link href="/88rising">
-                            <ProjectCard
-                                mediaSrc="/project-covers/fondazioneprada.mp4"
-                                mediaType="video"
-                                badges={['Fondazione Prada', 'Interaction Design – Pre-exhibition Microsite']}
-                            />
-                        </Link>
-                    </div>
 
 
                 </div>
