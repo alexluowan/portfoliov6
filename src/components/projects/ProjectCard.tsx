@@ -1,7 +1,7 @@
 // components/ProjectCard.tsx
 import Image from "next/image";
 import { memo, useRef, useEffect, useState } from "react";
-import { motion, useAnimationControls } from "framer-motion";
+import { motion } from "framer-motion";
 import clsx from "clsx";
 
 export type ProjectCardProps = {
@@ -35,7 +35,6 @@ function ProjectCard({
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isMobile, setIsMobile] = useState(false);
     const [isClient, setIsClient] = useState(false);
-    const controls = useAnimationControls();
 
     // Check if device is mobile
     useEffect(() => {
@@ -54,14 +53,6 @@ function ProjectCard({
         return () => window.removeEventListener("resize", checkIsMobile);
     }, []);
 
-    // Set animation state based on mobile detection
-    useEffect(() => {
-        if (isMobile) {
-            controls.start("hover");
-        } else {
-            controls.start("rest");
-        }
-    }, [isMobile, controls]);
 
     // lazy-play video when in view
     useEffect(() => {
@@ -86,8 +77,8 @@ function ProjectCard({
             className={clsx("w-full aspect-video relative overflow-hidden", className)}
             variants={containerVariants}
             initial="rest"
+            animate={isClient && isMobile ? "hover" : "rest"}
             whileHover={isClient && !isMobile ? "hover" : undefined}
-            animate={isClient && isMobile ? "hover" : controls}
         >
             {/* Media */}
             {mediaSrc && mediaType === "video" ? (
