@@ -102,7 +102,7 @@ export default function Rising88() {
                 ref={mainRef}
                 className="
                     col-span-1
-                    md:col-span-6
+                    md:col-span-9
                     md:col-start-4
                     overflow-auto
                     mt-4

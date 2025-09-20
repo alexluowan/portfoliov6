@@ -34,10 +34,12 @@ function ProjectCard({
                      }: ProjectCardProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isMobile, setIsMobile] = useState(false);
+    const [isClient, setIsClient] = useState(false);
     const controls = useAnimationControls();
 
     // Check if device is mobile
     useEffect(() => {
+        setIsClient(true);
         const checkIsMobile = () => {
             setIsMobile(window.innerWidth <= 768);
         };
@@ -84,8 +86,8 @@ function ProjectCard({
             className={clsx("w-full aspect-video relative overflow-hidden", className)}
             variants={containerVariants}
             initial="rest"
-            whileHover="hover"
-            animate={isMobile ? "hover" : controls}
+            whileHover={isClient && !isMobile ? "hover" : undefined}
+            animate={isClient && isMobile ? "hover" : controls}
         >
             {/* Media */}
             {mediaSrc && mediaType === "video" ? (
@@ -115,7 +117,7 @@ function ProjectCard({
                         <motion.span
                             key={i}
                             variants={badgeVariants}
-                            animate={isMobile ? "hover" : undefined}
+                            animate={isClient && isMobile ? "hover" : undefined}
                             className="inline-block w-max whitespace-nowrap bg-white text-black text-xs px-2 py-1 shadow"
                         >
                             {tag}

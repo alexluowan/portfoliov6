@@ -116,7 +116,7 @@ const CaseStudyContent: React.FC<CaseStudyContentProps> = ({
     };
 
     return (
-        <div className="max-w-[48.125rem]">
+        <div className="w-full">
             <h2 className="uppercase">
                 {subtitle}
             </h2>
