@@ -1,6 +1,7 @@
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import { AnimatePresence } from 'framer-motion'
+import { Analytics } from '@vercel/analytics/react'
 import '../styles/globals.css'
 import PageTransition from '../src/components/PageTransition'
 
@@ -18,6 +19,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
           <Component {...pageProps} />
         </PageTransition>
       </AnimatePresence>
+      <Analytics />
     </>
   )
 }
