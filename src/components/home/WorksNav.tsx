@@ -9,6 +9,10 @@ import { useState, useEffect } from 'react'
 const defaultWorks = [
     { label: '88rising', href: '/88rising' },
     // { label: 'Blaze.ai', href: 'https://www.blaze.ai/' },
+    {
+        label: 'Blueberry',
+        href: 'https://www.figma.com/proto/TWVrzXVl7Eg3VE8F2BPWRG/Portfolio-webpage?page-id=7234%3A2&node-id=8357-72&viewport=-39808%2C-9949%2C0.38&t=CSrT5ztAilwsNZ4i-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=8034%3A6079'
+    },
     { label: 'Figma', href: '/figma' },
     { label: 'Wise', href: '/wise' },
     // { label: 'Fondazione Prada', href: '/fondazione' },  // Disabled for now
@@ -168,22 +172,34 @@ export default function WorksNav({
                 <span className="text-sm m-0 p-0">works</span>
                 <ul className="flex flex-col m-0 p-0">
                     {defaultWorks.map(({ label, href }) => {
+                        const isExternal = href.startsWith('http')
                         const isActive = pathname === href
 
                         return (
                             <li key={href} className="m-0 p-0">
-                                <Link
-                                    href={href}
-                                    aria-current={isActive ? 'page' : undefined}
-                                    className={
-                                        (isActive
-                                                ? 'inline-block bg-black text-white '
-                                                : 'inline-block text-gray-500 hover:bg-black hover:text-white'
-                                        ) + ' transition-colors m-0 p-0 pr-8 py-[1px]'
-                                    }
-                                >
-                                    {label}
-                                </Link>
+                                {isExternal ? (
+                                    <a
+                                        href={href}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="inline-block text-gray-500 hover:bg-black hover:text-white transition-colors m-0 p-0 pr-8 py-[1px]"
+                                    >
+                                        {label}
+                                    </a>
+                                ) : (
+                                    <Link
+                                        href={href}
+                                        aria-current={isActive ? 'page' : undefined}
+                                        className={
+                                            (isActive
+                                                    ? 'inline-block bg-black text-white '
+                                                    : 'inline-block text-gray-500 hover:bg-black hover:text-white'
+                                            ) + ' transition-colors m-0 p-0 pr-8 py-[1px]'
+                                        }
+                                    >
+                                        {label}
+                                    </Link>
+                                )}
                             </li>
                         )
                     })}
