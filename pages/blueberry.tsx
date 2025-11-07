@@ -148,7 +148,6 @@ export default function BlueberrySocial() {
                             roles={['UI & Prototyping Lead']}
                             team={['Lauren Liang', 'Keiko Kobayashi', 'Shania Chacon', 'Valerie Peng']}
                             timeline="2025 · 5 Weeks"
-                            client="Blueberry Social"
                             tools={['Figma', 'ChatGPT', 'V0']}
                         />
                     </motion.div>

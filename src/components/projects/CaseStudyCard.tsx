@@ -9,7 +9,6 @@ interface CaseStudyCardProps {
     roles: string[];
     team: string[];
     timeline: string;
-    client: string;
     tools: string[];
 }
 
@@ -21,7 +20,6 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
                                                          roles,
                                                          team,
                                                          timeline,
-                                                         client,
                                                          tools,
                                                      }) => (
     <div className="flex flex-col w-full max-w-full">
@@ -53,27 +51,23 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
             <h1 className="mt-[2rem]">{title}</h1>
         </div>
         <div className="flex flex-wrap mt-[0.75rem]">
-            <div className="w-1/2 md:w-1/5 pr-4 mb-4">
+            <div className="w-1/2 md:w-1/4 pr-4 mb-4">
                 <h4>ROLE</h4>
                 {roles.map(role => (
                     <p key={role}>{role}</p>
                 ))}
             </div>
-            <div className="w-1/2 md:w-1/5 pr-4 mb-4">
+            <div className="w-1/2 md:w-1/4 pr-4 mb-4">
                 <h4>TEAM</h4>
                 {team.map(member => (
                     <p key={member}>{member}</p>
                 ))}
             </div>
-            <div className="w-1/2 md:w-1/5 pr-4 mb-4">
+            <div className="w-1/2 md:w-1/4 pr-4 mb-4">
                 <h4>TIMELINE</h4>
                 <p>{timeline}</p>
             </div>
-            <div className="w-1/2 md:w-1/5 pr-4 mb-4">
-                <h4>CLIENT</h4>
-                <p>{client}</p>
-            </div>
-            <div className="w-1/2 md:w-1/5 mb-4">
+            <div className="w-1/2 md:w-1/4 mb-4">
                 <h4>TOOLS</h4>
                 {tools.map(tool => (
                     <p key={tool}>{tool}</p>

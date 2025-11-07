@@ -117,17 +117,21 @@ export default function Home() {
                         </Link>
                     </div>
                     <div>
+                        <Link href="/wise">
+                            <ProjectCard
+                                mediaSrc="/project-covers/wisethumbnail.png"
+                                mediaType="image"
+                                badges={['Wise', 'UI – Personal Project']}
+                            />
+                        </Link>
+                    </div>
+                    <div>
                         <ProjectCard
                             mediaSrc="/project-covers/figmaplugindock.jpg"
                             mediaType="image"
                             badges={['Figma', 'UX/UI – Personal Project']}
                         />
                     </div>
-                    <ProjectCard
-                        mediaSrc="/project-covers/wisethumbnail.png"
-                        mediaType="image"
-                        badges={['Wise', 'UI – Personal Project']}
-                    />
 
                 </div>
             </main>

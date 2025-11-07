@@ -13,8 +13,8 @@ const defaultWorks = [
         label: 'Blueberry',
         href: 'https://www.figma.com/proto/TWVrzXVl7Eg3VE8F2BPWRG/Portfolio-webpage?page-id=7234%3A2&node-id=8357-72&viewport=-39808%2C-9949%2C0.38&t=CSrT5ztAilwsNZ4i-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=8034%3A6079'
     },
-    { label: 'Figma', href: '/figma' },
     { label: 'Wise', href: '/wise' },
+    { label: 'Figma', href: '/figma' },
     // { label: 'Fondazione Prada', href: '/fondazione' },  // Disabled for now
 ]
 

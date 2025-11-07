@@ -149,7 +149,6 @@ export default function Rising88() {
                             roles={['Product Designer', 'Prototyper', 'Facilitator']}
                             team={['Justin Yu', 'Luke Do', 'Claret Egwim', 'Terrence Xu']}
                             timeline="4 Weeks – 2023"
-                            client="88rising (Mock)"
                             tools={['Figma', 'After Effects', 'Premiere Pro']}
                         />
                     </motion.div>
