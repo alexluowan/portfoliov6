@@ -115,11 +115,6 @@ export default function Home() {
                         mediaType="image"
                         badges={['Wise', 'UI – Personal Project']}
                     />
-            <ProjectCard
-                        mediaSrc="/project-covers/wisethumbnail.png"
-                        mediaType="image"
-                        badges={['Wise', 'UI – Personal Project']}
-                    />
 
                 </div>
             </main>
