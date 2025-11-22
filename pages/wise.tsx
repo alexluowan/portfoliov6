@@ -120,7 +120,7 @@ export default function WiseCaseStudy() {
                 ref={mainRef}
                 className="
                     col-span-1
-                    md:col-span-9
+                    md:col-span-8
                     md:col-start-4
                     overflow-visible
                     md:overflow-auto

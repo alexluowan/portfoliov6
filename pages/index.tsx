@@ -117,6 +117,19 @@ export default function Home() {
                         </Link>
                     </div>
                     <div>
+                        <Link
+                            href="/blueberry"
+                            target="_blank"
+                            rel="noreferrer"
+                        >
+                            <ProjectCard
+                                mediaSrc="/project-covers/blueberrythumbnail.png"
+                                mediaType="image"
+                                badges={['Blueberry Social', 'Product Design – Social Selling Agent ']}
+                            />
+                        </Link>
+                    </div>
+                    <div>
                         <Link href="/wise">
                             <ProjectCard
                                 mediaSrc="/project-covers/wisethumbnail.png"
@@ -124,13 +137,6 @@ export default function Home() {
                                 badges={['Wise', 'UI – Personal Project']}
                             />
                         </Link>
-                    </div>
-                    <div>
-                        <ProjectCard
-                            mediaSrc="/project-covers/figmaplugindock.jpg"
-                            mediaType="image"
-                            badges={['Figma', 'UX/UI – Personal Project']}
-                        />
                     </div>
 
                 </div>
