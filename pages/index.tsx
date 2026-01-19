@@ -104,27 +104,10 @@ export default function Home() {
                     {/*    badges={['Freelance Work', 'Product & Brand Design - (2024 - Now)']}*/}
                     {/*/>*/}
                     <div>
-                        <Link
-                            href="https://www.figma.com/proto/TWVrzXVl7Eg3VE8F2BPWRG/Portfolio-webpage?page-id=7234%3A2&node-id=8357-72&viewport=-39808%2C-9949%2C0.38&t=CSrT5ztAilwsNZ4i-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=8034%3A6079"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
+                        <Link href="/blueberry">
                             <ProjectCard
-                                mediaSrc="/project-covers/blueberrythumbnail.png"
-                                mediaType="image"
-                                badges={['Blueberry Social', 'Product Design – Social Selling Agent ']}
-                            />
-                        </Link>
-                    </div>
-                    <div>
-                        <Link
-                            href="/blueberry"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <ProjectCard
-                                mediaSrc="/project-covers/blueberrythumbnail.png"
-                                mediaType="image"
+                                mediaSrc="/project-covers/blueberrysizzle.mp4"
+                                mediaType="video"
                                 badges={['Blueberry Social', 'Product Design – Social Selling Agent ']}
                             />
                         </Link>
@@ -134,7 +117,7 @@ export default function Home() {
                             <ProjectCard
                                 mediaSrc="/project-covers/wisethumbnail.png"
                                 mediaType="image"
-                                badges={['Wise', 'UI – Personal Project']}
+                                badges={['Wise', 'Product Exploration – Validated']}
                             />
                         </Link>
                     </div>
