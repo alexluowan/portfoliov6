@@ -167,7 +167,7 @@ export default function BlueberrySocial() {
                                 svgContent={
                                     <div className="mt-[2.5rem]">
                                         <p className="text-2xl md:text-3xl italic text-[#363636] leading-relaxed">
-                                            "Don't fully trust AI yet, but open to automation once I trust it over time."
+                                            &ldquo;Don&apos;t fully trust AI yet, but open to automation once I trust it over time.&rdquo;
                                         </p>
                                         <p className="text-sm text-[#999] mt-4">
                                             — Growth Lead, Mid-sized eCommerce Brand
@@ -250,7 +250,7 @@ export default function BlueberrySocial() {
                                     <div className="flex flex-col gap-12 mt-[2.5rem]">
                                         <div>
                                             <h3 className="text-lg font-medium mb-2">Rules that felt like programming</h3>
-                                            <p className="text-[#363636] mb-4">My first automation designs looked like logic builders: if/then statements, nested conditions, technical syntax. Users froze. "Rules look a bit intimidating," one participant told us. I was designing for flexibility when I should have been designing for confidence.</p>
+                                            <p className="text-[#363636] mb-4">My first automation designs looked like logic builders: if/then statements, nested conditions, technical syntax. Users froze. &ldquo;Rules look a bit intimidating,&rdquo; one participant told us. I was designing for flexibility when I should have been designing for confidence.</p>
                                             <video className="w-full" controls={false} autoPlay playsInline muted loop>
                                                 <source src="/work/blueberry/videos/programmablerulesbuilder.mp4" type="video/mp4" />
                                             </video>

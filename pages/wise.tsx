@@ -249,7 +249,7 @@ export default function WiseCaseStudy() {
                                 svgContent={
                                     <div className="mt-[2.5rem] border border-[#E5E5E5] p-6">
                                         <p className="text-sm text-[#999] uppercase tracking-wider mb-2">What Wise shipped (April 2025)</p>
-                                        <p className="font-medium text-lg">"Spend with Others"</p>
+                                        <p className="font-medium text-lg">&ldquo;Spend with Others&rdquo;</p>
                                         <p className="text-[#363636] mt-2">Groups of up to 5 people, digital cards for each member, spending across 160 countries and 40 currencies. Initially available in UK, EU, Switzerland, Australia, New Zealand, and Singapore.</p>
                                     </div>
                                 }
