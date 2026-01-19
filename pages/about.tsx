@@ -2,7 +2,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
-import Lenis from '@studio-freight/lenis'
+import Lenis from 'lenis'
 
 import GridContainer from '@/components/GridContainer'
 import ProfileNav from '@/components/home/ProfileNav'

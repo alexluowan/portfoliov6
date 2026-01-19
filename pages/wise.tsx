@@ -3,7 +3,7 @@
 
 import {useEffect, useRef, useState} from 'react'
 import {motion} from 'framer-motion'
-import Lenis from '@studio-freight/lenis'
+import Lenis from 'lenis'
 import GridContainer from '@/components/GridContainer'
 import WorksNav, {Section} from '@/components/home/WorksNav'
 import ProfileNav from '@/components/home/ProfileNav'
