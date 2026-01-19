@@ -4,11 +4,11 @@
 
 ---
 
-## INTRO (30 seconds)
+## INTRO (40 seconds)
 
-"Hi, I'm Alex. I'm a product designer who focuses on helping users trust automated systems—whether that's AI-powered tools or platform features that run in the background.
+"Hi, I'm Alex. I'm currently a product designer at AthenaHQ, where I work on AI-powered tools for enterprise workflows. It's been a great experience, but I'm looking for something more B2C—products where I can see real people using what I build, not just dashboards for internal teams.
 
-I'm applying to Whop because I see a similar challenge: you're building tools that help creators automate their businesses, and that only works if creators trust what the platform is doing on their behalf.
+That's what drew me to Whop. You're building tools that help creators run their businesses, and I'm excited about the direct connection between design decisions and user outcomes. Plus, you're tackling a challenge I've spent a lot of time on: helping users trust automated systems.
 
 I'll walk you through two projects that show how I think about these problems."
 
@@ -45,11 +45,11 @@ I'll walk you through two projects that show how I think about these problems."
 
 ## WHY WHOP (45 seconds)
 
-"Whop is building tools that let creators automate parts of their business—payments, access control, analytics. That's the same trust problem I worked on at Blueberry: users need to see what's happening and feel confident it won't break.
+"At Athena, I've learned how to design AI tools that people actually trust. But the work is enterprise—I rarely see real users interact with what I build. Whop is the opposite: 200,000 weekly users, creators who depend on the platform to run their businesses. I want that direct feedback loop.
 
-I'm also drawn to the technical complexity. Whop is expanding into financial infrastructure, and I've worked on fintech concepts like the Wise project. I'm comfortable in that domain.
+The problems are also familiar. Whop is building automation for creators—payments, access control, analytics. That's the same trust challenge I worked on at Blueberry: users need to see what's happening and feel confident it won't break.
 
-Finally, I work fast. The Blueberry pivot happened mid-project, and we still shipped. I prototype in V0, test weekly, and iterate based on real feedback—not assumptions."
+I'm also comfortable with fintech complexity. The Wise project shows I can think through payment flows and multi-party transactions. And I work fast—the Blueberry pivot happened mid-project, and we still shipped."
 
 ---
 
