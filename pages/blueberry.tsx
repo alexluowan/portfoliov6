@@ -9,6 +9,7 @@ import WorksNav, {Section} from '@/components/home/WorksNav'
 import AnimatedSection from '@/components/AnimatedSection'
 import {heroAnimation, fadeInUp, fadeInUpStagger} from '@/animations/animationVariants'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function BlueberrySocial() {
     const mainRef = useRef<HTMLDivElement>(null)
@@ -167,7 +168,7 @@ export default function BlueberrySocial() {
                                 svgContent={
                                     <div className="mt-[2.5rem]">
                                         <p className="text-2xl md:text-3xl italic text-[#363636] leading-relaxed">
-                                            "Don't fully trust AI yet, but open to automation once I trust it over time."
+                                            &ldquo;Don&apos;t fully trust AI yet, but open to automation once I trust it over time.&rdquo;
                                         </p>
                                         <p className="text-sm text-[#999] mt-4">
                                             — Growth Lead, Mid-sized eCommerce Brand
@@ -236,9 +237,9 @@ export default function BlueberrySocial() {
                                 description={`While my teammates tackled onboarding and early inbox explorations, I focused on the features that would make or break trust: the automation rules system, brand voice configuration, and bringing the inbox to its final form. These were the highest-risk areas because they determined whether users would actually flip the switch on automation.`}
                                 svgContent={
                                     <div className="flex flex-col gap-8 mt-[2.5rem]">
-                                        <img src="/work/blueberry/images/automationruleshowcase.png" alt="Automation rules showcase" className="w-full" />
-                                        <img src="/work/blueberry/images/brandvoiceshowcase.png" alt="Brand voice showcase" className="w-full" />
-                                        <img src="/work/blueberry/images/finalinboxshowcase.png" alt="Final inbox showcase" className="w-full" />
+                                        <Image src="/work/blueberry/images/automationruleshowcase.png" alt="Automation rules showcase" width={0} height={0} sizes="100vw" className="w-full h-auto" />
+                                        <Image src="/work/blueberry/images/brandvoiceshowcase.png" alt="Brand voice showcase" width={0} height={0} sizes="100vw" className="w-full h-auto" />
+                                        <Image src="/work/blueberry/images/finalinboxshowcase.png" alt="Final inbox showcase" width={0} height={0} sizes="100vw" className="w-full h-auto" />
                                     </div>
                                 }
                             />
@@ -250,7 +251,7 @@ export default function BlueberrySocial() {
                                     <div className="flex flex-col gap-12 mt-[2.5rem]">
                                         <div>
                                             <h3 className="text-lg font-medium mb-2">Rules that felt like programming</h3>
-                                            <p className="text-[#363636] mb-4">My first automation designs looked like logic builders: if/then statements, nested conditions, technical syntax. Users froze. "Rules look a bit intimidating," one participant told us. I was designing for flexibility when I should have been designing for confidence.</p>
+                                            <p className="text-[#363636] mb-4">My first automation designs looked like logic builders: if/then statements, nested conditions, technical syntax. Users froze. &ldquo;Rules look a bit intimidating,&rdquo; one participant told us. I was designing for flexibility when I should have been designing for confidence.</p>
                                             <video className="w-full" controls={false} autoPlay playsInline muted loop>
                                                 <source src="/work/blueberry/videos/programmablerulesbuilder.mp4" type="video/mp4" />
                                             </video>
@@ -258,7 +259,7 @@ export default function BlueberrySocial() {
                                         <div>
                                             <h3 className="text-lg font-medium mb-2">Brand voice: real-time testing split attention</h3>
                                             <p className="text-[#363636] mb-4">I designed a split interface with voice guidelines on the left and live testing on the right. The hypothesis: real-time feedback builds confidence faster. Users got stuck—constant context-switching between typing traits and checking output.</p>
-                                            <img src="/work/blueberry/images/brandvoice-exploration1.png" alt="Split interface exploration for brand voice" className="w-full" />
+                                            <Image src="/work/blueberry/images/brandvoice-exploration1.png" alt="Split interface exploration for brand voice" width={0} height={0} sizes="100vw" className="w-full h-auto" />
                                         </div>
                                     </div>
                                 }
