@@ -273,8 +273,8 @@ export default function BlueberrySocial() {
                             />
                             <CaseStudyContent
                                 subtitle=""
-                                title="Brand voice: showing the AI's reasoning"
-                                description={`Early designs hid how AI made decisions. Users didn't trust it. I added inline explanations: why the AI chose specific words, how it applied brand guidelines. Real-time adaptation as users edited. Every suggestion editable and transparent. When one user asked "Can you save multiple brand voices?"—I knew we'd earned enough trust for them to think about scaling.`}
+                                title="Brand voice: natural language over rigid controls"
+                                description={`Users adjust how the AI responds through natural language prompts. Describe the tone you want, preview how responses might sound. No rigid sliders or dropdown menus. The preview lets users experiment before committing. Given more time, I would have added reasoning behind specific word choices to show users why the AI picked certain phrases. But even without that, the ability to preview and adjust built enough confidence that one user asked "Can you save multiple brand voices?"`}
                                 videoSrcMp4="/work/blueberry/videos/Brand voice.mp4"
                                 mediaAlt="Blueberry brand voice configuration interface"
                             />
