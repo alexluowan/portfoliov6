@@ -81,17 +81,17 @@ function VideoCarousel({videos, color}: { videos: string[]; color: string }) {
             {/* Navigation arrows */}
             <button
                 onClick={prev}
-                className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white/80 hover:bg-white transition-colors rounded-full hover-target-small"
+                className="absolute left-10 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white/80 hover:bg-white transition-colors rounded-full hover-target-big"
             >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#575757" strokeWidth="2">
+                <svg className="pointer-events-none" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#575757" strokeWidth="2">
                     <path d="M15 18l-6-6 6-6" />
                 </svg>
             </button>
             <button
                 onClick={next}
-                className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white/80 hover:bg-white transition-colors rounded-full hover-target-small"
+                className="absolute right-10 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white/80 hover:bg-white transition-colors rounded-full hover-target-big"
             >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#575757" strokeWidth="2">
+                <svg className="pointer-events-none" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#575757" strokeWidth="2">
                     <path d="M9 18l6-6-6-6" />
                 </svg>
             </button>
