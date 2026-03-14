@@ -32,22 +32,47 @@ export default function Home() {
     useEffect(() => {
         if (!mainRef.current) return
 
-        // 2) init Lenis on that element
-        const lenis = new Lenis({
-            wrapper: mainRef.current,
-            smoothWheel: true,
-        })
+        // Only init Lenis on desktop where main is the scroll container
+        const mq = window.matchMedia('(min-width: 1200px)')
 
-        // 3) start the RAF loop
-        function raf(time: number) {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
+        let lenis: Lenis | null = null
+        let rafId: number | null = null
+
+        function initLenis() {
+            if (!mainRef.current) return
+            lenis = new Lenis({
+                wrapper: mainRef.current,
+                smoothWheel: true,
+            })
+            function raf(time: number) {
+                lenis!.raf(time)
+                rafId = requestAnimationFrame(raf)
+            }
+            rafId = requestAnimationFrame(raf)
         }
 
-        requestAnimationFrame(raf)
+        function destroyLenis() {
+            if (rafId) cancelAnimationFrame(rafId)
+            rafId = null
+            lenis?.destroy()
+            lenis = null
+        }
 
-        // 4) cleanup
-        return () => lenis.destroy()
+        function handleChange() {
+            if (mq.matches) {
+                if (!lenis) initLenis()
+            } else {
+                destroyLenis()
+            }
+        }
+
+        handleChange()
+        mq.addEventListener('change', handleChange)
+
+        return () => {
+            mq.removeEventListener('change', handleChange)
+            destroyLenis()
+        }
     }, [])
 
     return (
@@ -83,7 +108,7 @@ export default function Home() {
                 ref={mainRef}
                 className="w-full md:overflow-y-auto overflow-hidden relative md:pl-[24px] scrollbar-hidden"
             >
-                <div className="feed-grid flex flex-col gap-4 md:flex-row md:gap-2 pt-4 pb-4">
+                <div className="feed-grid flex flex-col gap-4 md:flex-row md:gap-2 pt-4 pb-16">
                     {/* Column 1 */}
                     <div className="flex flex-col gap-4 md:w-1/2 md:gap-2">
                         <Link href="/discord" className="feed-card hover-target-big transition-opacity duration-200">
@@ -92,8 +117,9 @@ export default function Home() {
                                 mediaType="video"
                                 aspect="portrait"
                                 objectPosition="center 60%"
-                                title="Discord Catchup"
-                                subtitle="Product Design – Feature Concept"
+                                title="Discord"
+
+                                subtitle="Catching up on missed conversations."
                             />
                         </Link>
                         <Link href="/blueberry" className="feed-card hover-target-big transition-opacity duration-200">
@@ -102,7 +128,8 @@ export default function Home() {
                                 mediaType="video"
                                 aspect="landscape"
                                 title="Blueberry Social"
-                                subtitle="Case Study – AI Email Agent"
+
+                                subtitle="AI-powered marketing for every customer interaction."
                             />
                         </Link>
                     </div>
@@ -114,7 +141,8 @@ export default function Home() {
                                 mediaType="video"
                                 aspect="wide"
                                 title="88rising"
-                                subtitle="Product Design – Website Revamp"
+
+                                subtitle="A platform for fans to discover and support 88rising's artist roster."
                             />
                         </Link>
                         <Link href="/athena" className="feed-card hover-target-big transition-opacity duration-200">
@@ -123,7 +151,8 @@ export default function Home() {
                                 mediaType="image"
                                 aspect="portrait"
                                 title="AthenaHQ"
-                                subtitle="Product Design – AI Platform"
+
+                                subtitle="Customizable dashboards for AI Search intelligence."
                             />
                         </Link>
                     </div>

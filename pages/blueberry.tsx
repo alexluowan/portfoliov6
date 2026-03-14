@@ -109,7 +109,7 @@ export default function BlueberrySocial() {
 
             <main
                 ref={mainRef}
-                className="w-full md:overflow-y-auto overflow-hidden relative pt-4 pb-4 scrollbar-hidden"
+                className="w-full md:overflow-y-auto overflow-hidden relative pt-4 pb-16 scrollbar-hidden"
             >
                 <div className="flex flex-col gap-y-[6rem]">
                     <motion.div
