@@ -22,7 +22,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
                                                          timeline,
                                                          tools,
                                                      }) => (
-    <div className="flex flex-col w-full max-w-full">
+    <div className="w-full max-w-[768px] mx-auto">
         <div className="w-full">
             {imageSrc ? (
                 <Image
@@ -47,28 +47,26 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
                 </video>
             )}
         </div>
-        <div className="w-full">
-            <h1 className="mt-[2rem]">{title}</h1>
-        </div>
+        <h1 className="mt-[2rem]" style={{fontFamily: '"Self Modern"'}}>{title}</h1>
         <div className="flex flex-wrap mt-[0.75rem]">
             <div className="w-1/2 md:w-1/4 pr-4 mb-4">
-                <h4>ROLE</h4>
+                <h4 className="font-mono text-[12px]">ROLE</h4>
                 {roles.map(role => (
                     <p key={role}>{role}</p>
                 ))}
             </div>
             <div className="w-1/2 md:w-1/4 pr-4 mb-4">
-                <h4>TEAM</h4>
+                <h4 className="font-mono text-[12px]">TEAM</h4>
                 {team.map(member => (
                     <p key={member}>{member}</p>
                 ))}
             </div>
             <div className="w-1/2 md:w-1/4 pr-4 mb-4">
-                <h4>TIMELINE</h4>
+                <h4 className="font-mono text-[12px]">TIMELINE</h4>
                 <p>{timeline}</p>
             </div>
             <div className="w-1/2 md:w-1/4 mb-4">
-                <h4>TOOLS</h4>
+                <h4 className="font-mono text-[12px]">TOOLS</h4>
                 {tools.map(tool => (
                     <p key={tool}>{tool}</p>
                 ))}

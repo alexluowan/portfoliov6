@@ -116,14 +116,14 @@ const CaseStudyContent: React.FC<CaseStudyContentProps> = ({
     };
 
     return (
-        <div className="w-full">
-            <h2 className="uppercase">
+        <div className="w-full max-w-[768px] mx-auto">
+            <h2 className="uppercase font-mono text-[12px]">
                 {subtitle}
             </h2>
-            <h1 className="mt-[1.5rem] max-w-[756px]">
+            <h1 className="mt-[1.5rem]" style={{fontFamily: '"Self Modern"'}}>
                 {title}
             </h1>
-            <p className="text-[#363636] mt-[0.5rem] max-w-[756px]">
+            <p className="text-[#363636] mt-[0.5rem] max-w-[60ch]">
                 {description}
             </p>
             {renderMedia()}

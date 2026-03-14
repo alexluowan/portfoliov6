@@ -86,10 +86,16 @@ export default function DiscordCatchup() {
                 <Link href="/" className="w-fit text-[14px] leading-[18px] text-[#575757] font-[350] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
                     ← Back
                 </Link>
-                <p className="mt-4 text-[14px] leading-[18px] text-[#575757] font-[350]">
-                    Reimagining how friends catch up on missed conversations in Discord.
-                </p>
-                <div className="mt-4">
+                <div className="flex flex-col gap-y-4 mt-6">
+                    <div className="flex flex-col">
+                        <h1 className="text-[18px] leading-[1.3] font-light" style={{fontFamily: '"Self Modern"'}}>Discord</h1>
+
+                    </div>
+                    <div className="flex items-center gap-x-1">
+                        <p className="text-[11px] leading-none font-mono uppercase text-[#999]">Product Design</p>
+                    </div>
+                </div>
+                <div className="mt-8">
                     <WorksNav
                         scrollContainerRef={mainRef}
                         sections={sections}
@@ -100,7 +106,7 @@ export default function DiscordCatchup() {
 
             <main
                 ref={mainRef}
-                className="w-full md:overflow-y-auto overflow-hidden relative pt-4 pb-4 md:pl-[24px] scrollbar-hidden"
+                className="w-full md:overflow-y-auto overflow-hidden relative pt-4 pb-4 scrollbar-hidden"
             >
                 <div className="flex flex-col gap-y-[6rem]">
                     <motion.div
@@ -134,6 +140,8 @@ export default function DiscordCatchup() {
                     </div>
                 </div>
             </main>
+
+            <div className="hidden md:block md:w-[320px] shrink-0" />
         </div>
     )
 }

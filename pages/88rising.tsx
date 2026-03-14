@@ -90,10 +90,18 @@ export default function Rising88() {
                 <Link href="/" className="w-fit text-[14px] leading-[18px] text-[#575757] font-[350] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
                     ← Back
                 </Link>
-                <p className="mt-4 text-[14px] leading-[18px] text-[#575757] font-[350]">
-                    Turning 88rising&apos;s website into a backstage pass for every fan.
-                </p>
-                <div className="mt-4">
+                <div className="flex flex-col gap-y-4 mt-6">
+                    <div className="flex flex-col">
+                        <h1 className="text-[18px] leading-[1.3] font-light" style={{fontFamily: '"Self Modern"'}}>88rising</h1>
+
+                    </div>
+                    <div className="flex items-center gap-x-1">
+                        <p className="text-[11px] leading-none font-mono uppercase text-[#999]">Product Design</p>
+                        <div className="bg-[#999] h-[2px] w-[2px] rounded-full" />
+                        <p className="text-[11px] leading-none font-mono uppercase text-[#999]">2023</p>
+                    </div>
+                </div>
+                <div className="mt-8">
                     <WorksNav
                         scrollContainerRef={mainRef}
                         sections={sections}
@@ -104,7 +112,7 @@ export default function Rising88() {
 
             <main
                 ref={mainRef}
-                className="w-full md:overflow-y-auto overflow-hidden relative pt-4 pb-4 md:pl-[24px] scrollbar-hidden"
+                className="w-full md:overflow-y-auto overflow-hidden relative pt-4 pb-4 scrollbar-hidden"
             >
                 <div className="flex flex-col gap-y-[6rem]">
                     <motion.div 
@@ -240,7 +248,7 @@ export default function Rising88() {
                         >
                             <CaseStudyContent
                                 subtitle="design principles"
-                                title="Based on the insights we gathered, we asked a simple question: what must this experience do for fans and for 88rising to truly win? Those answers became three guiding principles."
+                                title="Three principles that shaped every decision"
                                 description="We first considered the realities of a global, multi‑platform music ecosystem, balancing the needs of fans, artists, and the business before shaping the end‑to‑end experience."
                                 imageSrc="/work/88rising/designprinciples.svg"
                                 mediaAlt=""
@@ -253,11 +261,21 @@ export default function Rising88() {
                             variants={fadeInUpStagger}
                         >
                             <CaseStudyContent
-                                subtitle="Reflections"
-                                title="Key Takeaways & Fixes"
-                                description="Seven weeks sounded roomy until we spent four hunting for the perfect brief and were left with just three to launch. That squeeze forced ruthless focus. We trimmed every nice-to-have and doubled down on what matters most to fans: stumbling onto their next favourite artist. The result? A story-first interface with crisp visuals, micro-interactions, and plain-spoken copy that sparks a real fan-artist connection. The sprint was a gut-check reminder that design isn&apos;t linear; it&apos;s about steering through detours and making every pixel earn its place."
-                                imageSrc="/work/88rising/ripruss.png"
-                                mediaAlt=""
+                                subtitle="Reflection"
+                                title="What I learned"
+                                description=""
+                                svgContent={
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-[2.5rem]">
+                                        <div>
+                                            <h3 className="text-lg font-medium">Scope ruthlessly for speed.</h3>
+                                            <p className="text-[#363636] mt-2">We spent four of seven weeks hunting for the perfect brief. The remaining three forced us to cut every nice-to-have and ship only what mattered most: helping fans stumble onto their next favourite artist.</p>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-lg font-medium">Discovery beats decoration.</h3>
+                                            <p className="text-[#363636] mt-2">Crisp visuals and micro-interactions mean nothing if fans can&apos;t find new music. Every design decision was filtered through one question: does this help someone discover an artist?</p>
+                                        </div>
+                                    </div>
+                                }
                             />
                             <CaseStudyContent
                                 subtitle="Reach out"
@@ -276,6 +294,8 @@ export default function Rising88() {
                     </div>
                 </div>
             </main>
+
+            <div className="hidden md:block md:w-[320px] shrink-0" />
         </div>
     )
 }

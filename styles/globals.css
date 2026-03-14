@@ -32,6 +32,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Self Modern Text";
+  src: url("/fonts/selfmodern/self-modern_text.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -74,7 +82,7 @@ h1 {
 
 h2 {
   color: #757575;
-  font-size: 1rem;
+  font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 1.125rem; /* 112.5% */
