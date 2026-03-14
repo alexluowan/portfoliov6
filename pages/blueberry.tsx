@@ -147,7 +147,7 @@ export default function BlueberrySocial() {
                             <CaseStudyContent
                                 subtitle="my focus"
                                 title="I owned rules, brand voice, and the final inbox"
-                                description={`I focused on the highest-risk areas: the features that determined whether users would actually flip the switch on automation.`}
+                                description={`I focused on the highest-risk areas: the features that determined whether the AI's output would be reliable enough for operators to trust with real customers.`}
                                 svgContent={
                                     <div className="flex flex-col gap-8 mt-[2.5rem]">
                                         <Image src="/work/blueberry/images/automationruleshowcase.png" alt="Automation rules showcase" width={0} height={0} sizes="100vw" className="w-full h-auto" />
@@ -223,8 +223,8 @@ export default function BlueberrySocial() {
                             />
                             <CaseStudyContent
                                 subtitle="the real problem"
-                                title="It's not capability. It's trust."
-                                description={`Every growth lead we interviewed had tried AI tools and stopped. AI adoption fails when operators can't see or control what it does.`}
+                                title="It's not capability. It's reliability."
+                                description={`Every growth lead we interviewed had tried AI tools and stopped. The output was unreliable and they couldn't trust it to represent their brand.`}
                                 svgContent={
                                     <div className="border-l-2 border-[#171717] pl-6 py-4 mt-[2.5rem]">
                                         <p className="text-[18px] leading-[1.5]" style={{fontFamily: '"Self Modern"'}}>
@@ -269,7 +269,7 @@ export default function BlueberrySocial() {
                             <CaseStudyContent
                                 subtitle="design principle"
                                 title="AI assists first. Automates only when trusted."
-                                description={`Every feature had to let humans see what AI was doing, understand why, and override it instantly.`}
+                                description={`Every feature had to guarantee the AI's output was consistent, on-brand, and something operators would confidently send to real customers.`}
                             />
                         </AnimatedSection>
 
@@ -319,8 +319,8 @@ export default function BlueberrySocial() {
                                 svgContent={
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div>
-                                            <h3 className="text-[16px] font-medium">Trust is earned in small moments.</h3>
-                                            <p className="text-[#363636] mt-2">Every decision came back to one question: can the user see what's happening and undo it if needed? The best AI tools don't replace humans. They make human judgment faster.</p>
+                                            <h3 className="text-[16px] font-medium">Reliability beats intelligence.</h3>
+                                            <p className="text-[#363636] mt-2">Users don't care how smart the AI is. They care whether it sounds like their brand every single time. Consistent, predictable output is what earns the trust to automate.</p>
                                         </div>
                                         <div>
                                             <h3 className="text-[16px] font-medium">Pivots are a design skill.</h3>
