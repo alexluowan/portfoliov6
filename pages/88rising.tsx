@@ -2,7 +2,13 @@
 'use client'
 
 import {useEffect, useRef, useState} from 'react'
+import dynamic from 'next/dynamic'
 import { motion } from 'framer-motion'
+
+const MuxPlayer = dynamic(
+    () => import('@mux/mux-player-react'),
+    { ssr: false }
+)
 import CaseStudyCard from "@/components/projects/CaseStudyCard"
 import CaseStudyContent from "@/components/projects/CaseStudyContent"
 import WorksNav, {Section} from "@/components/home/WorksNav"
@@ -19,10 +25,12 @@ export default function Rising88() {
     const sections: Section[] = [
         {label: 'Intro', sectionId: 'hero'},
         {label: 'Challenge', sectionId: 'challenge'},
-        {label: 'Insight', sectionId: 'insight'},
         {label: 'Solution', sectionId: 'solution'},
-        {label: 'Explorations', sectionId: 'explorations'},
+        {label: 'Current State', sectionId: 'current-state'},
+        {label: 'Insight', sectionId: 'insight'},
         {label: 'Principles', sectionId: 'principles'},
+        {label: 'Explorations', sectionId: 'explorations'},
+        {label: 'Outcome', sectionId: 'outcome'},
         {label: 'Reflections', sectionId: 'reflections'},
     ]
 
@@ -133,42 +141,56 @@ export default function Rising88() {
                     </motion.div>
                     <div className="flex flex-col gap-y-[8rem]">
 
-                        <AnimatedSection 
-                            data-section="challenge" 
+                        {/* 1. Challenge */}
+                        <AnimatedSection
+                            data-section="challenge"
                             className="flex flex-col gap-y-[8rem]"
                             variants={fadeInUp}
                         >
                             <CaseStudyContent
                                 subtitle="the challenge"
                                 title="Fans can&apos;t find new artists"
-                                description="88rising&apos;s content lives across YouTube, Spotify, Instagram, and TikTok, but their own website is a dead end. Fans land there and bounce. New signings get buried. I led the initial audit and mapped where fans actually spend time vs. where 88rising wanted them, which reframed the brief for the whole team."
+                                description="Fans land on the website and bounce. New signings get buried. I led the initial audit and mapped where fans actually spend time vs. where 88rising wanted them, which reframed the brief for the whole team."
                                 imageSrc="/work/88rising/88risingchallenge.png"
                                 mediaAlt="88rising content fragmentation across platforms"
                             />
                             <CaseStudyContent
                                 subtitle="the business problem"
                                 title="Growth has flatlined"
-                                description="3 billion YouTube views in the first three years, then only 0.43 billion over the next four. The website wasn&apos;t pulling its weight and new artists weren&apos;t getting the discovery that early stars like Rich Brian and Joji enjoyed. That gap costs streams, ticket sales, and long-term brand momentum."
-                                imageSrc="/work/88rising/statistics.svg"
-                                mediaAlt="88rising YouTube view growth statistics"
+                                description="The website wasn&apos;t pulling its weight and new artists weren&apos;t getting the discovery that early stars like Rich Brian and Joji enjoyed. That gap costs streams, ticket sales, and long-term brand momentum."
+                                svgContent={
+                                    <div className="flex flex-col gap-8 mt-[2rem]">
+                                        <div className="relative pb-[1px]">
+                                            <div className="flex items-end gap-3">
+                                                <div className="w-[180px] h-[180px] md:w-[300px] md:h-[300px] rounded-full border border-[#171717] bg-[#171717]/5 shrink-0" />
+                                                <div className="pb-4">
+                                                    <p className="text-lg font-medium tracking-tight leading-none">3 billion views</p>
+                                                    <p className="text-[#999] text-sm tracking-tight leading-none mt-1">2016 — 2019</p>
+                                                </div>
+                                            </div>
+                                            <div className="flex items-end gap-4 mt-6 ml-[50%] md:ml-[55%]">
+                                                <div className="w-[36px] h-[36px] md:w-[44px] md:h-[44px] rounded-full border border-[#171717] bg-[#171717]/5 shrink-0" />
+                                                <div className="pb-1">
+                                                    <p className="text-lg font-medium tracking-tight leading-none">0.43 billion views</p>
+                                                    <p className="text-[#999] text-sm tracking-tight leading-none mt-1">2020 — 2023</p>
+                                                </div>
+                                            </div>
+                                            <hr className="border-[#171717] mt-6" />
+                                        </div>
+                                        <div className="border-l-2 border-[#171717] pl-6 py-4">
+                                            <p className="text-[18px] leading-[1.5]" style={{fontFamily: '"Self Modern"'}}>
+                                                &quot;For Asians, Asian Americans and just Asian youth globally, <span className="font-medium">there&apos;s no real home on the internet</span> or a company consistently putting out things that either include Asian talent or Asian viewpoints in stories.&quot;
+                                            </p>
+                                            <p className="text-[#999] text-sm mt-4">Sean Miyashiro, Founder of 88rising</p>
+                                        </div>
+                                    </div>
+                                }
                             />
                         </AnimatedSection>
 
-                        <AnimatedSection 
-                            data-section="insight"
-                            variants={fadeInUp}
-                        >
-                            <CaseStudyContent
-                                subtitle="the key insight"
-                                title="Fans want discovery, not a storefront"
-                                description="I ran 8 fan interviews and synthesized 40+ survey responses. The surprise wasn&apos;t that fans felt frustrated. It was how they coped. Most had already given up on the website entirely. One fan told us: &quot;I just wait for the algorithm to show me something.&quot; That reframed our entire direction. We weren&apos;t competing with other music sites. We were competing with passive scrolling."
-                                imageSrc="/work/88rising/research.svg"
-                                mediaAlt="User research synthesis"
-                            />
-                        </AnimatedSection>
-
-                        <AnimatedSection 
-                            data-section="solution" 
+                        {/* 2. Solution */}
+                        <AnimatedSection
+                            data-section="solution"
                             className="flex flex-col gap-y-[4rem]"
                             variants={fadeInUpStagger}
                         >
@@ -223,8 +245,87 @@ export default function Rising88() {
                             />
                         </AnimatedSection>
 
-                        <AnimatedSection 
-                            data-section="explorations" 
+                        {/* 3. Current State */}
+                        <AnimatedSection
+                            data-section="current-state"
+                            variants={fadeInUp}
+                        >
+                            <CaseStudyContent
+                                subtitle="current state"
+                                title="The two touchpoints fans have today"
+                                description=""
+                                svgContent={
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-[1.5rem]">
+                                        <div>
+                                            <div className="bg-[#F5F5F5] p-6 flex items-center justify-center aspect-square">
+                                                <video className="w-full" controls={false} autoPlay playsInline muted loop>
+                                                    <source src="/video/88rising/88risingyoutubefeed.webm" type="video/webm" />
+                                                </video>
+                                            </div>
+                                            <p className="text-[#999] text-sm mt-3">YouTube: scattered across channels, no path between artists.</p>
+                                        </div>
+                                        <div>
+                                            <div className="bg-[#F5F5F5] p-6 flex items-center justify-center aspect-square">
+                                                <video className="w-full" controls={false} autoPlay playsInline muted loop>
+                                                    <source src="/video/88rising/88risingcurrentsite.webm" type="video/webm" />
+                                                </video>
+                                            </div>
+                                            <p className="text-[#999] text-sm mt-3">Website: a merch storefront with no artist roster or identity.</p>
+                                        </div>
+                                    </div>
+                                }
+                            />
+                        </AnimatedSection>
+
+                        {/* 4. Insight */}
+                        <AnimatedSection
+                            data-section="insight"
+                            variants={fadeInUp}
+                        >
+                            <CaseStudyContent
+                                subtitle="the key insight"
+                                title="Fans want discovery, not a storefront"
+                                description="The team conducted 15 user interviews and received 89 survey responses from casual to die-hard fans about their music habits and perception of 88rising. The findings pointed to a lack of awareness within the fanbase of 88rising&apos;s frequent releases, which directly feeds their decline in popularity."
+                                svgContent={
+                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-[2.5rem]">
+                                        <div>
+                                            <p className="text-[48px] leading-none tracking-tight">62%</p>
+                                            <p className="text-[#363636] text-sm mt-3">of fans unaware of weekly releases</p>
+                                        </div>
+                                        <div>
+                                            <p className="text-[48px] leading-none tracking-tight">93%</p>
+                                            <p className="text-[#363636] text-sm mt-3">of interviewees unaware of most signed artists</p>
+                                        </div>
+                                        <div>
+                                            <p className="text-[48px] leading-none tracking-tight">75%</p>
+                                            <p className="text-[#363636] text-sm mt-3">believe 88rising is declining in popularity</p>
+                                        </div>
+                                        <div>
+                                            <p className="text-[48px] leading-none tracking-tight">41%</p>
+                                            <p className="text-[#363636] text-sm mt-3">attributed decline to lack of brand engagement</p>
+                                        </div>
+                                    </div>
+                                }
+                            />
+                        </AnimatedSection>
+
+                        {/* 5. Principles */}
+                        <AnimatedSection
+                            data-section="principles"
+                            variants={fadeInUp}
+                        >
+                            <CaseStudyContent
+                                subtitle="design principles"
+                                title="Three principles that shaped every decision"
+                                description="We first considered the realities of a global, multi‑platform music ecosystem, balancing the needs of fans, artists, and the business before shaping the end‑to‑end experience."
+                                imageSrc="/work/88rising/designprinciples.svg"
+                                mediaAlt=""
+                            />
+                        </AnimatedSection>
+
+                        {/* 6. Explorations */}
+                        <AnimatedSection
+                            data-section="explorations"
                             className="flex flex-col gap-y-[4rem]"
                             variants={fadeInUp}
                         >
@@ -242,21 +343,53 @@ export default function Rising88() {
                             />
                         </AnimatedSection>
 
-                        <AnimatedSection 
-                            data-section="principles"
+                        <AnimatedSection
+                            data-section="outcome"
                             variants={fadeInUp}
                         >
                             <CaseStudyContent
-                                subtitle="design principles"
-                                title="Three principles that shaped every decision"
-                                description="We first considered the realities of a global, multi‑platform music ecosystem, balancing the needs of fans, artists, and the business before shaping the end‑to‑end experience."
-                                imageSrc="/work/88rising/designprinciples.svg"
-                                mediaAlt=""
+                                subtitle="outcome"
+                                title="What this created"
+                                description=""
+                                mediaClassName="mt-[1.5rem]"
+                                svgContent={
+                                    <div className="flex flex-col gap-8">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                            <div>
+                                                <h3 className="text-[16px] font-medium">For 88rising</h3>
+                                                <p className="text-[#363636] mt-2">A platform that builds a loyal fanbase through deeper song engagement and merch discovery. Lesser-known artists gain visibility by sharing space with headliners, deepening the talent pool while promoting Asian American media to global audiences.</p>
+                                            </div>
+                                            <div>
+                                                <h3 className="text-[16px] font-medium">For fans</h3>
+                                                <p className="text-[#363636] mt-2">A more diverse range of music and artists through enhanced discoverability. Fans gain appreciation for each artist&apos;s creativity, influences, and personal experiences instead of relying on algorithms to surface what they might like.</p>
+                                            </div>
+                                        </div>
+                                        <MuxPlayer
+                                            playbackId="DPFJhnJGho7Kmkgj3RAtgsYUeYMP2mEKZCJRpbo6nmQ"
+                                            streamType="on-demand"
+                                            accentColor="#000000"
+                                            muted
+                                            autoPlay
+                                            loop
+                                            preferPlayback="mse"
+                                            minResolution="1080p"
+                                            maxResolution="2160p"
+                                            style={{
+                                                height: '100%',
+                                                width: '100%',
+                                            }}
+                                            metadata={{
+                                                video_title: '88rising outcome',
+                                                player_name: 'Outcome Mux Player',
+                                            }}
+                                        />
+                                    </div>
+                                }
                             />
                         </AnimatedSection>
 
-                        <AnimatedSection 
-                            data-section="reflections" 
+                        <AnimatedSection
+                            data-section="reflections"
                             className="flex flex-col gap-y-[8rem]"
                             variants={fadeInUpStagger}
                         >
