@@ -104,7 +104,7 @@ export default function WiseCaseStudy() {
     return (
         <div className="flex flex-col gap-x-4 px-4 md:flex-row md:h-screen md:overflow-hidden max-w-[1800px] mx-auto">
             <aside
-                className="w-full shrink-0 pt-4 md:sticky md:top-0 md:h-svh md:w-[320px] md:py-4 flex flex-col transition-opacity duration-200 ease-out"
+                className="hidden md:flex w-full shrink-0 pt-4 md:sticky md:top-0 md:h-svh md:w-[320px] md:py-4 flex-col transition-opacity duration-200 ease-out"
                 style={{opacity: sidebarOpacity}}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
@@ -136,6 +136,14 @@ export default function WiseCaseStudy() {
                 ref={mainRef}
                 className="w-full md:overflow-y-auto overflow-hidden relative pt-4 pb-16 scrollbar-hidden"
             >
+                {/* Mobile header */}
+                <div className="flex flex-col md:hidden pt-4 pb-4 max-w-[768px] mx-auto w-full">
+                    <Link href="/" className="w-fit text-[14px] leading-[18px] text-[#575757] font-[350] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
+                        ← Back
+                    </Link>
+                    <h1 className="text-[18px] leading-[1.3] font-light mt-4" style={{fontFamily: '"Self Modern"'}}>Wise</h1>
+                </div>
+
                 <div className="flex flex-col gap-y-[6rem]">
                     <motion.div
                         data-section="hero"
