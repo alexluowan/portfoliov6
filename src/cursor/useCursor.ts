@@ -5,7 +5,7 @@ let isInitialized = false
 let cursorCleanup: (() => void) | null = null
 let cursorRefresh: (() => void) | null = null
 
-function initCursor() {
+async function initCursor() {
     if (typeof window === 'undefined') return
     if ('ontouchstart' in window && navigator.maxTouchPoints > 0) return
     if (window.matchMedia('(pointer: coarse)').matches) return
@@ -17,7 +17,7 @@ function initCursor() {
         cursorRefresh = null
     }
 
-    const { setupCursor } = require('./cursor')
+    const { setupCursor } = await import('./cursor')
     const { refershCursorTargets, cleanupCursor } = setupCursor()
     cursorCleanup = cleanupCursor
     cursorRefresh = refershCursorTargets

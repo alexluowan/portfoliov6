@@ -98,7 +98,7 @@ function VideoCarousel({videos, color}: { videos: string[]; color: string }) {
 
             {/* Dots */}
             <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
-                {videos.map((_, i) => (
+                {videos.map((_v, i) => (
                     <button
                         key={i}
                         onClick={() => setCurrent(i)}
