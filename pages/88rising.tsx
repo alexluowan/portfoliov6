@@ -124,7 +124,7 @@ export default function Rising88() {
                         <CaseStudyCard
                             videoSrcWebm="/project-covers/88risingthumbnail.webm"
                             videoSrcMp4="/project-covers/88risingthumbnail.mp4"
-                            title="Reimagining 88rising&apos;s website experience for fans to engage with their favourite artists and stay informed."
+                            title="Turning 88rising&apos;s website into a discovery engine for fans across Asia."
                             roles={['Product Designer', 'Prototyper', 'Facilitator']}
                             team={['Justin Yu', 'Luke Do', 'Claret Egwim', 'Terrence Xu']}
                             timeline="4 Weeks – 2023"
@@ -140,17 +140,17 @@ export default function Rising88() {
                         >
                             <CaseStudyContent
                                 subtitle="the challenge"
-                                title="Difficulty In Discovering Artists and Content"
-                                description="Fans struggle to discover new music and connect with artists because content is scattered across platforms. This fragmentation disengages fans, blocking immersion in the 88rising ecosystem and eroding brand loyalty. When discovery stalls, the mission of amplifying Asian voices stalls too."
+                                title="Fans can&apos;t find new artists"
+                                description="88rising&apos;s content lives across YouTube, Spotify, Instagram, and TikTok, but their own website is a dead end. Fans land there and bounce. New signings get buried. I led the initial audit and mapped where fans actually spend time vs. where 88rising wanted them, which reframed the brief for the whole team."
                                 imageSrc="/work/88rising/88risingchallenge.png"
-                                mediaAlt="88rising logo with social media icons"
+                                mediaAlt="88rising content fragmentation across platforms"
                             />
                             <CaseStudyContent
                                 subtitle="the business problem"
-                                title="Why 88rising Should Care"
-                                description="88rising racked up 3 B YouTube views in its first three years, yet has added only 0.43 B over the last four. A discovery‑poor web presence means new signings don't get the reach early stars enjoyed, costing streams, ticket sales, and long‑term brand momentum."
+                                title="Growth has flatlined"
+                                description="3 billion YouTube views in the first three years, then only 0.43 billion over the next four. The website wasn&apos;t pulling its weight and new artists weren&apos;t getting the discovery that early stars like Rich Brian and Joji enjoyed. That gap costs streams, ticket sales, and long-term brand momentum."
                                 imageSrc="/work/88rising/statistics.svg"
-                                mediaAlt="88rising logo with social media icons"
+                                mediaAlt="88rising YouTube view growth statistics"
                             />
                         </AnimatedSection>
 
@@ -160,10 +160,10 @@ export default function Rising88() {
                         >
                             <CaseStudyContent
                                 subtitle="the key insight"
-                                title="Identifying Core Frustrations"
-                                description="Interviews and surveys showed fans felt frustrated by fragmented content and limited interaction with artists, craving an effortless discovery experience. These insights clearly pointed to one need: fans seek discovery, not a storefront."
+                                title="Fans want discovery, not a storefront"
+                                description="I ran 8 fan interviews and synthesized 40+ survey responses. The surprise wasn&apos;t that fans felt frustrated. It was how they coped. Most had already given up on the website entirely. One fan told us: &quot;I just wait for the algorithm to show me something.&quot; That reframed our entire direction. We weren&apos;t competing with other music sites. We were competing with passive scrolling."
                                 imageSrc="/work/88rising/research.svg"
-                                mediaAlt=""
+                                mediaAlt="User research synthesis"
                             />
                         </AnimatedSection>
 
@@ -174,8 +174,8 @@ export default function Rising88() {
                         >
                             <CaseStudyContent
                                 subtitle="Solution"
-                                title="Language-Driven Discovery"
-                                description="The landing page greets fans with a mosaic of Asian languages and their home countries. By tapping a language they relate to, users instantly see artists who share that cultural backdrop; turning heritage into a discovery springboard."
+                                title="Language-driven discovery"
+                                description="I proposed and prototyped the core concept: a landing page built around a mosaic of Asian languages and home countries. Tap a language you relate to, and you instantly see artists who share that cultural backdrop. Heritage becomes a discovery springboard instead of a filter buried in a menu."
                                 mediaAlt=""
                                 muxPlaybackId="bdeowRPYjuBUoOR3UHW802Ep5SCLTGQ2Rj01DXeBs00qRk"
                                 muxOptions={{
@@ -187,8 +187,8 @@ export default function Rising88() {
                             />
                             <CaseStudyContent
                                 subtitle=""
-                                title="Culture Hubs & Upcoming Releases"
-                                description="Selecting a country opens a region hub listing every local 88rising act, while a side panel spotlights upcoming releases and high‑profile collaborations. Lesser‑known artists ride the wave of star talent, giving fans fresh music without leaving the page."
+                                title="Culture hubs that surface new talent"
+                                description="Selecting a country opens a region hub with every local 88rising act. A side panel spotlights upcoming releases and collaborations. I designed the information hierarchy so lesser-known artists ride the visibility of star talent and fans discover new music without leaving the page."
                                 muxPlaybackId="fH005AX8Ie92r77bFsSdK2ze5gKuf37EmG0102YKTUy6Ts"
                                 muxOptions={{
                                     accentColor: "#FF0000",
@@ -199,8 +199,8 @@ export default function Rising88() {
                             />
                             <CaseStudyContent
                                 subtitle=""
-                                title="Adaptable Individuality - Immersive Artists Pages"
-                                description="Each artist owns a bespoke space: stacked candid photos, bite‑sized bios, looping video backdrops, and quick links to songs and merch. The layout flexes to every vibe yet remains part of one cohesive system—deepening connection without confusion."
+                                title="Artist pages that flex to every vibe"
+                                description="Each artist owns a bespoke space with candid photos, bite-sized bios, looping video backdrops, and quick links to songs and merch. I built a modular layout system that adapts to each artist&apos;s energy while staying cohesive across the roster."
                                 muxPlaybackId="Vv800mAA1uTn6UaqKOCNDA6kg9AssHIEqNqQ400NsdU004"
                                 muxOptions={{
                                     accentColor: "#FF0000",
@@ -211,8 +211,8 @@ export default function Rising88() {
                             />
                             <CaseStudyContent
                                 subtitle=""
-                                title="Behind the Beat — Waveform Release Calendar"
-                                description="A linear, waveform‑inspired timeline visualizes future drops at a glance. Fans can preview snippets and set reminders, closing the awareness gap that 62 % of survey respondents cited and boosting anticipation for new music."
+                                title="A release calendar fans actually use"
+                                description="62% of survey respondents said they miss new drops. I designed a waveform-inspired timeline that visualizes upcoming releases at a glance so fans can preview snippets and set reminders, closing the awareness gap that was costing 88rising streams."
                                 muxPlaybackId="6YLpD39o1x01Fl01m01zUbkoI6pY00ENM02LX3CrdPod027QA"
                                 muxOptions={{
                                     accentColor: "#FF0000",
@@ -230,14 +230,14 @@ export default function Rising88() {
                         >
                             <CaseStudyContent
                                 subtitle="explorations"
-                                title="Pinpointing Nations with Lat-Long "
-                                description="We recast the landing page as a stripped-down world map. Each neon-red bar sits at the actual latitude of a region that feeds the 88rising roster, turning raw co-ordinates into a visual navigation system. By starting discovery with place and lighting up the local word for rise in each block—we remind fans that the label&apos;s heartbeat is pan-Asian, not platform-first."
+                                title="Lat-long navigation"
+                                description="An early direction I explored: a stripped-down world map where neon-red bars sit at the actual latitude of each region in the 88rising roster. It tested well conceptually but added friction because fans had to learn a new mental model before discovering anything. We killed it."
                                 imageSrc="/work/88rising/exploration1.png"
                             />
                             <CaseStudyContent
                                 subtitle=""
-                                title="Unfiltered Artists Energy"
-                                description="Fans don&apos;t bond with stats, they bond with snapshots of real life. A backyard hose, a beat-up Rubik&apos;s Cube, and Brian&apos;s sky-blue coat say more than any metric, turning casual scrollers into curious fans eager to dive into music, merch, and more."
+                                title="Raw artist energy over polished bios"
+                                description="Another direction I pushed: leading with candid, unfiltered photos instead of stats or press shots. A backyard hose, a beat-up Rubik&apos;s Cube, Brian&apos;s sky-blue coat. This one stuck. It tested strongly because fans bond with personality, not metrics."
                                 imageSrc="/work/88rising/exploration2.png"
                             />
                         </AnimatedSection>
@@ -264,24 +264,24 @@ export default function Rising88() {
                                 subtitle="Reflection"
                                 title="What I learned"
                                 description=""
+                                mediaClassName="mt-[1.5rem]"
                                 svgContent={
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-[2.5rem]">
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div>
-                                            <h3 className="text-lg font-medium">Scope ruthlessly for speed.</h3>
-                                            <p className="text-[#363636] mt-2">We spent four of seven weeks hunting for the perfect brief. The remaining three forced us to cut every nice-to-have and ship only what mattered most: helping fans stumble onto their next favourite artist.</p>
+                                            <h3 className="text-[16px] font-medium">A bad brief costs more than a late start.</h3>
+                                            <p className="text-[#363636] mt-2">We burned four of seven weeks circling the wrong problem. The three-week sprint that followed was the most focused work I&apos;ve done, but only because the wasted time taught us exactly what to cut.</p>
                                         </div>
                                         <div>
-                                            <h3 className="text-lg font-medium">Discovery beats decoration.</h3>
-                                            <p className="text-[#363636] mt-2">Crisp visuals and micro-interactions mean nothing if fans can&apos;t find new music. Every design decision was filtered through one question: does this help someone discover an artist?</p>
+                                            <h3 className="text-[16px] font-medium">Culture is a design material.</h3>
+                                            <p className="text-[#363636] mt-2">Using language and geography as navigation wasn&apos;t a styling choice. It came directly from how fans already talk about 88rising artists. The best design decisions came from listening to the community, not inventing for them.</p>
                                         </div>
                                     </div>
                                 }
                             />
                             <CaseStudyContent
-                                subtitle="Reach out"
-                                title="Want the inside scoop? Let&apos;s chat"
-                                description="Getting here was anything but linear. If you&apos;d like the full story twists, turns, and aha moments let&apos;s hop on a quick call :) "
-                                mediaAlt=""
+                                subtitle=""
+                                title="Want to hear more?"
+                                description="This case study is the highlight reel. If you&apos;d like the full story including the detours, debates, and decisions that didn&apos;t make the cut, let&apos;s chat."
                                 muxPlaybackId="zXbKAQgr5YArc01ssVta1T4sRCeovGsk01pIerilmstCk"
                                 muxOptions={{
                                     accentColor: "#FF0000",
