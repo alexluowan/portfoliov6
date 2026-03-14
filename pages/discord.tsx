@@ -64,13 +64,37 @@ export default function DiscordCatchup() {
 
     useEffect(() => {
         if (!mainRef.current) return
-        const lenis = new Lenis({wrapper: mainRef.current, smoothWheel: true})
-        function raf(time: number) {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
+        const mq = window.matchMedia('(min-width: 1200px)')
+        let lenis: Lenis | null = null
+        let rafId: number | null = null
+        function initLenis() {
+            if (!mainRef.current) return
+            lenis = new Lenis({wrapper: mainRef.current, smoothWheel: true})
+            function raf(time: number) {
+                lenis!.raf(time)
+                rafId = requestAnimationFrame(raf)
+            }
+            rafId = requestAnimationFrame(raf)
         }
-        requestAnimationFrame(raf)
-        return () => lenis.destroy()
+        function destroyLenis() {
+            if (rafId) cancelAnimationFrame(rafId)
+            rafId = null
+            lenis?.destroy()
+            lenis = null
+        }
+        function handleChange() {
+            if (mq.matches) {
+                if (!lenis) initLenis()
+            } else {
+                destroyLenis()
+            }
+        }
+        handleChange()
+        mq.addEventListener('change', handleChange)
+        return () => {
+            mq.removeEventListener('change', handleChange)
+            destroyLenis()
+        }
     }, [])
 
     const sidebarOpacity = isHovered ? 1 : Math.max(0.4, 1 - scrollY / 400)
