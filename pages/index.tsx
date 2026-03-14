@@ -58,8 +58,8 @@ export default function Home() {
                     Alex Luowan is a product designer with a love for playful interactions and a sharp eye for detail. He is interested in creating digital experiences that feel clear, engaging, and enjoyable for the people using them.
                 </p>
                 <p className="mt-4 text-[14px] leading-[18px] text-[#575757] font-[350]">
-                    Currently, he&apos;s designing <a href="https://www.athenahq.com" target="_blank" rel="noreferrer" className="hover:underline hover:text-[#F25410] decoration-[#F25410]">@AthenaHQ</a>.<br/>
-                    Previously worked with, <a href="https://www.blaze.ai" target="_blank" rel="noreferrer" className="hover:underline hover:text-[#F25410] decoration-[#F25410]">@Blaze.ai</a>, <a href="https://www.phlur.com" target="_blank" rel="noreferrer" className="hover:underline hover:text-[#F25410] decoration-[#F25410]">@Phlur</a>, and <a href="https://www.blueberrysocial.com" target="_blank" rel="noreferrer" className="hover:underline hover:text-[#F25410] decoration-[#F25410]">@Blueberry Social</a>
+                    Currently, he&apos;s designing <a href="https://athenahq.ai/" target="_blank" rel="noreferrer" className="hover:underline hover:text-[#F25410] decoration-[#F25410] hover-target-small">@AthenaHQ</a>.<br/>
+                    Previously worked with, <a href="https://www.blaze.ai" target="_blank" rel="noreferrer" className="hover:underline hover:text-[#F25410] decoration-[#F25410] hover-target-small">@Blaze.ai</a>, <a href="https://www.phlur.com" target="_blank" rel="noreferrer" className="hover:underline hover:text-[#F25410] decoration-[#F25410] hover-target-small">@Phlur</a>, and <a href="https://www.blueberrysocial.com" target="_blank" rel="noreferrer" className="hover:underline hover:text-[#F25410] decoration-[#F25410] hover-target-small">@Blueberry Social</a>
                 </p>
                 <div className="mt-4 border-t border-[#E0E0E0]"></div>
                 <span className="mt-2 text-[11px] leading-[14px] text-[#999999] font-[350]">Other Spaces</span>
