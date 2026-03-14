@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 
-// Dynamically import MuxPlayer with no SSR to avoid hydration issues
 const MuxPlayer = dynamic(
     () => import('@mux/mux-player-react'),
     { ssr: false }
@@ -75,7 +74,7 @@ const CaseStudyContent: React.FC<CaseStudyContentProps> = ({
                         muted={muxOptions.muted !== undefined ? muxOptions.muted : true}
                         autoPlay={muxOptions.autoPlay !== undefined ? muxOptions.autoPlay : true}
                         loop={muxOptions.loop !== undefined ? muxOptions.loop : true}
-
+                        preload="none"
                         style={{
                             height: '100%',
                             width: '100%',

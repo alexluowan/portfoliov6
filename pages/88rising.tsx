@@ -266,7 +266,7 @@ export default function Rising88() {
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-[1.5rem]">
                                         <div>
                                             <div className="bg-[#F5F5F5] p-6 flex items-center justify-center aspect-square">
-                                                <video className="w-full" controls={false} autoPlay playsInline muted loop>
+                                                <video className="w-full" controls={false} autoPlay playsInline muted loop preload="none">
                                                     <source src="/video/88rising/88risingyoutubefeed.webm" type="video/webm" />
                                                 </video>
                                             </div>
@@ -274,7 +274,7 @@ export default function Rising88() {
                                         </div>
                                         <div>
                                             <div className="bg-[#F5F5F5] p-6 flex items-center justify-center aspect-square">
-                                                <video className="w-full" controls={false} autoPlay playsInline muted loop>
+                                                <video className="w-full" controls={false} autoPlay playsInline muted loop preload="none">
                                                     <source src="/video/88rising/88risingcurrentsite.webm" type="video/webm" />
                                                 </video>
                                             </div>
@@ -379,6 +379,7 @@ export default function Rising88() {
                                             muted
                                             autoPlay
                                             loop
+                                            preload="none"
                                             preferPlayback="mse"
                                             minResolution="1080p"
                                             maxResolution="2160p"
