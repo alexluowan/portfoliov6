@@ -24,8 +24,8 @@ export default function Figma() {
     return (
         <GridContainer className="grid grid-cols-1 md:grid-cols-12 md:h-screen md:overflow-hidden gap-4">
             <div className="flex flex-col h-full col-span-1 md:col-span-2 md:sticky md:top-0 mt-4 bg-white">
-                <Link href="/">
-                    <p>Alex Luowan</p>
+                <Link href="/" className="w-fit text-[14px] leading-[18px] text-[#575757] font-[350] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
+                    ← Back
                 </Link>
                 <p className="mt-4">
                     Figma plugin design and development project.

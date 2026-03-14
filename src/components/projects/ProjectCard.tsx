@@ -1,58 +1,42 @@
 // components/ProjectCard.tsx
 import Image from "next/image";
-import { memo, useRef, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { memo, useRef, useEffect } from "react";
 import clsx from "clsx";
 
 export type ProjectCardProps = {
     mediaSrc?: string;
     mediaType?: "image" | "video";
+    aspect?: "landscape" | "portrait" | "tall" | "square" | "wide";
+    title?: string;
+    subtitle?: string;
     badges?: string[];
     className?: string;
+    bgColor?: string;
+    objectFit?: "cover" | "contain";
+    objectPosition?: string;
 };
 
-const containerVariants = {
-    rest: {},      // no animation on the container itself
-    hover: {},     // just a state trigger for children
-};
-
-const badgeVariants = {
-    rest: { opacity: 0, y: -20, rotate: -10 },
-    hover: {
-        opacity: 1,
-        y: 0,
-        rotate: 0,
-        transition: { type: "spring" as const, stiffness: 300, damping: 20 },
-    },
+const aspectClasses = {
+    landscape: "md:aspect-[5/3]",
+    portrait: "md:aspect-[4/5]",
+    tall: "md:aspect-[9/16]",
+    square: "md:aspect-square",
+    wide: "md:aspect-[16/9]",
 };
 
 function ProjectCard({
                          mediaSrc,
                          mediaType = "image",
+                         aspect = "portrait",
+                         title,
+                         subtitle,
                          badges = [],
                          className,
+                         bgColor,
+                         objectFit = "cover",
+                         objectPosition,
                      }: ProjectCardProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
-    const [isMobile, setIsMobile] = useState(false);
-    const [isClient, setIsClient] = useState(false);
-
-    // Check if device is mobile
-    useEffect(() => {
-        setIsClient(true);
-        const checkIsMobile = () => {
-            setIsMobile(window.innerWidth <= 768);
-        };
-
-        // Run on mount
-        checkIsMobile();
-
-        // Add event listener for window resize
-        window.addEventListener("resize", checkIsMobile);
-
-        // Clean up
-        return () => window.removeEventListener("resize", checkIsMobile);
-    }, []);
-
 
     // lazy-play video when in view
     useEffect(() => {
@@ -73,50 +57,74 @@ function ProjectCard({
     }, [mediaType]);
 
     return (
-        <motion.div
-            className={clsx("w-full aspect-video relative overflow-hidden", className)}
-            variants={containerVariants}
-            initial="rest"
-            animate={isClient && isMobile ? "hover" : "rest"}
-            whileHover={isClient && !isMobile ? "hover" : undefined}
-        >
-            {/* Media */}
-            {mediaSrc && mediaType === "video" ? (
-                <video
-                    ref={videoRef}
-                    src={mediaSrc}
-                    muted
-                    loop
-                    playsInline
-                    preload="metadata"
-                    className="absolute inset-0 w-full h-full object-cover"
-                />
-            ) : mediaSrc && mediaType === "image" ? (
-                <Image
-                    src={mediaSrc}
-                    alt="Project thumbnail"
-                    fill
-                    style={{ objectFit: "cover" }}
-                    sizes="100vw"
-                />
-            ) : null}
+        <div className={clsx("group relative", aspectClasses[aspect], className)}>
+            {/* Media — mobile: fixed 4:3 aspect, desktop: fills parent height, shrinks on hover */}
+            <div className="relative aspect-[4/3] w-full md:aspect-auto md:h-full">
+                <div
+                    className="relative z-[1] h-full w-full overflow-hidden transition-[height] duration-[167ms] ease-linear md:group-hover:h-[calc(100%-32px)]"
+                    style={bgColor ? { backgroundColor: bgColor } : undefined}
+                >
+                    {mediaSrc && mediaType === "video" ? (
+                        <video
+                            ref={videoRef}
+                            src={mediaSrc}
+                            muted
+                            loop
+                            playsInline
+                            preload="metadata"
+                            className={clsx("absolute inset-0 w-full h-full", objectFit === "contain" ? "object-contain" : "object-cover")}
+                            style={objectPosition ? { objectPosition } : undefined}
+                        />
+                    ) : mediaSrc && mediaType === "image" ? (
+                        <Image
+                            src={mediaSrc}
+                            alt={title || "Project thumbnail"}
+                            fill
+                            style={{ objectFit }}
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                        />
+                    ) : null}
+                </div>
+            </div>
 
-            {/* Badges only */}
-            {badges.length > 0 && (
-                <div className="absolute top-4 left-4 flex flex-col z-10 pointer-events-none">
+            {/* Mobile text — always visible below image */}
+            {(title || subtitle) && (
+                <div className="relative mt-2 flex flex-col md:hidden">
+                    {title && (
+                        <p className="text-[15px] leading-[1.25] font-[350]">{title}</p>
+                    )}
+                    {subtitle && (
+                        <p className="text-[15px] leading-[1.25] font-[350] text-gray-500">{subtitle}</p>
+                    )}
+                </div>
+            )}
+
+            {/* Desktop text — absolute bottom, hidden until hover */}
+            {(title || subtitle) && (
+                <div className="absolute bottom-0 left-0 hidden w-full justify-between gap-x-2 overflow-hidden pt-2 pb-1 opacity-0 duration-[167ms] ease-linear group-hover:opacity-100 group-hover:delay-[167ms] md:flex">
+                    {title && (
+                        <p className="text-[15px] leading-[1.25] font-[350] truncate">{title}</p>
+                    )}
+                    {subtitle && (
+                        <p className="text-[15px] leading-[1.25] font-[350] text-gray-500 truncate">{subtitle}</p>
+                    )}
+                </div>
+            )}
+
+            {/* Legacy badge support */}
+            {!title && badges.length > 0 && (
+                <div className="mt-3">
                     {badges.map((tag, i) => (
-                        <motion.span
+                        <span
                             key={i}
-                            variants={badgeVariants}
-                            animate={isClient && isMobile ? "hover" : undefined}
-                            className="inline-block w-max whitespace-nowrap bg-white text-black text-xs px-2 py-1 shadow"
+                            className="inline-block text-sm text-gray-500 mr-2"
                         >
                             {tag}
-                        </motion.span>
+                        </span>
                     ))}
                 </div>
             )}
-        </motion.div>
+        </div>
     );
 }
 

@@ -1,16 +1,30 @@
 // pages/index.tsx
 'use client'
 
-import {useEffect, useRef} from 'react'
+import {useEffect, useRef, useState} from 'react'
 import Lenis from '@studio-freight/lenis'
 
-import GridContainer from '@/components/GridContainer'
-import ProjectNav from '@/components/home/WorksNav'
-import ProfileNav from '@/components/home/ProfileNav'
 import ProjectCard from '@/components/projects/ProjectCard'
 import Link from "next/link";
 
 export default function Home() {
+    const [time, setTime] = useState('')
+
+    useEffect(() => {
+        const update = () => {
+            const now = new Date()
+            setTime(now.toLocaleTimeString('en-US', {
+                timeZone: 'America/Vancouver',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true,
+            }))
+        }
+        update()
+        const interval = setInterval(update, 1000)
+        return () => clearInterval(interval)
+    }, [])
 
     // 1) ref your scroll‐pane
     const mainRef = useRef<HTMLDivElement>(null)
@@ -20,12 +34,8 @@ export default function Home() {
 
         // 2) init Lenis on that element
         const lenis = new Lenis({
-            // tells Lenis to listen on your element instead of `window`
             wrapper: mainRef.current,
-            // smooth scrolling
             smoothWheel: true,
-            // you can tweak the easing
-            // easing: t => t,
         })
 
         // 3) start the RAF loop
@@ -41,106 +51,84 @@ export default function Home() {
     }, [])
 
     return (
-        <GridContainer
-            className="
-        grid
-        grid-cols-1
-        md:grid-cols-12
-        md:h-screen
-        /* remove native overflow so Lenis can take over */
-        md:overflow-hidden
-        gap-4
-      "
-        >
+        <div className="flex flex-col gap-x-4 px-4 md:flex-row md:h-screen md:overflow-hidden max-w-[1800px] mx-auto">
             {/* Sidebar */}
-            <aside className="flex flex-col h-full col-span-1 md:col-span-2 md:sticky md:top-0 mt-4 bg-white">
-                <p>Alex Luowan</p>
-                <p className="mt-4">
-                    I&apos;m Alex, a product and brand designer focusing on ✷ intuitive interaction flows,
-                    ◎ cohesive visual identities, and ✺ inclusive design systems.
+            <aside className="w-full shrink-0 pt-4 md:sticky md:top-0 md:h-svh md:w-[320px] md:py-4 flex flex-col">
+                <p className="text-[14px] leading-[18px] text-[#575757] font-[350]">
+                    Alex Luowan is a product designer with a love for playful interactions and a sharp eye for detail. He is interested in creating digital experiences that feel clear, engaging, and enjoyable for the people using them.
                 </p>
-                <div className="mt-4">
-                    <ProjectNav/>
-                </div>
-                <div className="mt-auto">
-                    <ProfileNav/>
-                </div>
+                <p className="mt-4 text-[14px] leading-[18px] text-[#575757] font-[350]">
+                    Currently, he&apos;s designing <a href="https://www.athenahq.com" target="_blank" rel="noreferrer" className="hover:underline hover:text-[#F25410] decoration-[#F25410]">@AthenaHQ</a>.<br/>
+                    Previously worked with, <a href="https://www.blaze.ai" target="_blank" rel="noreferrer" className="hover:underline hover:text-[#F25410] decoration-[#F25410]">@Blaze.ai</a>, <a href="https://www.phlur.com" target="_blank" rel="noreferrer" className="hover:underline hover:text-[#F25410] decoration-[#F25410]">@Phlur</a>, and <a href="https://www.blueberrysocial.com" target="_blank" rel="noreferrer" className="hover:underline hover:text-[#F25410] decoration-[#F25410]">@Blueberry Social</a>
+                </p>
+                <div className="mt-4 border-t border-[#E0E0E0]"></div>
+                <span className="mt-2 text-[11px] leading-[14px] text-[#999999] font-[350]">Other Spaces</span>
+                <nav className="mt-1 flex flex-col items-start text-[14px] leading-[18px] font-[350]">
+                    <Link href="/about" className="w-fit text-[#575757] py-[1px] hover:text-[#F25410] transition-colors duration-200 ease-in-out">About Me</Link>
+                    <Link href="/friends" className="w-fit text-[#575757] py-[1px] hover:text-[#F25410] transition-colors duration-200 ease-in-out">Friends</Link>
+                    <Link href="/playground" className="w-fit text-[#575757] py-[1px] hover:text-[#F25410] transition-colors duration-200 ease-in-out">Playground</Link>
+                </nav>
+                <span className="mt-4 text-[11px] leading-[14px] text-[#999999] font-[350]">Places to find me</span>
+                <nav className="mt-1 flex flex-col items-start text-[14px] leading-[18px] font-[350]">
+                    <a href="/resume.pdf" target="_blank" rel="noreferrer" className="w-fit text-[#575757] py-[1px] hover:text-[#F25410] transition-colors duration-200 ease-in-out">CV</a>
+                    <a href="https://www.linkedin.com/in/alexluowan" target="_blank" rel="noreferrer" className="w-fit text-[#575757] py-[1px] hover:text-[#F25410] transition-colors duration-200 ease-in-out">LinkedIn</a>
+                </nav>
+                <p className="hidden md:block mt-auto pt-4 text-[12px] leading-[14px] text-[#575757] font-[350]">
+                    Vancouver, BC {time}
+                </p>
             </aside>
 
             {/* Main scroll container */}
             <main
                 ref={mainRef}
-                className="
-          col-span-1
-          md:col-span-10
-          md:col-start-4
-          /* remove native scrollbars for Lenis */
-          overflow-hidden
-          mt-4
-          relative pb-4
-
-        "
+                className="w-full md:overflow-y-auto overflow-hidden relative md:pl-[24px] scrollbar-hidden"
             >
-                <div className="flex flex-col gap-4">
-                    <div>
-                        <Link href="/88rising">
+                <div className="feed-grid flex flex-col gap-4 md:flex-row md:gap-2 pt-4 pb-4">
+                    {/* Column 1 */}
+                    <div className="flex flex-col gap-4 md:w-1/2 md:gap-2">
+                        <Link href="/discord" className="feed-card hover-target-big transition-opacity duration-200">
+                            <ProjectCard
+                                mediaSrc="/project-covers/discordcatchup.mp4"
+                                mediaType="video"
+                                aspect="portrait"
+                                objectPosition="center 60%"
+                                title="Discord Catchup"
+                                subtitle="Product Design – Feature Concept"
+                            />
+                        </Link>
+                        <Link href="/blueberry" className="feed-card hover-target-big transition-opacity duration-200">
+                            <ProjectCard
+                                mediaSrc="/project-covers/blueberrysizzle.mp4"
+                                mediaType="video"
+                                aspect="landscape"
+                                title="Blueberry Social"
+                                subtitle="Case Study – AI Email Agent"
+                            />
+                        </Link>
+                    </div>
+                    {/* Column 2 */}
+                    <div className="flex flex-col gap-4 md:w-1/2 md:gap-2">
+                        <Link href="/88rising" className="feed-card hover-target-big transition-opacity duration-200">
                             <ProjectCard
                                 mediaSrc="/project-covers/88risingthumbnail.mp4"
                                 mediaType="video"
-                                badges={['88rising', 'Product Design – Website Revamp']}
+                                aspect="wide"
+                                title="88rising"
+                                subtitle="Product Design – Website Revamp"
                             />
                         </Link>
-                    </div>
-                    {/*<Link href="https://www.blaze.ai/">*/}
-                    {/*<ProjectCard*/}
-                    {/*    mediaSrc="/project-covers/blazeaicontentdesigner.mp4"*/}
-                    {/*    mediaType="video"*/}
-                    {/*    badges={['Blaze.ai Templates', 'Visual Design']}*/}
-                    {/*/>*/}
-                    {/*</Link>*/}
-                    {/*<ProjectCard*/}
-                    {/*    mediaSrc="/project-covers/blazeaicontentdesigner"*/}
-                    {/*    mediaType="image"*/}
-                    {/*    badges={['Freelance Work', 'Product & Brand Design - (2024 - Now)']}*/}
-                    {/*/>*/}
-                    <div>
-                        <Link
-                            href="https://www.figma.com/proto/TWVrzXVl7Eg3VE8F2BPWRG/Portfolio-webpage?page-id=7234%3A2&node-id=8357-72&viewport=-39808%2C-9949%2C0.38&t=CSrT5ztAilwsNZ4i-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=8034%3A6079"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
+                        <Link href="/athena" className="feed-card hover-target-big transition-opacity duration-200">
                             <ProjectCard
-                                mediaSrc="/project-covers/blueberrythumbnail.png"
+                                mediaSrc="/project-covers/athenahq.jpg"
                                 mediaType="image"
-                                badges={['Blueberry Social', 'Product Design – Social Selling Agent ']}
+                                aspect="portrait"
+                                title="AthenaHQ"
+                                subtitle="Product Design – AI Platform"
                             />
                         </Link>
                     </div>
-                    <div>
-                        <Link
-                            href="/blueberry"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <ProjectCard
-                                mediaSrc="/project-covers/blueberrythumbnail.png"
-                                mediaType="image"
-                                badges={['Blueberry Social', 'Product Design – Social Selling Agent ']}
-                            />
-                        </Link>
-                    </div>
-                    <div>
-                        <Link href="/wise">
-                            <ProjectCard
-                                mediaSrc="/project-covers/wisethumbnail.png"
-                                mediaType="image"
-                                badges={['Wise', 'UI – Personal Project']}
-                            />
-                        </Link>
-                    </div>
-
                 </div>
             </main>
-        </GridContainer>
+        </div>
     )
 }

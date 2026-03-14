@@ -3,7 +3,6 @@
 
 import {useEffect, useRef, useState} from 'react'
 import { motion } from 'framer-motion'
-import GridContainer from '@/components/GridContainer'
 import CaseStudyCard from "@/components/projects/CaseStudyCard"
 import CaseStudyContent from "@/components/projects/CaseStudyContent"
 import WorksNav, {Section} from "@/components/home/WorksNav"
@@ -81,28 +80,17 @@ export default function Rising88() {
     const sidebarOpacity = isHovered ? 1 : Math.max(0.4, 1 - (scrollY / 400))
 
     return (
-        <GridContainer
-            className="
-                grid
-                grid-cols-1
-                md:grid-cols-12
-                md:h-screen
-                md:overflow-hidden
-                min-h-screen
-                gap-4
-                mobile-native-scroll
-            "
-        >
+        <div className="flex flex-col gap-x-4 px-4 md:flex-row md:h-screen md:overflow-hidden max-w-[1800px] mx-auto">
             <aside
-                className="flex flex-col h-full col-span-1 md:col-span-2 md:sticky md:top-0 md:h-screen mt-4 bg-white transition-opacity duration-200 ease-out"
+                className="w-full shrink-0 pt-4 md:sticky md:top-0 md:h-svh md:w-[320px] md:py-4 flex flex-col transition-opacity duration-200 ease-out"
                 style={{opacity: sidebarOpacity}}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
-                <Link href="/">
-                    <p>Alex Luowan</p>
+                <Link href="/" className="w-fit text-[14px] leading-[18px] text-[#575757] font-[350] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
+                    ← Back
                 </Link>
-                <p className="mt-4">
+                <p className="mt-4 text-[14px] leading-[18px] text-[#575757] font-[350]">
                     Turning 88rising&apos;s website into a backstage pass for every fan.
                 </p>
                 <div className="mt-4">
@@ -112,28 +100,11 @@ export default function Rising88() {
                         showTimeline={true}
                     />
                 </div>
-                <div className="mt-auto">
-                </div>
             </aside>
 
             <main
                 ref={mainRef}
-                className="
-                    col-span-1
-                    md:col-span-8
-                    md:col-start-4
-                    overflow-visible
-                    md:overflow-auto
-                    mt-4
-                    relative pb-4
-                    h-auto
-                    md:h-screen
-                    md:scrollbar-hide
-                "
-                style={{
-                    scrollbarWidth: 'none',
-                    msOverflowStyle: 'none'
-                }}
+                className="w-full md:overflow-y-auto overflow-hidden relative pt-4 pb-4 md:pl-[24px] scrollbar-hidden"
             >
                 <div className="flex flex-col gap-y-[6rem]">
                     <motion.div 
@@ -305,6 +276,6 @@ export default function Rising88() {
                     </div>
                 </div>
             </main>
-        </GridContainer>
+        </div>
     )
 }

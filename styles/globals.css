@@ -1,5 +1,37 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "TWK Lausanne";
+  src: url("/fonts/twklausanne/TWKLausanne-350.woff") format("woff");
+  font-weight: 350;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TWK Lausanne";
+  src: url("/fonts/twklausanne/TWKLausanne-400.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "TWK Lausanne";
+  src: url("/fonts/twklausanne/TWKLausanne-400Italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Self Modern";
+  src: url("/fonts/selfmodern/SelfModern-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -8,6 +40,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 1200px;
+  --breakpoint-lg: 1440px;
+  --breakpoint-xl: 1800px;
 }
 
 /*@media (prefers-color-scheme: dark) {*/
@@ -23,11 +59,11 @@ body {
   font-family: "TWK Lausanne", Helvetica, sans-serif;
   font-size: 14px;
   line-height: 18px;
+  cursor: none;
   /* Improve mobile scrolling */
   -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
 }
-
 h1 {
   font-size: 1.5rem;
   font-style: normal;
@@ -84,6 +120,39 @@ mux-player {
   /* Target a specific section by prefixing the CSS var with (top|center|bottom) */
   --center-controls: none;
   --bottom-play-button: none;
+}
+
+/* Text selection color */
+::selection {
+  background: #ff9500;
+  color: #ffffff;
+}
+
+/* Hide native cursor everywhere (desktop only) */
+a, button, input, textarea, select {
+  cursor: none;
+}
+
+@media (pointer: coarse) {
+  body, a, button, input, textarea, select {
+    cursor: auto;
+  }
+}
+
+/* Hide scrollbar */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Feed card hover — only dim when a card is hovered, not empty space */
+@media (min-width: 1200px) {
+  .feed-grid:has(.feed-card:hover) .feed-card:not(:hover) {
+    opacity: 0.4;
+  }
 }
 
 /* Mobile native scrolling */

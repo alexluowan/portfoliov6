@@ -120,10 +120,10 @@ const CaseStudyContent: React.FC<CaseStudyContentProps> = ({
             <h2 className="uppercase">
                 {subtitle}
             </h2>
-            <h1 className="mt-[1.5rem]">
+            <h1 className="mt-[1.5rem] max-w-[756px]">
                 {title}
             </h1>
-            <p className="text-[#363636] mt-[0.5rem]">
+            <p className="text-[#363636] mt-[0.5rem] max-w-[756px]">
                 {description}
             </p>
             {renderMedia()}

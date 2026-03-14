@@ -4,6 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <link rel="icon" href="/favicon.ico" />
         <link
           rel="preload"
           href="/fonts/twklausanne/TWKLausanne-400.woff"
@@ -29,7 +30,7 @@ export default function Document() {
           `
         }} />
       </Head>
-      <body className="antialiased flex relative flex-col px-4 w-full">
+      <body className="antialiased relative w-full">
         <Main />
         <NextScript />
       </body>

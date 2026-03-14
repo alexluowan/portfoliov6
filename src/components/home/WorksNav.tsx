@@ -125,8 +125,7 @@ export default function WorksNav({
     if (showTimeline && sections.length > 0) {
         return (
             <nav className="hidden md:flex flex-col m-0 p-0">
-                {/*<span className="text-sm m-0 p-0">Timeline</span>*/}
-                <ul className="flex flex-col m-0 p-0">
+                <ul className="flex flex-col items-start m-0 p-0">
                     {sections.map(({ label, sectionId }) => {
                         const isActive = activeSection === sectionId
 
@@ -151,8 +150,8 @@ export default function WorksNav({
                                     }}
                                     className={
                                         isActive
-                                            ? 'bg-black text-white inline-block transition-colors m-0 p-0 pr-8 py-[1px] text-left border-none cursor-pointer font-inherit text-sm leading-[18px]'
-                                            : 'text-gray-500 hover:bg-black hover:text-white inline-block transition-colors m-0 p-0 pr-8 py-[1px] text-left border-none bg-transparent cursor-pointer font-inherit text-sm leading-[18px]'
+                                            ? 'hover-target-small text-[#F25410] w-fit inline-block transition-colors duration-200 ease-in-out m-0 p-0 py-[1px] text-left border-none bg-transparent cursor-none font-[350] text-[14px] leading-[18px]'
+                                            : 'hover-target-small text-[#575757] w-fit inline-block transition-colors duration-200 ease-in-out hover:text-[#F25410] m-0 p-0 py-[1px] text-left border-none bg-transparent cursor-none font-[350] text-[14px] leading-[18px]'
                                     }
                                 >
                                     {label}

@@ -4,8 +4,10 @@ import { AnimatePresence } from 'framer-motion'
 import { Analytics } from '@vercel/analytics/react'
 import '../styles/globals.css'
 import PageTransition from '../src/components/PageTransition'
+import { useCursor } from '../src/cursor/useCursor'
 
 export default function App({ Component, pageProps, router }: AppProps) {
+  useCursor()
   return (
     <>
       <Head>
