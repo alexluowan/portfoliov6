@@ -3,7 +3,6 @@
 
 import {useEffect, useRef, useState} from 'react'
 import {motion} from 'framer-motion'
-import Lenis from '@studio-freight/lenis'
 import WorksNav, {Section} from '@/components/home/WorksNav'
 import CaseStudyCard from '@/components/projects/CaseStudyCard'
 import CaseStudyContent from '@/components/projects/CaseStudyContent'
@@ -25,6 +24,7 @@ export default function AthenaHQ() {
     const sections: Section[] = [
         {label: 'Intro', sectionId: 'hero'},
         {label: 'Solution', sectionId: 'solution'},
+        {label: 'Exploration', sectionId: 'exploration'},
         {label: 'Context', sectionId: 'context'},
         {label: 'Precedent', sectionId: 'precedent'},
         {label: 'Decisions', sectionId: 'decisions'},
@@ -78,41 +78,6 @@ export default function AthenaHQ() {
             sessionStorage.setItem('lastVisitedCaseStudy', 'athena')
         }
     }, [isUnlocked])
-
-    useEffect(() => {
-        if (!mainRef.current) return
-        const mq = window.matchMedia('(min-width: 1200px)')
-        let lenis: Lenis | null = null
-        let rafId: number | null = null
-        function initLenis() {
-            if (!mainRef.current) return
-            lenis = new Lenis({wrapper: mainRef.current, smoothWheel: true})
-            function raf(time: number) {
-                lenis!.raf(time)
-                rafId = requestAnimationFrame(raf)
-            }
-            rafId = requestAnimationFrame(raf)
-        }
-        function destroyLenis() {
-            if (rafId) cancelAnimationFrame(rafId)
-            rafId = null
-            lenis?.destroy()
-            lenis = null
-        }
-        function handleChange() {
-            if (mq.matches) {
-                if (!lenis) initLenis()
-            } else {
-                destroyLenis()
-            }
-        }
-        handleChange()
-        mq.addEventListener('change', handleChange)
-        return () => {
-            mq.removeEventListener('change', handleChange)
-            destroyLenis()
-        }
-    }, [])
 
     const sidebarOpacity = isHovered ? 1 : Math.max(0.4, 1 - scrollY / 400)
 
@@ -276,7 +241,7 @@ export default function AthenaHQ() {
                 </Link>
                 <div className="flex flex-col gap-y-4 mt-6">
                     <div className="flex flex-col">
-                        <h1 className="text-[18px] leading-[1.3] font-light" style={{fontFamily: '"Self Modern"'}}>Olympus</h1>
+                        <h1 className="text-[18px] leading-[1.3] font-light" style={{fontFamily: '"Self Modern"'}}>AthenaHQ</h1>
 
                     </div>
                     <div className="flex items-center gap-x-1">
@@ -358,7 +323,29 @@ export default function AthenaHQ() {
                             />
                         </AnimatedSection>
 
-                        {/* 2. Context — the problem and insight */}
+                        {/* 2. Exploration — a direction we cut */}
+                        <AnimatedSection
+                            data-section="exploration"
+                            variants={fadeInUp}
+                        >
+                            <div className="w-full max-w-[768px] mx-auto">
+                                <h2 className="uppercase font-mono text-[12px]">A direction we cut</h2>
+                                <h1 className="mt-[1.5rem]" style={{fontFamily: '"Self Modern"'}}>Full report generation was too heavy</h1>
+                                <p className="text-[#363636] mt-[0.5rem] max-w-[60ch]">We explored a multi-step flow for generating PDF reports from dashboard data: pick a goal, select focus areas, and export a formatted document. But the workflow was too tedious. Users didn't want a new artifact. They wanted to pull specific widgets into existing decks and docs. That insight pushed export toward the simpler widget-level action instead.</p>
+                                <ImageCarousel
+                                    className="mt-[2.5rem]"
+                                    slides={[
+                                        { src: '/work/olympus/images/report-goal.png', alt: 'Report goal selection with templates', label: 'Choose a report goal' },
+                                        { src: '/work/olympus/images/report-templates.png', alt: 'Report templates and custom prompt', label: 'Templates or write your own' },
+                                        { src: '/work/olympus/images/report-prompt.png', alt: 'Custom prompt input for report generation', label: 'Custom prompt input' },
+                                        { src: '/work/olympus/images/report-focus.png', alt: 'Focus areas selection with draggable modules', label: 'Select focus areas' },
+                                        { src: '/work/olympus/images/report-output.png', alt: 'Generated report with high-impact insights', label: 'Generated report output' },
+                                    ]}
+                                />
+                            </div>
+                        </AnimatedSection>
+
+                        {/* 3. Context — the problem and insight */}
                         <AnimatedSection
                             data-section="context"
                             className="flex flex-col gap-y-[4rem]"
@@ -430,7 +417,7 @@ export default function AthenaHQ() {
                             <CaseStudyContent
                                 subtitle="precedent"
                                 title="This pattern already works at scale"
-                                description="Stripe and Shopify both use modular, customizable dashboards — strong defaults with the ability to add, remove, and rearrange widgets."
+                                description="Stripe and Shopify both use modular, customizable dashboards. Strong defaults with the ability to add, remove, and rearrange widgets."
                             />
                             <div className="w-full max-w-[768px] mx-auto">
                                 <h2 className="uppercase font-mono text-[12px]">Stripe</h2>
@@ -439,7 +426,7 @@ export default function AthenaHQ() {
                                     className="mt-[2.5rem]"
                                     slides={[
                                         { src: '/work/olympus/images/precedent/stripe-default.png', alt: 'Stripe default dashboard overview', label: 'Default dashboard' },
-                                        { src: '/work/olympus/images/precedent/stripe-edit.png', alt: 'Stripe edit mode with removable widgets', label: 'Edit mode — remove widgets' },
+                                        { src: '/work/olympus/images/precedent/stripe-edit.png', alt: 'Stripe edit mode with removable widgets', label: 'Edit mode' },
                                         { src: '/work/olympus/images/precedent/stripe-add.png', alt: 'Stripe widget picker modal', label: 'Add widgets from picker' },
                                     ]}
                                 />
