@@ -56,52 +56,75 @@ const items: PlaygroundItem[] = [
 
 function VideoCarousel({videos, color}: { videos: string[]; color: string }) {
     const [current, setCurrent] = useState(0)
+    const scrollRef = useRef<HTMLDivElement>(null)
 
-    const next = useCallback(() => {
-        setCurrent(i => (i + 1) % videos.length)
+    const goTo = useCallback((index: number) => {
+        const clamped = Math.max(0, Math.min(index, videos.length - 1))
+        setCurrent(clamped)
+        const container = scrollRef.current
+        if (!container) return
+        const child = container.children[clamped] as HTMLElement
+        if (!child) return
+        container.scrollTo({ left: child.offsetLeft - container.offsetLeft, behavior: 'smooth' })
     }, [videos.length])
 
-    const prev = useCallback(() => {
-        setCurrent(i => (i - 1 + videos.length) % videos.length)
-    }, [videos.length])
+    useEffect(() => {
+        const container = scrollRef.current
+        if (!container) return
+        container.scrollLeft = 0
+    }, [])
+
+    useEffect(() => {
+        const container = scrollRef.current
+        if (!container) return
+
+        const handleScroll = () => {
+            const children = Array.from(container.children) as HTMLElement[]
+            const scrollLeft = container.scrollLeft
+            let closest = 0
+            let minDist = Infinity
+            children.forEach((child, i) => {
+                const dist = Math.abs(child.offsetLeft - scrollLeft)
+                if (dist < minDist) {
+                    minDist = dist
+                    closest = i
+                }
+            })
+            setCurrent(closest)
+        }
+
+        container.addEventListener('scroll', handleScroll, { passive: true })
+        return () => container.removeEventListener('scroll', handleScroll)
+    }, [])
 
     return (
-        <div className="relative w-full h-full flex items-center justify-center" style={{backgroundColor: color}}>
-            <video
-                key={videos[current]}
-                className="w-full h-full object-contain p-8"
-                autoPlay
-                playsInline
-                muted
-                loop
+        <div className="relative w-full h-full flex flex-col" style={{backgroundColor: color}}>
+            <div
+                ref={scrollRef}
+                className="flex-1 flex overflow-x-auto snap-x snap-mandatory scrollbar-hidden"
             >
-                <source src={videos[current]} type="video/webm" />
-            </video>
-
-            {/* Navigation arrows */}
-            <button
-                onClick={prev}
-                className="absolute left-10 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white/80 hover:bg-white transition-colors rounded-full hover-target-big"
-            >
-                <svg className="pointer-events-none" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#575757" strokeWidth="2">
-                    <path d="M15 18l-6-6 6-6" />
-                </svg>
-            </button>
-            <button
-                onClick={next}
-                className="absolute right-10 top-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center bg-white/80 hover:bg-white transition-colors rounded-full hover-target-big"
-            >
-                <svg className="pointer-events-none" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#575757" strokeWidth="2">
-                    <path d="M9 18l6-6-6-6" />
-                </svg>
-            </button>
+                {videos.map((src) => (
+                    <div key={src} className="flex-shrink-0 w-full h-full snap-start flex items-center justify-center">
+                        <video
+                            key={src}
+                            className="w-full h-full object-contain p-8"
+                            autoPlay
+                            playsInline
+                            muted
+                            loop
+                        >
+                            <source src={src} type="video/webm" />
+                        </video>
+                    </div>
+                ))}
+            </div>
 
             {/* Dots */}
             <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
                 {videos.map((_v, i) => (
                     <button
                         key={i}
-                        onClick={() => setCurrent(i)}
+                        onClick={() => goTo(i)}
                         className={`w-1.5 h-1.5 rounded-full transition-colors ${i === current ? 'bg-[#575757]' : 'bg-[#575757]/30'}`}
                     />
                 ))}
