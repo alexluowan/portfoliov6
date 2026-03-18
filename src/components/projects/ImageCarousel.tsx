@@ -21,7 +21,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ slides, className = '' })
         if (!container) return
         const child = container.children[index] as HTMLElement
         if (!child) return
-        container.scrollTo({ left: child.offsetLeft, behavior: 'smooth' })
+        container.scrollTo({ left: child.offsetLeft - container.offsetLeft, behavior: 'smooth' })
     }, [])
 
     const goTo = useCallback((index: number) => {
@@ -29,6 +29,12 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ slides, className = '' })
         setActiveIndex(clamped)
         scrollTo(clamped)
     }, [slides.length, scrollTo])
+
+    useEffect(() => {
+        const container = scrollRef.current
+        if (!container) return
+        container.scrollLeft = 0
+    }, [])
 
     useEffect(() => {
         const container = scrollRef.current
@@ -42,7 +48,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ slides, className = '' })
             let closest = 0
             let minDist = Infinity
             children.forEach((child, i) => {
-                const dist = Math.abs(child.offsetLeft - scrollLeft - (containerWidth - child.offsetWidth) / 2)
+                const dist = Math.abs(child.offsetLeft - scrollLeft)
                 if (dist < minDist) {
                     minDist = dist
                     closest = i
@@ -64,7 +70,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ slides, className = '' })
                     className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hidden"
                 >
                     {slides.map((slide) => (
-                        <div key={slide.src} className="flex-shrink-0 w-full snap-center">
+                        <div key={slide.src} className="flex-shrink-0 w-full snap-start">
                             <Image
                                 src={slide.src}
                                 alt={slide.alt}
