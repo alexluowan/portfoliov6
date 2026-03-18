@@ -327,7 +327,7 @@ export default function AthenaHQ() {
                                 }
                             />
                             <CaseStudyContent
-                                subtitle="the question"
+                                subtitle=""
                                 title=""
                                 description=""
                                 svgContent={
@@ -339,7 +339,7 @@ export default function AthenaHQ() {
                                 }
                             />
                             <CaseStudyContent
-                                subtitle="what customers needed"
+                                subtitle=""
                                 title=""
                                 description=""
                                 svgContent={
@@ -372,21 +372,21 @@ export default function AthenaHQ() {
                             variants={fadeInUpStagger}
                         >
                             <CaseStudyContent
-                                subtitle="the solution"
+                                subtitle="solution"
                                 title="A strong default that works out of the box"
                                 description="Olympus opens with a structured overview: key metrics at the top, deeper modules below. Users get oriented immediately without needing to configure anything."
                                 imageSrc="/work/olympus/images/dashboard.png"
                                 mediaAlt="Olympus default dashboard showing share of voice, brand traits, citation rate, and model-level visibility"
                             />
                             <CaseStudyContent
-                                subtitle="configurable modules"
+                                subtitle=""
                                 title="One system, different views for different roles"
                                 description="Rather than separate dashboards for CMOs, SEOs, and PMMs, users select, reorder, and remove widgets to match the questions they care about most."
                                 imageSrc="/work/olympus/images/dashboard-settings.png"
                                 mediaAlt="Dashboard settings panel showing selected and configurable widget modules"
                             />
                             <CaseStudyContent
-                                subtitle="export & reset"
+                                subtitle=""
                                 title="From dashboard to presentation in one click"
                                 description="CMOs and SEOs don't just consume data inside the product. They carry it into decks and recurring updates. Export lets them package specific widgets directly. Reset keeps customization low-risk."
                                 imageSrc="/work/olympus/images/export-reset.png"
@@ -400,7 +400,7 @@ export default function AthenaHQ() {
                             variants={fadeInUp}
                         >
                             <div className="w-full max-w-[768px] mx-auto">
-                                <h2 className="uppercase font-mono text-[12px]">A direction we cut</h2>
+                                <h2 className="uppercase font-mono text-[12px]">Exploration</h2>
                                 <h1 className="mt-[1.5rem]" style={{fontFamily: '"Self Modern"'}}>Full report generation was too heavy</h1>
                                 <p className="text-[#363636] mt-[0.5rem] max-w-[60ch]">We explored a multi-step flow for generating PDF reports from dashboard data: pick a goal, select focus areas, and export a formatted document. But the workflow was too tedious. Users didn't want a new artifact. They wanted to pull specific widgets into existing decks and docs. That insight pushed export toward the simpler widget-level action instead.</p>
                                 <ImageCarousel
@@ -428,7 +428,7 @@ export default function AthenaHQ() {
                                 description="Stripe and Shopify both use modular, customizable dashboards. Strong defaults with the ability to add, remove, and rearrange widgets."
                             />
                             <div className="w-full max-w-[768px] mx-auto">
-                                <h2 className="uppercase font-mono text-[12px]">Stripe</h2>
+                                <h3 className="text-[16px] font-medium">Stripe</h3>
                                 <p className="text-[#363636] mt-[0.5rem] max-w-[60ch]">Default overview with + Add and Edit controls. Edit mode lets users remove widgets. + Add opens a picker to pull in new ones.</p>
                                 <ImageCarousel
                                     className="mt-[2.5rem]"
@@ -440,7 +440,7 @@ export default function AthenaHQ() {
                                 />
                             </div>
                             <div className="w-full max-w-[768px] mx-auto">
-                                <h2 className="uppercase font-mono text-[12px]">Shopify</h2>
+                                <h3 className="text-[16px] font-medium">Shopify</h3>
                                 <p className="text-[#363636] mt-[0.5rem] max-w-[60ch]">Analytics with a Customize button that opens a categorized Metrics Library sidebar.</p>
                                 <ImageCarousel
                                     className="mt-[2.5rem]"

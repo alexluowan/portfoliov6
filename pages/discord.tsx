@@ -225,7 +225,7 @@ export default function DiscordCatchup() {
                                 description="I originally framed this around helping users reconnect with communities. Research pointed to a more practical truth: they wanted a faster way to decide what deserved attention and what could be safely ignored. That shifted the project from a broad catch-up concept into a focused backlog-triage tool."
                             />
                             <CaseStudyContent
-                                subtitle="what I learned"
+                                subtitle=""
                                 title=""
                                 description=""
                                 svgContent={
@@ -258,7 +258,7 @@ export default function DiscordCatchup() {
                             variants={fadeInUpStagger}
                         >
                             <CaseStudyContent
-                                subtitle="one card at a time"
+                                subtitle="solution"
                                 title="Backlog becomes a sequence of single decisions"
                                 description="Instead of a wall of unread content, users see one missed item at a time. A progress count like '4 left' makes catch-up feel finite instead of endless."
                                 svgContent={
@@ -268,7 +268,7 @@ export default function DiscordCatchup() {
                                 }
                             />
                             <CaseStudyContent
-                                subtitle="quick triage"
+                                subtitle=""
                                 title="Support quick judgment, not deep reading"
                                 description="Each card includes enough context to make a fast call: open it, dismiss it, or mark it as read. Mark as Read and Not Interested match how users already process overload, but more intentionally."
                                 svgContent={
@@ -278,7 +278,7 @@ export default function DiscordCatchup() {
                                 }
                             />
                             <CaseStudyContent
-                                subtitle="relevance controls"
+                                subtitle=""
                                 title="Make relevance steerable, not a black box"
                                 description="Server and channel-level controls let users shape what appears over time. Highlights makes a good first guess, then lets users guide it."
                                 svgContent={
@@ -296,7 +296,7 @@ export default function DiscordCatchup() {
                             variants={fadeInUp}
                         >
                             <CaseStudyContent
-                                subtitle="iteration I killed"
+                                subtitle="exploration"
                                 title="Moving the entry point from bottom navbar to sidebar"
                                 description="Highlights originally lived in the bottom navbar. But research showed that even DM-heavy users rarely explored beyond their primary navigation path. Moving the entry point to the sidebar made it visible during normal DM usage, increasing the chance of adoption without requiring users to change their habits."
                                 svgContent={
@@ -306,7 +306,7 @@ export default function DiscordCatchup() {
                                 }
                             />
                             <CaseStudyContent
-                                subtitle="iteration I killed"
+                                subtitle=""
                                 title="Full card was too much information"
                                 description="The first version showed the full conversation thread inside each card. But Discord is already overwhelming. Showing the entire message context defeated the purpose of reducing overload. I cut the card size in half to surface just enough to make a quick judgment. The undo button was also in an inconvenient spot, making it harder to recover from mistakes."
                                 svgContent={
