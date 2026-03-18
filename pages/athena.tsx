@@ -17,9 +17,9 @@ export default function AthenaHQ() {
     const mainRef = useRef<HTMLDivElement>(null)
     const [scrollY, setScrollY] = useState<number>(0)
     const [isHovered, setIsHovered] = useState(false)
-    const [isUnlocked, setIsUnlocked] = useState(true)
-    const [password, setPassword] = useState('')
-    const [error, setError] = useState(false)
+    // const [isUnlocked, setIsUnlocked] = useState(true)
+    // const [password, setPassword] = useState('')
+    // const [error, setError] = useState(false)
 
     const sections: Section[] = [
         {label: 'Intro', sectionId: 'hero'},
@@ -75,13 +75,13 @@ export default function AthenaHQ() {
     }, [])
 
     useEffect(() => {
-        if (isUnlocked) {
-            sessionStorage.setItem('lastVisitedCaseStudy', 'athena')
-        }
-    }, [isUnlocked])
+        sessionStorage.setItem('lastVisitedCaseStudy', 'athena')
+    }, [])
 
     const sidebarOpacity = isHovered ? 1 : Math.max(0.4, 1 - scrollY / 400)
 
+    /*
+    // Password protection — commented out
     const [shake, setShake] = useState(false)
     const [errorIndex, setErrorIndex] = useState(0)
     const [failCount, setFailCount] = useState(0)
@@ -109,7 +109,6 @@ export default function AthenaHQ() {
     useEffect(() => {
         if (!bouncing) return
 
-        // Start from center-ish
         posRef.current = { x: window.innerWidth / 2 - 40, y: window.innerHeight / 2 }
         velRef.current = { dx: 3 + Math.random() * 2, dy: 2 + Math.random() * 2 }
 
@@ -166,7 +165,6 @@ export default function AthenaHQ() {
                 setBouncing(true)
                 setTimeout(() => {
                     refreshCursor()
-                    // Force cursor out of stuck hover state by dispatching a synthetic pointer event
                     document.dispatchEvent(new PointerEvent('pointermove', { clientX: 0, clientY: 0 }))
                     document.dispatchEvent(new MouseEvent('mousemove', { clientX: 0, clientY: 0 }))
                 }, 100)
@@ -228,6 +226,7 @@ export default function AthenaHQ() {
             </div>
         )
     }
+    */
 
     return (
         <div className="flex flex-col gap-x-4 px-4 md:flex-row md:h-screen md:overflow-hidden max-w-[1800px] mx-auto">
