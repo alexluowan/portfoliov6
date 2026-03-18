@@ -74,6 +74,12 @@ export default function AthenaHQ() {
     }, [])
 
     useEffect(() => {
+        if (isUnlocked) {
+            sessionStorage.setItem('lastVisitedCaseStudy', 'athena')
+        }
+    }, [isUnlocked])
+
+    useEffect(() => {
         if (!mainRef.current) return
         const mq = window.matchMedia('(min-width: 1200px)')
         let lenis: Lenis | null = null

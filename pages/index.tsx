@@ -9,6 +9,11 @@ import Link from "next/link";
 
 export default function Home() {
     const [time, setTime] = useState('')
+    const [lastVisited, setLastVisited] = useState<string | null>(null)
+
+    useEffect(() => {
+        setLastVisited(sessionStorage.getItem('lastVisitedCaseStudy'))
+    }, [])
 
     useEffect(() => {
         const update = () => {
@@ -118,8 +123,8 @@ export default function Home() {
                                 aspect="portrait"
                                 objectPosition="center 60%"
                                 title="Discord"
-
                                 subtitle="Catching up on missed conversations."
+                                justSeen={lastVisited === 'discord'}
                             />
                         </Link>
                         <Link href="/blueberry" className="feed-card hover-target-big transition-opacity duration-200">
@@ -128,8 +133,8 @@ export default function Home() {
                                 mediaType="video"
                                 aspect="landscape"
                                 title="Blueberry Social"
-
                                 subtitle="AI-powered marketing for every customer interaction."
+                                justSeen={lastVisited === 'blueberry'}
                             />
                         </Link>
                     </div>
@@ -141,8 +146,8 @@ export default function Home() {
                                 mediaType="video"
                                 aspect="wide"
                                 title="88rising"
-
                                 subtitle="A platform for fans to discover and support 88rising's artist roster."
+                                justSeen={lastVisited === '88rising'}
                             />
                         </Link>
                         <Link href="/athena" className="feed-card hover-target-big transition-opacity duration-200">
@@ -151,8 +156,8 @@ export default function Home() {
                                 mediaType="image"
                                 aspect="portrait"
                                 title="AthenaHQ"
-
                                 subtitle="Customizable dashboards for AI Search intelligence."
+                                justSeen={lastVisited === 'athena'}
                             />
                         </Link>
                     </div>

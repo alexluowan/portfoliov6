@@ -21,6 +21,10 @@ export default function Rising88() {
     const [scrollY, setScrollY] = useState<number>(0)
     const [isHovered, setIsHovered] = useState(false)
 
+    useEffect(() => {
+        sessionStorage.setItem('lastVisitedCaseStudy', '88rising')
+    }, [])
+
     // Define sections for this case study
     const sections: Section[] = [
         {label: 'Intro', sectionId: 'hero'},

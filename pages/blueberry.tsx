@@ -26,6 +26,10 @@ export default function BlueberrySocial() {
     ]
 
     useEffect(() => {
+        sessionStorage.setItem('lastVisitedCaseStudy', 'blueberry')
+    }, [])
+
+    useEffect(() => {
         const currentRef = mainRef.current
         if (!currentRef) return
 

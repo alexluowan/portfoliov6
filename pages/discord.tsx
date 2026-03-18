@@ -22,6 +22,10 @@ export default function DiscordCatchup() {
     ]
 
     useEffect(() => {
+        sessionStorage.setItem('lastVisitedCaseStudy', 'discord')
+    }, [])
+
+    useEffect(() => {
         const currentRef = mainRef.current
         if (!currentRef) return
 

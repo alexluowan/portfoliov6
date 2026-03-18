@@ -14,6 +14,7 @@ export type ProjectCardProps = {
     bgColor?: string;
     objectFit?: "cover" | "contain";
     objectPosition?: string;
+    justSeen?: boolean;
 };
 
 const aspectClasses = {
@@ -35,6 +36,7 @@ function ProjectCard({
                          bgColor,
                          objectFit = "cover",
                          objectPosition,
+                         justSeen = false,
                      }: ProjectCardProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -64,6 +66,16 @@ function ProjectCard({
                     className="relative z-[1] h-full w-full overflow-hidden transition-[height] duration-[167ms] ease-linear md:group-hover:h-[calc(100%-32px)]"
                     style={bgColor ? { backgroundColor: bgColor } : undefined}
                 >
+                    {justSeen && (
+                        <div className="absolute inset-0 z-[2] flex items-center justify-center bg-black/40 pointer-events-none">
+                            <span className="flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-white/80">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                                    <path d="M20 6L9 17l-5-5" />
+                                </svg>
+                                Just Seen
+                            </span>
+                        </div>
+                    )}
                     {mediaSrc && mediaType === "video" ? (
                         <video
                             ref={videoRef}
