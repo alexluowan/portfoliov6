@@ -8,7 +8,7 @@ import WorksNav, {Section} from '@/components/home/WorksNav'
 import CaseStudyCard from '@/components/projects/CaseStudyCard'
 import CaseStudyContent from '@/components/projects/CaseStudyContent'
 import AnimatedSection from '@/components/AnimatedSection'
-import {heroAnimation, fadeInUp} from '@/animations/animationVariants'
+import {heroAnimation, fadeInUp, fadeInUpStagger} from '@/animations/animationVariants'
 import Link from 'next/link'
 
 export default function DiscordCatchup() {
@@ -18,7 +18,12 @@ export default function DiscordCatchup() {
 
     const sections: Section[] = [
         {label: 'Intro', sectionId: 'hero'},
-        {label: 'Overview', sectionId: 'overview'},
+        {label: 'Context', sectionId: 'context'},
+        {label: 'The Shift', sectionId: 'shift'},
+        {label: 'Solution', sectionId: 'solution'},
+        {label: 'Exploration', sectionId: 'exploration'},
+        {label: 'Testing', sectionId: 'testing'},
+        {label: 'Reflection', sectionId: 'reflection'},
     ]
 
     useEffect(() => {
@@ -116,7 +121,7 @@ export default function DiscordCatchup() {
                 </Link>
                 <div className="flex flex-col gap-y-4 mt-6">
                     <div className="flex flex-col">
-                        <h1 className="text-[18px] leading-[1.3] font-light" style={{fontFamily: '"Self Modern"'}}>Discord</h1>
+                        <h1 className="text-[18px] leading-[1.3] font-light" style={{fontFamily: '"Self Modern"'}}>Discord Highlights</h1>
 
                     </div>
                     <div className="flex items-center gap-x-1">
@@ -134,14 +139,14 @@ export default function DiscordCatchup() {
 
             <main
                 ref={mainRef}
-                className="w-full md:overflow-y-auto overflow-hidden relative pt-4 pb-16 scrollbar-hidden"
+                className="w-full md:overflow-y-auto overflow-hidden relative pt-4 pb-[70vh] scrollbar-hidden"
             >
                 {/* Mobile header */}
                 <div className="flex flex-col md:hidden pt-4 pb-4 max-w-[768px] mx-auto w-full">
                     <Link href="/" className="w-fit text-[14px] leading-[18px] text-[#575757] font-[350] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
                         ← Back
                     </Link>
-                    <h1 className="text-[18px] leading-[1.3] font-light mt-4" style={{fontFamily: '"Self Modern"'}}>Discord</h1>
+                    <h1 className="text-[18px] leading-[1.3] font-light mt-4" style={{fontFamily: '"Self Modern"'}}>Discord Highlights</h1>
                 </div>
 
                 <div className="flex flex-col gap-y-[6rem]">
@@ -153,24 +158,222 @@ export default function DiscordCatchup() {
                     >
                         <CaseStudyCard
                             videoSrcMp4="/project-covers/discordcatchup.mp4"
-                            title="Reimagining how friends catch up on missed conversations in Discord."
+                            title="A backlog-triage concept for server-heavy users who fall behind on missed messages."
                             roles={['Product Designer']}
                             team={['Myself']}
                             timeline="3 Weeks"
-                            tools={['Figma']}
+                            tools={['Figma', 'Prototyping']}
                         />
                     </motion.div>
 
                     <div className="flex flex-col gap-y-[8rem]">
+                        {/* 1. Context */}
                         <AnimatedSection
-                            data-section="overview"
-                            variants={fadeInUp}
+                            data-section="context"
                             className="flex flex-col gap-y-[4rem]"
+                            variants={fadeInUp}
                         >
                             <CaseStudyContent
-                                subtitle="overview"
-                                title="This case study is currently in progress. A fuller breakdown of the research, iterations, and final design decisions is coming soon."
-                                description={`I redesigned how Discord users catch up on missed server messages after time away. What began as a project about "reconnecting with communities" shifted once research showed a different reality: most users do not want to dig through everything they missed. They only care about a small subset of servers, and when backlog piles up, many default to muting, ignoring, or mass-clearing messages just to make the noise disappear. In response, I designed a Highlights experience that helps users quickly judge what is worth their attention, dismiss what is not, and reduce future noise through lightweight relevance controls. This project challenged my original assumptions and pushed me to think more deeply about attention, trust, and designing for people who are already overwhelmed.`}
+                                subtitle="the problem"
+                                title="Server messages stop feeling like conversations and start feeling like backlog"
+                                description="DMs are direct, finite, and easy to process. Server activity is not. It spreads across multiple servers and channels, full of low-priority chatter, and much harder to scan once it accumulates. When volume gets too high, users stop trying to catch up altogether."
+                            />
+                            <CaseStudyContent
+                                subtitle=""
+                                title=""
+                                description=""
+                                svgContent={
+                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                                        <div className="border border-[#E5E5E5] p-4">
+                                            <p className="text-[14px] font-medium">Muting servers</p>
+                                        </div>
+                                        <div className="border border-[#E5E5E5] p-4">
+                                            <p className="text-[14px] font-medium">Muting Discord entirely</p>
+                                        </div>
+                                        <div className="border border-[#E5E5E5] p-4">
+                                            <p className="text-[14px] font-medium">Ignoring notifications</p>
+                                        </div>
+                                        <div className="border border-[#E5E5E5] p-4">
+                                            <p className="text-[14px] font-medium">Mark all as read</p>
+                                        </div>
+                                    </div>
+                                }
+                            />
+                            <CaseStudyContent
+                                subtitle="the question"
+                                title=""
+                                description=""
+                                svgContent={
+                                    <div className="border-l-2 border-[#171717] pl-6 py-4">
+                                        <p className="text-[18px] leading-[1.5]" style={{fontFamily: '"Self Modern"'}}>
+                                            How might we help server-heavy Discord users quickly sort through missed messages without manually catching up on everything?
+                                        </p>
+                                    </div>
+                                }
+                            />
+                        </AnimatedSection>
+
+                        {/* 2. The Shift */}
+                        <AnimatedSection
+                            data-section="shift"
+                            className="flex flex-col gap-y-[4rem]"
+                            variants={fadeInUp}
+                        >
+                            <CaseStudyContent
+                                subtitle="the shift"
+                                title="Users were not asking to reconnect. They were trying to reduce effort."
+                                description="I originally framed this around helping users reconnect with communities. Research pointed to a more practical truth: they wanted a faster way to decide what deserved attention and what could be safely ignored. That shifted the project from a broad catch-up concept into a focused backlog-triage tool."
+                            />
+                            <CaseStudyContent
+                                subtitle="what I learned"
+                                title=""
+                                description=""
+                                svgContent={
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">DMs come first. Servers come later.</h3>
+                                            <p className="text-[#363636] mt-2">Users consistently treated DMs as highest priority. Server activity was dealt with only after, if they had the energy.</p>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">Overload pushes users toward avoidance.</h3>
+                                            <p className="text-[#363636] mt-2">When unread messages piled up, users stopped engaging. They muted or marked everything as read to make the noise disappear.</p>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">Users skim and infer, not read deeply.</h3>
+                                            <p className="text-[#363636] mt-2">People relied on quick cues like topic, keywords, and timestamps to decide whether something was worth opening.</p>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">Relevance needs user control.</h3>
+                                            <p className="text-[#363636] mt-2">Users did not just want less volume. They wanted control over what surfaced, not all-or-nothing muting.</p>
+                                        </div>
+                                    </div>
+                                }
+                            />
+                        </AnimatedSection>
+
+                        {/* 3. Solution */}
+                        <AnimatedSection
+                            data-section="solution"
+                            className="flex flex-col gap-y-[4rem]"
+                            variants={fadeInUpStagger}
+                        >
+                            <CaseStudyContent
+                                subtitle="one card at a time"
+                                title="Backlog becomes a sequence of single decisions"
+                                description="Instead of a wall of unread content, users see one missed item at a time. A progress count like '4 left' makes catch-up feel finite instead of endless."
+                                svgContent={
+                                    <div className="mt-[2.5rem] w-full aspect-[16/10] bg-[#F5F5F5] flex items-center justify-center">
+                                        <p className="text-[14px] text-[#999] font-mono">Screen placeholder: card UI with progress counter</p>
+                                    </div>
+                                }
+                            />
+                            <CaseStudyContent
+                                subtitle="quick triage"
+                                title="Support quick judgment, not deep reading"
+                                description="Each card includes enough context to make a fast call: open it, dismiss it, or mark it as read. Mark as Read and Not Interested match how users already process overload, but more intentionally."
+                                svgContent={
+                                    <div className="mt-[2.5rem] w-full aspect-[16/10] bg-[#F5F5F5] flex items-center justify-center">
+                                        <p className="text-[14px] text-[#999] font-mono">Screen placeholder: triage actions</p>
+                                    </div>
+                                }
+                            />
+                            <CaseStudyContent
+                                subtitle="relevance controls"
+                                title="Make relevance steerable, not a black box"
+                                description="Server and channel-level controls let users shape what appears over time. Highlights makes a good first guess, then lets users guide it."
+                                svgContent={
+                                    <div className="mt-[2.5rem] w-full aspect-[16/10] bg-[#F5F5F5] flex items-center justify-center">
+                                        <p className="text-[14px] text-[#999] font-mono">Screen placeholder: relevance controls</p>
+                                    </div>
+                                }
+                            />
+                        </AnimatedSection>
+
+                        {/* 4. Exploration */}
+                        <AnimatedSection
+                            data-section="exploration"
+                            className="flex flex-col gap-y-[4rem]"
+                            variants={fadeInUp}
+                        >
+                            <CaseStudyContent
+                                subtitle="iteration I killed"
+                                title="Moving the entry point from bottom navbar to sidebar"
+                                description="Highlights originally lived in the bottom navbar. But research showed that even DM-heavy users rarely explored beyond their primary navigation path. Moving the entry point to the sidebar made it visible during normal DM usage, increasing the chance of adoption without requiring users to change their habits."
+                                svgContent={
+                                    <div className="mt-[2.5rem] w-full aspect-[16/10] bg-[#F5F5F5] flex items-center justify-center">
+                                        <p className="text-[14px] text-[#999] font-mono">Screen placeholder: bottom nav vs sidebar placement</p>
+                                    </div>
+                                }
+                            />
+                            <CaseStudyContent
+                                subtitle="iteration I killed"
+                                title="Full card was too much information"
+                                description="The first version showed the full conversation thread inside each card. But Discord is already overwhelming. Showing the entire message context defeated the purpose of reducing overload. I cut the card size in half to surface just enough to make a quick judgment. The undo button was also in an inconvenient spot, making it harder to recover from mistakes."
+                                svgContent={
+                                    <div className="mt-[2.5rem] w-full aspect-[4/3] bg-[#E8E8E8] flex items-center justify-center">
+                                        <img
+                                            src="/work/discord/images/full-card-iteration.png"
+                                            alt="Early full-card iteration showing too much conversation context and awkward undo placement"
+                                            className="h-[90%] w-auto object-contain"
+                                        />
+                                    </div>
+                                }
+                            />
+                        </AnimatedSection>
+
+                        {/* 5. Testing */}
+                        <AnimatedSection
+                            data-section="testing"
+                            variants={fadeInUp}
+                        >
+                            <CaseStudyContent
+                                subtitle="testing"
+                                title="Testing narrowed both the audience and the product story"
+                                description="Some participants primarily used Discord for DMs and had already solved server overload by muting. Those sessions clarified who the feature was not for. The strongest signal came from users in many active servers who frequently fell behind and already relied on crude workarounds."
+                                svgContent={
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-[2.5rem]">
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">Audience became narrower</h3>
+                                            <p className="text-[#363636] mt-2">From all Discord users to specifically server-heavy users with backlog problems.</p>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">Framing shifted</h3>
+                                            <p className="text-[#363636] mt-2">Away from "community reconnection" toward practical backlog triage.</p>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">Controls mattered more than expected</h3>
+                                            <p className="text-[#363636] mt-2">Relevance controls became more important than initially scoped.</p>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">Easier to defend as triage</h3>
+                                            <p className="text-[#363636] mt-2">The feature became stronger positioned as a triage tool rather than a generic feed.</p>
+                                        </div>
+                                    </div>
+                                }
+                            />
+                        </AnimatedSection>
+
+                        {/* 5. Reflection */}
+                        <AnimatedSection
+                            data-section="reflection"
+                            variants={fadeInUp}
+                        >
+                            <CaseStudyContent
+                                subtitle="reflection"
+                                title="The framing mattered as much as the UI"
+                                description=""
+                                svgContent={
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">Users are more pragmatic than expected.</h3>
+                                            <p className="text-[#363636] mt-2">I started designing for "reconnection," but users were trying to reduce noise, avoid wasting time, and decide what was worth their attention. That shift made the concept stronger.</p>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">The challenge was not just the interface.</h3>
+                                            <p className="text-[#363636] mt-2">It was defining who the feature was for, how it fit alongside notifications, and how to make system-driven relevance feel trustworthy enough to use.</p>
+                                        </div>
+                                    </div>
+                                }
                             />
                         </AnimatedSection>
                     </div>

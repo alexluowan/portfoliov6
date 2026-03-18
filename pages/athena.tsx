@@ -23,9 +23,10 @@ export default function AthenaHQ() {
 
     const sections: Section[] = [
         {label: 'Intro', sectionId: 'hero'},
+        {label: 'Before', sectionId: 'before'},
+        {label: 'Context', sectionId: 'context'},
         {label: 'Solution', sectionId: 'solution'},
         {label: 'Exploration', sectionId: 'exploration'},
-        {label: 'Context', sectionId: 'context'},
         {label: 'Precedent', sectionId: 'precedent'},
         {label: 'Decisions', sectionId: 'decisions'},
         {label: 'Outcome', sectionId: 'outcome'},
@@ -287,11 +288,10 @@ export default function AthenaHQ() {
                     </motion.div>
 
                     <div className="flex flex-col gap-y-[8rem]">
-                        {/* 1. Solution — lead with the work */}
+                        {/* 1. Before — establish the problem visually */}
                         <AnimatedSection
-                            data-section="solution"
-                            className="flex flex-col gap-y-[4rem]"
-                            variants={fadeInUpStagger}
+                            data-section="before"
+                            variants={fadeInUp}
                         >
                             <CaseStudyContent
                                 subtitle="before"
@@ -300,52 +300,9 @@ export default function AthenaHQ() {
                                 imageSrc="/work/olympus/images/old-dashboard.png"
                                 mediaAlt="Original Olympus dashboard showing an overwhelming wall of charts and data"
                             />
-                            <CaseStudyContent
-                                subtitle="after"
-                                title="A strong default that works out of the box"
-                                description="Olympus opens with a structured overview: key metrics at the top, deeper modules below. Users get oriented immediately without needing to configure anything."
-                                imageSrc="/work/olympus/images/dashboard.png"
-                                mediaAlt="Olympus default dashboard showing share of voice, brand traits, citation rate, and model-level visibility"
-                            />
-                            <CaseStudyContent
-                                subtitle="configurable modules"
-                                title="One system, different views for different roles"
-                                description="Rather than separate dashboards for CMOs, SEOs, and PMMs, users select, reorder, and remove widgets to match the questions they care about most."
-                                imageSrc="/work/olympus/images/dashboard-settings.png"
-                                mediaAlt="Dashboard settings panel showing selected and configurable widget modules"
-                            />
-                            <CaseStudyContent
-                                subtitle="export & reset"
-                                title="From dashboard to presentation in one click"
-                                description="CMOs and SEOs don't just consume data inside the product. They carry it into decks and recurring updates. Export lets them package specific widgets directly. Reset keeps customization low-risk."
-                                imageSrc="/work/olympus/images/export-reset.png"
-                                mediaAlt="Export and reset controls for dashboard widgets"
-                            />
                         </AnimatedSection>
 
-                        {/* 2. Exploration — a direction we cut */}
-                        <AnimatedSection
-                            data-section="exploration"
-                            variants={fadeInUp}
-                        >
-                            <div className="w-full max-w-[768px] mx-auto">
-                                <h2 className="uppercase font-mono text-[12px]">A direction we cut</h2>
-                                <h1 className="mt-[1.5rem]" style={{fontFamily: '"Self Modern"'}}>Full report generation was too heavy</h1>
-                                <p className="text-[#363636] mt-[0.5rem] max-w-[60ch]">We explored a multi-step flow for generating PDF reports from dashboard data: pick a goal, select focus areas, and export a formatted document. But the workflow was too tedious. Users didn't want a new artifact. They wanted to pull specific widgets into existing decks and docs. That insight pushed export toward the simpler widget-level action instead.</p>
-                                <ImageCarousel
-                                    className="mt-[2.5rem]"
-                                    slides={[
-                                        { src: '/work/olympus/images/report-goal.png', alt: 'Report goal selection with templates', label: 'Choose a report goal' },
-                                        { src: '/work/olympus/images/report-templates.png', alt: 'Report templates and custom prompt', label: 'Templates or write your own' },
-                                        { src: '/work/olympus/images/report-prompt.png', alt: 'Custom prompt input for report generation', label: 'Custom prompt input' },
-                                        { src: '/work/olympus/images/report-focus.png', alt: 'Focus areas selection with draggable modules', label: 'Select focus areas' },
-                                        { src: '/work/olympus/images/report-output.png', alt: 'Generated report with high-impact insights', label: 'Generated report output' },
-                                    ]}
-                                />
-                            </div>
-                        </AnimatedSection>
-
-                        {/* 3. Context — the problem and insight */}
+                        {/* 2. Context — build tension */}
                         <AnimatedSection
                             data-section="context"
                             className="flex flex-col gap-y-[4rem]"
@@ -408,7 +365,58 @@ export default function AthenaHQ() {
                             />
                         </AnimatedSection>
 
-                        {/* 3. Precedent — industry validation */}
+                        {/* 3. Solution — the payoff */}
+                        <AnimatedSection
+                            data-section="solution"
+                            className="flex flex-col gap-y-[4rem]"
+                            variants={fadeInUpStagger}
+                        >
+                            <CaseStudyContent
+                                subtitle="the solution"
+                                title="A strong default that works out of the box"
+                                description="Olympus opens with a structured overview: key metrics at the top, deeper modules below. Users get oriented immediately without needing to configure anything."
+                                imageSrc="/work/olympus/images/dashboard.png"
+                                mediaAlt="Olympus default dashboard showing share of voice, brand traits, citation rate, and model-level visibility"
+                            />
+                            <CaseStudyContent
+                                subtitle="configurable modules"
+                                title="One system, different views for different roles"
+                                description="Rather than separate dashboards for CMOs, SEOs, and PMMs, users select, reorder, and remove widgets to match the questions they care about most."
+                                imageSrc="/work/olympus/images/dashboard-settings.png"
+                                mediaAlt="Dashboard settings panel showing selected and configurable widget modules"
+                            />
+                            <CaseStudyContent
+                                subtitle="export & reset"
+                                title="From dashboard to presentation in one click"
+                                description="CMOs and SEOs don't just consume data inside the product. They carry it into decks and recurring updates. Export lets them package specific widgets directly. Reset keeps customization low-risk."
+                                imageSrc="/work/olympus/images/export-reset.png"
+                                mediaAlt="Export and reset controls for dashboard widgets"
+                            />
+                        </AnimatedSection>
+
+                        {/* 4. Exploration — a direction we cut */}
+                        <AnimatedSection
+                            data-section="exploration"
+                            variants={fadeInUp}
+                        >
+                            <div className="w-full max-w-[768px] mx-auto">
+                                <h2 className="uppercase font-mono text-[12px]">A direction we cut</h2>
+                                <h1 className="mt-[1.5rem]" style={{fontFamily: '"Self Modern"'}}>Full report generation was too heavy</h1>
+                                <p className="text-[#363636] mt-[0.5rem] max-w-[60ch]">We explored a multi-step flow for generating PDF reports from dashboard data: pick a goal, select focus areas, and export a formatted document. But the workflow was too tedious. Users didn't want a new artifact. They wanted to pull specific widgets into existing decks and docs. That insight pushed export toward the simpler widget-level action instead.</p>
+                                <ImageCarousel
+                                    className="mt-[2.5rem]"
+                                    slides={[
+                                        { src: '/work/olympus/images/report-goal.png', alt: 'Report goal selection with templates', label: 'Choose a report goal' },
+                                        { src: '/work/olympus/images/report-templates.png', alt: 'Report templates and custom prompt', label: 'Templates or write your own' },
+                                        { src: '/work/olympus/images/report-prompt.png', alt: 'Custom prompt input for report generation', label: 'Custom prompt input' },
+                                        { src: '/work/olympus/images/report-focus.png', alt: 'Focus areas selection with draggable modules', label: 'Select focus areas' },
+                                        { src: '/work/olympus/images/report-output.png', alt: 'Generated report with high-impact insights', label: 'Generated report output' },
+                                    ]}
+                                />
+                            </div>
+                        </AnimatedSection>
+
+                        {/* 5. Precedent — industry validation */}
                         <AnimatedSection
                             data-section="precedent"
                             className="flex flex-col gap-y-[4rem]"
