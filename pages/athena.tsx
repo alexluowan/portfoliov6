@@ -8,8 +8,10 @@ import WorksNav, {Section} from '@/components/home/WorksNav'
 import CaseStudyCard from '@/components/projects/CaseStudyCard'
 import CaseStudyContent from '@/components/projects/CaseStudyContent'
 import AnimatedSection from '@/components/AnimatedSection'
-import {heroAnimation, fadeInUp} from '@/animations/animationVariants'
+import {heroAnimation, fadeInUp, fadeInUpStagger} from '@/animations/animationVariants'
 import Link from 'next/link'
+import Image from 'next/image'
+import ImageCarousel from '@/components/projects/ImageCarousel'
 import {refreshCursor} from '@/cursor/useCursor'
 
 export default function AthenaHQ() {
@@ -22,8 +24,12 @@ export default function AthenaHQ() {
 
     const sections: Section[] = [
         {label: 'Intro', sectionId: 'hero'},
-        {label: 'Overview', sectionId: 'overview'},
-        {label: 'Process', sectionId: 'process'},
+        {label: 'Solution', sectionId: 'solution'},
+        {label: 'Context', sectionId: 'context'},
+        {label: 'Precedent', sectionId: 'precedent'},
+        {label: 'Decisions', sectionId: 'decisions'},
+        {label: 'Outcome', sectionId: 'outcome'},
+        {label: 'Reflection', sectionId: 'reflection'},
     ]
 
     useEffect(() => {
@@ -264,7 +270,7 @@ export default function AthenaHQ() {
                 </Link>
                 <div className="flex flex-col gap-y-4 mt-6">
                     <div className="flex flex-col">
-                        <h1 className="text-[18px] leading-[1.3] font-light" style={{fontFamily: '"Self Modern"'}}>AthenaHQ</h1>
+                        <h1 className="text-[18px] leading-[1.3] font-light" style={{fontFamily: '"Self Modern"'}}>Olympus</h1>
 
                     </div>
                     <div className="flex items-center gap-x-1">
@@ -282,14 +288,14 @@ export default function AthenaHQ() {
 
             <main
                 ref={mainRef}
-                className="w-full md:overflow-y-auto overflow-hidden relative pt-4 pb-16 scrollbar-hidden"
+                className="w-full md:overflow-y-auto overflow-hidden relative pt-4 pb-[70vh] scrollbar-hidden"
             >
                 {/* Mobile header */}
                 <div className="flex flex-col md:hidden pt-4 pb-4 max-w-[768px] mx-auto w-full">
                     <Link href="/" className="w-fit text-[14px] leading-[18px] text-[#575757] font-[350] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
                         ← Back
                     </Link>
-                    <h1 className="text-[18px] leading-[1.3] font-light mt-4" style={{fontFamily: '"Self Modern"'}}>AthenaHQ</h1>
+                    <h1 className="text-[18px] leading-[1.3] font-light mt-4" style={{fontFamily: '"Self Modern"'}}>Olympus</h1>
                 </div>
 
                 <div className="flex flex-col gap-y-[6rem]">
@@ -301,35 +307,233 @@ export default function AthenaHQ() {
                     >
                         <CaseStudyCard
                             videoSrcMp4="/project-covers/athenahqpreview.mp4"
-                            title="Designing the AI platform that helps teams work smarter."
+                            title="Designing a modular dashboard for marketers who need to monitor, interpret, and present AI visibility data."
                             roles={['Product Designer']}
-                            team={['AthenaHQ']}
-                            timeline="Ongoing"
-                            tools={['Figma']}
+                            team={['1 Designer', '4 Developers']}
+                            timeline="5 Weeks"
+                            tools={['Figma', 'Claude Code']}
                         />
                     </motion.div>
 
                     <div className="flex flex-col gap-y-[8rem]">
+                        {/* 1. Solution — lead with the work */}
                         <AnimatedSection
-                            data-section="overview"
-                            variants={fadeInUp}
+                            data-section="solution"
                             className="flex flex-col gap-y-[4rem]"
+                            variants={fadeInUpStagger}
                         >
                             <CaseStudyContent
-                                subtitle="overview"
-                                title="AthenaHQ"
-                                description="Coming soon."
+                                subtitle="before"
+                                title="The original dashboard was overwhelming"
+                                description="Everything on one page, no hierarchy, no way to customize. Users were bouncing off the dashboard more than they were staying on it."
+                                imageSrc="/work/olympus/images/old-dashboard.png"
+                                mediaAlt="Original Olympus dashboard showing an overwhelming wall of charts and data"
+                            />
+                            <CaseStudyContent
+                                subtitle="after"
+                                title="A strong default that works out of the box"
+                                description="Olympus opens with a structured overview: key metrics at the top, deeper modules below. Users get oriented immediately without needing to configure anything."
+                                imageSrc="/work/olympus/images/dashboard.png"
+                                mediaAlt="Olympus default dashboard showing share of voice, brand traits, citation rate, and model-level visibility"
+                            />
+                            <CaseStudyContent
+                                subtitle="configurable modules"
+                                title="One system, different views for different roles"
+                                description="Rather than separate dashboards for CMOs, SEOs, and PMMs, users select, reorder, and remove widgets to match the questions they care about most."
+                                imageSrc="/work/olympus/images/dashboard-settings.png"
+                                mediaAlt="Dashboard settings panel showing selected and configurable widget modules"
+                            />
+                            <CaseStudyContent
+                                subtitle="export & reset"
+                                title="From dashboard to presentation in one click"
+                                description="CMOs and SEOs don't just consume data inside the product. They carry it into decks and recurring updates. Export lets them package specific widgets directly. Reset keeps customization low-risk."
+                                imageSrc="/work/olympus/images/export-reset.png"
+                                mediaAlt="Export and reset controls for dashboard widgets"
                             />
                         </AnimatedSection>
 
+                        {/* 2. Context — the problem and insight */}
                         <AnimatedSection
-                            data-section="process"
+                            data-section="context"
+                            className="flex flex-col gap-y-[4rem]"
                             variants={fadeInUp}
                         >
                             <CaseStudyContent
-                                subtitle="process"
-                                title="Design Process"
-                                description="Coming soon."
+                                subtitle="context"
+                                title="Different stakeholders, different needs, one dashboard"
+                                description="Athena already surfaced powerful AI visibility data. But as the product matured, a tension emerged: CMOs wanted a quick pulse on brand momentum. SEOs wanted prompt-level detail. Analysts needed to package everything into recurring leadership updates. A single fixed dashboard was too generic for some and too dense for others."
+                            />
+                            <CaseStudyContent
+                                subtitle=""
+                                title=""
+                                description=""
+                                svgContent={
+                                    <div className="border-l-2 border-[#171717] pl-6 py-4">
+                                        <p className="text-[18px] leading-[1.5]" style={{fontFamily: '"Self Modern"'}}>
+                                            &ldquo;I&apos;ve got all the instruments that I need. But I gotta put together a symphony now.&rdquo;
+                                        </p>
+                                        <p className="text-[#999] text-sm mt-4">CMO, Coinbase Canada</p>
+                                    </div>
+                                }
+                            />
+                            <CaseStudyContent
+                                subtitle="the question"
+                                title=""
+                                description=""
+                                svgContent={
+                                    <div className="border-l-2 border-[#171717] pl-6 py-4">
+                                        <p className="text-[18px] leading-[1.5]" style={{fontFamily: '"Self Modern"'}}>
+                                            How might we design a dashboard that supports different stakeholder needs while making it easier to turn monitoring into a repeatable story teams can share?
+                                        </p>
+                                    </div>
+                                }
+                            />
+                            <CaseStudyContent
+                                subtitle="what customers needed"
+                                title=""
+                                description=""
+                                svgContent={
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">Different slices of data</h3>
+                                            <p className="text-[#363636] mt-2">By brand terms, growth terms, products, and markets.</p>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">A simple reporting rhythm</h3>
+                                            <p className="text-[#363636] mt-2">Data point, insight, next action.</p>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">Easy to export</h3>
+                                            <p className="text-[#363636] mt-2">Screenshot, export, drop into a deck.</p>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">A central source of truth</h3>
+                                            <p className="text-[#363636] mt-2">Shapes how the org understands progress.</p>
+                                        </div>
+                                    </div>
+                                }
+                            />
+                        </AnimatedSection>
+
+                        {/* 3. Precedent — industry validation */}
+                        <AnimatedSection
+                            data-section="precedent"
+                            className="flex flex-col gap-y-[4rem]"
+                            variants={fadeInUp}
+                        >
+                            <CaseStudyContent
+                                subtitle="precedent"
+                                title="This pattern already works at scale"
+                                description="Stripe and Shopify both use modular, customizable dashboards — strong defaults with the ability to add, remove, and rearrange widgets."
+                            />
+                            <div className="w-full max-w-[768px] mx-auto">
+                                <h2 className="uppercase font-mono text-[12px]">Stripe</h2>
+                                <p className="text-[#363636] mt-[0.5rem] max-w-[60ch]">Default overview with + Add and Edit controls. Edit mode lets users remove widgets. + Add opens a picker to pull in new ones.</p>
+                                <ImageCarousel
+                                    className="mt-[2.5rem]"
+                                    slides={[
+                                        { src: '/work/olympus/images/precedent/stripe-default.png', alt: 'Stripe default dashboard overview', label: 'Default dashboard' },
+                                        { src: '/work/olympus/images/precedent/stripe-edit.png', alt: 'Stripe edit mode with removable widgets', label: 'Edit mode — remove widgets' },
+                                        { src: '/work/olympus/images/precedent/stripe-add.png', alt: 'Stripe widget picker modal', label: 'Add widgets from picker' },
+                                    ]}
+                                />
+                            </div>
+                            <div className="w-full max-w-[768px] mx-auto">
+                                <h2 className="uppercase font-mono text-[12px]">Shopify</h2>
+                                <p className="text-[#363636] mt-[0.5rem] max-w-[60ch]">Analytics with a Customize button that opens a categorized Metrics Library sidebar.</p>
+                                <ImageCarousel
+                                    className="mt-[2.5rem]"
+                                    slides={[
+                                        { src: '/work/olympus/images/precedent/shopify-default.png', alt: 'Shopify analytics dashboard', label: 'Analytics default' },
+                                        { src: '/work/olympus/images/precedent/shopify-customize.png', alt: 'Shopify metrics library sidebar', label: 'Metrics library customization' },
+                                    ]}
+                                />
+                            </div>
+                        </AnimatedSection>
+
+                        {/* 4. Key Design Decisions */}
+                        <AnimatedSection
+                            data-section="decisions"
+                            className="flex flex-col gap-y-[4rem]"
+                            variants={fadeInUp}
+                        >
+                            <CaseStudyContent
+                                subtitle="key decisions"
+                                title=""
+                                description=""
+                                svgContent={
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">Default-first customization</h3>
+                                            <p className="text-[#363636] mt-2">The dashboard has to feel useful before anyone touches settings. Customization is additive, not required.</p>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">Widgets as narrative blocks</h3>
+                                            <p className="text-[#363636] mt-2">Each module plays a role in a story: summarize, compare, track momentum, or investigate. Not just data, but meaning.</p>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">Communication over analysis</h3>
+                                            <p className="text-[#363636] mt-2">The biggest unmet need was getting insights out of the product and into decks, docs, and recurring updates.</p>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">Safe to experiment</h3>
+                                            <p className="text-[#363636] mt-2">Reset returns users to a known baseline. Flexibility should feel approachable, not risky.</p>
+                                        </div>
+                                    </div>
+                                }
+                            />
+                        </AnimatedSection>
+
+                        {/* 4. Outcome */}
+                        <AnimatedSection
+                            data-section="outcome"
+                            variants={fadeInUp}
+                        >
+                            <CaseStudyContent
+                                subtitle="outcome"
+                                title="From vision to roadmap"
+                                description="The Olympus concept was adopted as the foundation for AthenaHQ's Q1 dashboard redesign. Configurable widgets and the export workflow shipped as the default architecture, replacing the original fixed layout."
+                                svgContent={
+                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-[2.5rem]">
+                                        <div>
+                                            <p className="text-[32px] leading-none tracking-tight">+18%</p>
+                                            <p className="text-[#363636] text-sm mt-3">increase in average session duration on Olympus</p>
+                                        </div>
+                                        <div>
+                                            <p className="text-[32px] leading-none tracking-tight">3x</p>
+                                            <p className="text-[#363636] text-sm mt-3">more exports per week compared to manual screenshots</p>
+                                        </div>
+                                        <div>
+                                            <p className="text-[32px] leading-none tracking-tight">68%</p>
+                                            <p className="text-[#363636] text-sm mt-3">of users customized their dashboard within the first week</p>
+                                        </div>
+                                    </div>
+                                }
+                            />
+                        </AnimatedSection>
+
+                        {/* 5. Reflection */}
+                        <AnimatedSection
+                            data-section="reflection"
+                            className="flex flex-col gap-y-[4rem]"
+                            variants={fadeInUp}
+                        >
+                            <CaseStudyContent
+                                subtitle="reflection"
+                                title="A dashboard is rarely just a dashboard"
+                                description=""
+                                svgContent={
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">Dashboards sit inside workflows.</h3>
+                                            <p className="text-[#363636] mt-2">The hardest part was not choosing which charts to show. It was figuring out how one system could stay coherent while serving different stakeholders and supporting the stories they need to tell.</p>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-[16px] font-medium">AI accelerated direction, not decisions.</h3>
+                                            <p className="text-[#363636] mt-2">Claude Code helped me move faster through interface directions. But the real work was defining product logic, user needs, and the kind of experience Athena needed to become.</p>
+                                        </div>
+                                    </div>
+                                }
                             />
                         </AnimatedSection>
                     </div>
