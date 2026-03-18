@@ -499,22 +499,6 @@ export default function AthenaHQ() {
                                 subtitle="outcome"
                                 title="From vision to roadmap"
                                 description="The Olympus concept was adopted as the foundation for AthenaHQ's Q1 dashboard redesign. Configurable widgets and the export workflow shipped as the default architecture, replacing the original fixed layout."
-                                svgContent={
-                                    <div className="grid grid-cols-2 md:grid-cols-3 gap-8 mt-[2.5rem]">
-                                        <div>
-                                            <p className="text-[32px] leading-none tracking-tight">+18%</p>
-                                            <p className="text-[#363636] text-sm mt-3">increase in average session duration on Olympus</p>
-                                        </div>
-                                        <div>
-                                            <p className="text-[32px] leading-none tracking-tight">3x</p>
-                                            <p className="text-[#363636] text-sm mt-3">more exports per week compared to manual screenshots</p>
-                                        </div>
-                                        <div>
-                                            <p className="text-[32px] leading-none tracking-tight">68%</p>
-                                            <p className="text-[#363636] text-sm mt-3">of users customized their dashboard within the first week</p>
-                                        </div>
-                                    </div>
-                                }
                             />
                         </AnimatedSection>
 
