@@ -18,7 +18,7 @@ export default function AthenaHQ() {
     const mainRef = useRef<HTMLDivElement>(null)
     const [scrollY, setScrollY] = useState<number>(0)
     const [isHovered, setIsHovered] = useState(false)
-    const [isUnlocked, setIsUnlocked] = useState(false)
+    const [isUnlocked, setIsUnlocked] = useState(true)
     const [password, setPassword] = useState('')
     const [error, setError] = useState(false)
 
