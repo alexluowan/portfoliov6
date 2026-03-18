@@ -441,14 +441,9 @@ export default function AthenaHQ() {
                             </div>
                             <div className="w-full max-w-[768px] mx-auto">
                                 <h3 className="text-[16px] font-medium">Shopify</h3>
-                                <p className="text-[#363636] mt-[0.5rem] max-w-[60ch]">Analytics with a Customize button that opens a categorized Metrics Library sidebar.</p>
-                                <ImageCarousel
-                                    className="mt-[2.5rem]"
-                                    slides={[
-                                        { src: '/work/olympus/images/precedent/shopify-default.png', alt: 'Shopify analytics dashboard', label: 'Analytics default' },
-                                        { src: '/work/olympus/images/precedent/shopify-customize.png', alt: 'Shopify metrics library sidebar', label: 'Metrics library customization' },
-                                    ]}
-                                />
+                                <p className="text-[#363636] mt-[0.5rem] max-w-[60ch]">Users can drag, reposition, and resize displayed analytics to their liking.</p>
+                                <Image src="/work/olympus/images/precedent/shopify-customize.png" alt="Shopify analytics library for drag, reposition, and resize" width={0} height={0} sizes="100vw" className="w-full h-auto mt-[2.5rem]" />
+                                <p className="text-[12px] text-[#999] font-mono mt-2">Analytics dashboard customization</p>
                             </div>
                         </AnimatedSection>
 
