@@ -57,6 +57,8 @@ const items: PlaygroundItem[] = [
 function VideoCarousel({videos, color}: { videos: string[]; color: string }) {
     const [current, setCurrent] = useState(0)
     const scrollRef = useRef<HTMLDivElement>(null)
+    const [isDragging, setIsDragging] = useState(false)
+    const dragState = useRef({ startX: 0, scrollLeft: 0, moved: false })
 
     const goTo = useCallback((index: number) => {
         const clamped = Math.max(0, Math.min(index, videos.length - 1))
@@ -97,14 +99,73 @@ function VideoCarousel({videos, color}: { videos: string[]; color: string }) {
         return () => container.removeEventListener('scroll', handleScroll)
     }, [])
 
+    const settleToNearest = useCallback(() => {
+        const container = scrollRef.current
+        if (!container) return
+        const children = Array.from(container.children) as HTMLElement[]
+        const scrollLeft = container.scrollLeft
+        let closest = 0
+        let minDist = Infinity
+        children.forEach((child, i) => {
+            const dist = Math.abs(child.offsetLeft - scrollLeft)
+            if (dist < minDist) {
+                minDist = dist
+                closest = i
+            }
+        })
+        const target = children[closest]
+        if (target) {
+            container.scrollTo({ left: target.offsetLeft - container.offsetLeft, behavior: 'smooth' })
+        }
+    }, [])
+
+    const handleMouseDown = useCallback((e: React.MouseEvent) => {
+        const container = scrollRef.current
+        if (!container) return
+        setIsDragging(true)
+        dragState.current = { startX: e.pageX, scrollLeft: container.scrollLeft, moved: false }
+    }, [])
+
+    const handleMouseMove = useCallback((e: React.MouseEvent) => {
+        if (!isDragging) return
+        const container = scrollRef.current
+        if (!container) return
+        e.preventDefault()
+        const dx = e.pageX - dragState.current.startX
+        if (Math.abs(dx) > 3) dragState.current.moved = true
+        container.scrollLeft = dragState.current.scrollLeft - dx
+    }, [isDragging])
+
+    const handleMouseUp = useCallback(() => {
+        if (!isDragging) return
+        setIsDragging(false)
+        settleToNearest()
+    }, [isDragging, settleToNearest])
+
+    useEffect(() => {
+        if (isDragging) {
+            const handleUp = () => {
+                setIsDragging(false)
+                settleToNearest()
+            }
+            window.addEventListener('mouseup', handleUp)
+            return () => window.removeEventListener('mouseup', handleUp)
+        }
+    }, [isDragging, settleToNearest])
+
     return (
         <div className="relative w-full h-full flex flex-col" style={{backgroundColor: color}}>
             <div
                 ref={scrollRef}
-                className="flex-1 flex overflow-x-auto snap-x snap-mandatory scrollbar-hidden"
+                className="flex-1 flex overflow-x-auto scrollbar-hidden select-none"
+                style={{ cursor: 'none' }}
+                onMouseDown={handleMouseDown}
+                onMouseMove={handleMouseMove}
+                onMouseUp={handleMouseUp}
+                onMouseLeave={handleMouseUp}
             >
                 {videos.map((src) => (
-                    <div key={src} className="flex-shrink-0 w-full h-full snap-start flex items-center justify-center">
+                    <div key={src} className="flex-shrink-0 w-full h-full flex items-center justify-center">
                         <video
                             key={src}
                             className="w-full h-full object-contain p-8"
