@@ -15,6 +15,8 @@ export type ProjectCardProps = {
     objectFit?: "cover" | "contain";
     objectPosition?: string;
     justSeen?: boolean;
+    mediaClassName?: string;
+    mobileAspect?: string;
 };
 
 const aspectClasses = {
@@ -37,6 +39,8 @@ function ProjectCard({
                          objectFit = "cover",
                          objectPosition,
                          justSeen = false,
+                         mediaClassName,
+                         mobileAspect,
                      }: ProjectCardProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -61,9 +65,9 @@ function ProjectCard({
     return (
         <div className={clsx("group relative", aspectClasses[aspect], className)}>
             {/* Media — mobile: fixed 4:3 aspect, desktop: fills parent height, shrinks on hover */}
-            <div className="relative aspect-[4/3] w-full md:aspect-auto md:h-full">
+            <div className={clsx("relative w-full md:aspect-auto md:h-full", mobileAspect || "aspect-[4/3]")}>
                 <div
-                    className="relative z-[1] h-full w-full overflow-hidden transition-[height] duration-[167ms] ease-linear md:group-hover:h-[calc(100%-32px)]"
+                    className={clsx("relative z-[1] h-full w-full overflow-hidden transition-[height] duration-[167ms] ease-linear md:group-hover:h-[calc(100%-32px)]", mediaClassName)}
                     style={bgColor ? { backgroundColor: bgColor } : undefined}
                 >
                     {justSeen && (

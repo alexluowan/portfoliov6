@@ -121,7 +121,7 @@ export default function Home() {
                                 mediaSrc="/project-covers/discordcatchup.webm"
                                 mediaType="video"
                                 aspect="portrait"
-                                objectPosition="center 60%"
+                                mobileAspect="aspect-[3/4]"
                                 title="Discord"
                                 subtitle="Catching up on missed conversations."
                                 justSeen={lastVisited === 'discord'}
