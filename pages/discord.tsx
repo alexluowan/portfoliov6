@@ -157,8 +157,9 @@ export default function DiscordCatchup() {
                         animate="visible"
                     >
                         <CaseStudyCard
+                            videoSrcWebm="/project-covers/discordcatchup.webm"
                             videoSrcMp4="/project-covers/discordcatchup.mp4"
-                            title="A backlog-triage concept for server-heavy users who fall behind on missed messages."
+                            title="Discord works well when you're already in the moment. The problem starts when you come back later and there's too much to sort through."
                             roles={['Product Designer', 'Prototyper']}
                             team={['Shania Chacon']}
                             timeline="3 Weeks"
@@ -175,8 +176,8 @@ export default function DiscordCatchup() {
                         >
                             <CaseStudyContent
                                 subtitle="the problem"
-                                title="Server messages stop feeling like conversations and start feeling like backlog"
-                                description="DMs are direct, finite, and easy to process. Server activity is not. It spreads across multiple servers and channels, full of low-priority chatter, and much harder to scan once it accumulates. When volume gets too high, users stop trying to catch up altogether."
+                                title="You open Discord after a weekend away. 47 unread channels across 8 servers."
+                                description="You skim two, skip the rest, and hit 'Mark All as Read.' Server activity isn't like DMs — it piles up fast, mixes signal with noise, and past a certain point, most people just stop trying."
                             />
                             <CaseStudyContent
                                 subtitle=""
@@ -186,15 +187,19 @@ export default function DiscordCatchup() {
                                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                                         <div className="border border-[#E5E5E5] p-4">
                                             <p className="text-[14px] font-medium">Muting servers</p>
+                                            <p className="text-[12px] text-[#999] mt-1">Silence everything, lose the signal too</p>
                                         </div>
                                         <div className="border border-[#E5E5E5] p-4">
                                             <p className="text-[14px] font-medium">Muting Discord entirely</p>
+                                            <p className="text-[12px] text-[#999] mt-1">The nuclear option</p>
                                         </div>
                                         <div className="border border-[#E5E5E5] p-4">
                                             <p className="text-[14px] font-medium">Ignoring notifications</p>
+                                            <p className="text-[12px] text-[#999] mt-1">Out of sight, out of mind</p>
                                         </div>
                                         <div className="border border-[#E5E5E5] p-4">
                                             <p className="text-[14px] font-medium">Mark all as read</p>
+                                            <p className="text-[12px] text-[#999] mt-1">Inbox zero, context zero</p>
                                         </div>
                                     </div>
                                 }
@@ -221,8 +226,8 @@ export default function DiscordCatchup() {
                         >
                             <CaseStudyContent
                                 subtitle="the shift"
-                                title="Users were not asking to reconnect. They were trying to reduce effort."
-                                description="I originally framed this around helping users reconnect with communities. Research pointed to a more practical truth: they wanted a faster way to decide what deserved attention and what could be safely ignored. That shifted the project from a broad catch-up concept into a focused backlog-triage tool."
+                                title="I went into interviews asking how people reconnect with communities. Nobody answered that question."
+                                description="They kept describing the same thing: open Discord, see the wall of unread, close it. They weren't trying to reconnect — they were trying to make the noise stop. That shifted the project from a catch-up feature into a triage tool."
                             />
                             <CaseStudyContent
                                 subtitle=""
@@ -231,20 +236,20 @@ export default function DiscordCatchup() {
                                 svgContent={
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div>
-                                            <h3 className="text-[16px] font-medium">DMs come first. Servers come later.</h3>
-                                            <p className="text-[#363636] mt-2">Users consistently treated DMs as highest priority. Server activity was dealt with only after, if they had the energy.</p>
+                                            <h3 className="text-[16px] font-medium">DMs always came first.</h3>
+                                            <p className="text-[#363636] mt-2">Every participant checked DMs before anything else. Server activity was something they got to later — if they had the energy left.</p>
                                         </div>
                                         <div>
-                                            <h3 className="text-[16px] font-medium">Overload pushes users toward avoidance.</h3>
-                                            <p className="text-[#363636] mt-2">When unread messages piled up, users stopped engaging. They muted or marked everything as read to make the noise disappear.</p>
+                                            <h3 className="text-[16px] font-medium">Too much unread led to giving up.</h3>
+                                            <p className="text-[#363636] mt-2">Nobody carefully caught up. They muted, ignored, or marked everything as read just to make the backlog disappear.</p>
                                         </div>
                                         <div>
-                                            <h3 className="text-[16px] font-medium">Users skim and infer, not read deeply.</h3>
-                                            <p className="text-[#363636] mt-2">People relied on quick cues like topic, keywords, and timestamps to decide whether something was worth opening.</p>
+                                            <h3 className="text-[16px] font-medium">People skim. They don't read.</h3>
+                                            <p className="text-[#363636] mt-2">A glance at who posted, a keyword, a timestamp — that's all it took for users to decide if something was worth opening.</p>
                                         </div>
                                         <div>
-                                            <h3 className="text-[16px] font-medium">Relevance needs user control.</h3>
-                                            <p className="text-[#363636] mt-2">Users did not just want less volume. They wanted control over what surfaced, not all-or-nothing muting.</p>
+                                            <h3 className="text-[16px] font-medium">Users wanted a say in what surfaced.</h3>
+                                            <p className="text-[#363636] mt-2">Less noise wasn't enough. They wanted to shape what kept appearing — without having to mute entire communities.</p>
                                         </div>
                                     </div>
                                 }
@@ -259,8 +264,8 @@ export default function DiscordCatchup() {
                         >
                             <CaseStudyContent
                                 subtitle="solution"
-                                title="Backlog becomes a sequence of single decisions"
-                                description="Instead of a wall of unread content, users see one missed item at a time. A progress count like '4 left' makes catch-up feel finite instead of endless."
+                                title="One card at a time. One decision at a time."
+                                description="Highlights surfaces one missed item at a time. Open, dismiss, or mark as read — then move on. A count like '4 left' makes the whole thing feel finite."
                                 svgContent={
                                     <div className="mt-[2.5rem] w-full aspect-[16/10] bg-[#F5F5F5] flex items-center justify-center">
                                         <p className="text-[14px] text-[#999] font-mono">Screen placeholder: card UI with progress counter</p>
@@ -269,8 +274,8 @@ export default function DiscordCatchup() {
                             />
                             <CaseStudyContent
                                 subtitle=""
-                                title="Support quick judgment, not deep reading"
-                                description="Each card includes enough context to make a fast call: open it, dismiss it, or mark it as read. Mark as Read and Not Interested match how users already process overload, but more intentionally."
+                                title="Enough context to judge, not enough to overwhelm"
+                                description="Each card shows who said what and the tone of the conversation — enough to make a quick call without opening the full thread."
                                 svgContent={
                                     <div className="mt-[2.5rem] w-full aspect-[16/10] bg-[#F5F5F5] flex items-center justify-center">
                                         <p className="text-[14px] text-[#999] font-mono">Screen placeholder: triage actions</p>
@@ -279,8 +284,8 @@ export default function DiscordCatchup() {
                             />
                             <CaseStudyContent
                                 subtitle=""
-                                title="Make relevance steerable, not a black box"
-                                description="Server and channel-level controls let users shape what appears over time. Highlights makes a good first guess, then lets users guide it."
+                                title="Relevance you can steer, not a black box"
+                                description="Highlights makes a first guess, then gives users server-level and channel-level controls to shape what keeps surfacing over time."
                                 svgContent={
                                     <div className="mt-[2.5rem] w-full aspect-[16/10] bg-[#F5F5F5] flex items-center justify-center">
                                         <p className="text-[14px] text-[#999] font-mono">Screen placeholder: relevance controls</p>
@@ -297,8 +302,8 @@ export default function DiscordCatchup() {
                         >
                             <CaseStudyContent
                                 subtitle="exploration"
-                                title="Moving the entry point from bottom navbar to sidebar"
-                                description="Highlights originally lived in the bottom navbar. But research showed that even DM-heavy users rarely explored beyond their primary navigation path. Moving the entry point to the sidebar made it visible during normal DM usage, increasing the chance of adoption without requiring users to change their habits."
+                                title="The entry point assumed users would go looking for it. They wouldn't."
+                                description="Highlights originally lived in the bottom navbar. During testing, people went straight to DMs and never looked down. I moved it into the sidebar — where users already were, not where I wanted them to go."
                                 svgContent={
                                     <div className="mt-[2.5rem] w-full aspect-[16/10] bg-[#F5F5F5] flex items-center justify-center">
                                         <p className="text-[14px] text-[#999] font-mono">Screen placeholder: bottom nav vs sidebar placement</p>
@@ -307,8 +312,8 @@ export default function DiscordCatchup() {
                             />
                             <CaseStudyContent
                                 subtitle=""
-                                title="Full card was too much information"
-                                description="The first version showed the full conversation thread inside each card. But Discord is already overwhelming. Showing the entire message context defeated the purpose of reducing overload. I cut the card size in half to surface just enough to make a quick judgment. The undo button was also in an inconvenient spot, making it harder to recover from mistakes."
+                                title="The first card design recreated the problem it was trying to solve"
+                                description="Full conversation threads inside each card felt like opening a channel all over again. Cutting the card in half forced the design to show just enough to judge relevance."
                                 svgContent={
                                     <div className="mt-[2.5rem] w-full aspect-[4/3] bg-[#E8E8E8] flex items-center justify-center">
                                         <img
@@ -328,25 +333,25 @@ export default function DiscordCatchup() {
                         >
                             <CaseStudyContent
                                 subtitle="testing"
-                                title="Testing narrowed both the audience and the product story"
-                                description="Some participants primarily used Discord for DMs and had already solved server overload by muting. Those sessions clarified who the feature was not for. The strongest signal came from users in many active servers who frequently fell behind and already relied on crude workarounds."
+                                title="Testing didn't just validate the design. It told me who this wasn't for."
+                                description="DM-first users had already solved overload by muting everything — Highlights didn't click for them. The strongest signal came from server-heavy users who fall behind often and already rely on blunt workarounds. Once I stopped designing for everyone, the concept got sharper."
                                 svgContent={
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-[2.5rem]">
                                         <div>
-                                            <h3 className="text-[16px] font-medium">Audience became narrower</h3>
-                                            <p className="text-[#363636] mt-2">From all Discord users to specifically server-heavy users with backlog problems.</p>
+                                            <h3 className="text-[16px] font-medium">The audience got smaller — and sharper.</h3>
+                                            <p className="text-[#363636] mt-2">From "all Discord users" to server-heavy users who regularly fall behind and resort to blunt workarounds.</p>
                                         </div>
                                         <div>
-                                            <h3 className="text-[16px] font-medium">Framing shifted</h3>
-                                            <p className="text-[#363636] mt-2">Away from "community reconnection" toward practical backlog triage.</p>
+                                            <h3 className="text-[16px] font-medium">The story changed.</h3>
+                                            <p className="text-[#363636] mt-2">This wasn't about reconnecting with communities. It was about giving people a faster way to decide what matters.</p>
                                         </div>
                                         <div>
-                                            <h3 className="text-[16px] font-medium">Controls mattered more than expected</h3>
-                                            <p className="text-[#363636] mt-2">Relevance controls became more important than initially scoped.</p>
+                                            <h3 className="text-[16px] font-medium">Relevance controls weren't a nice-to-have.</h3>
+                                            <p className="text-[#363636] mt-2">Users didn't just want less noise — they wanted a say in what kept surfacing. That made controls core, not optional.</p>
                                         </div>
                                         <div>
-                                            <h3 className="text-[16px] font-medium">Easier to defend as triage</h3>
-                                            <p className="text-[#363636] mt-2">The feature became stronger positioned as a triage tool rather than a generic feed.</p>
+                                            <h3 className="text-[16px] font-medium">Triage, not feed.</h3>
+                                            <p className="text-[#363636] mt-2">Framing it as a triage tool made every design decision easier to justify than calling it a catch-up feature.</p>
                                         </div>
                                     </div>
                                 }
@@ -360,17 +365,17 @@ export default function DiscordCatchup() {
                         >
                             <CaseStudyContent
                                 subtitle="reflection"
-                                title="The framing mattered as much as the UI"
+                                title="The framing mattered as much as the interface"
                                 description=""
                                 svgContent={
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div>
-                                            <h3 className="text-[16px] font-medium">Users are more pragmatic than expected.</h3>
-                                            <p className="text-[#363636] mt-2">I started designing for "reconnection," but users were trying to reduce noise, avoid wasting time, and decide what was worth their attention. That shift made the concept stronger.</p>
+                                            <h3 className="text-[16px] font-medium">The problem wasn't what I thought it was.</h3>
+                                            <p className="text-[#363636] mt-2">Users weren't trying to reconnect. They were trying to reduce effort. Designing for triage instead of catch-up made every decision easier to make.</p>
                                         </div>
                                         <div>
-                                            <h3 className="text-[16px] font-medium">The challenge was not just the interface.</h3>
-                                            <p className="text-[#363636] mt-2">It was defining who the feature was for, how it fit alongside notifications, and how to make system-driven relevance feel trustworthy enough to use.</p>
+                                            <h3 className="text-[16px] font-medium">The hardest part wasn't the UI.</h3>
+                                            <p className="text-[#363636] mt-2">It was defining who this was for, how it fit alongside notifications, and making system-driven relevance feel trustworthy enough to use.</p>
                                         </div>
                                     </div>
                                 }
