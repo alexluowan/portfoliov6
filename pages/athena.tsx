@@ -482,12 +482,29 @@ export default function AthenaHQ() {
                         {/* 4. Outcome */}
                         <AnimatedSection
                             data-section="outcome"
+                            className="flex flex-col gap-y-[4rem]"
                             variants={fadeInUp}
                         >
                             <CaseStudyContent
                                 subtitle="outcome"
                                 title="From vision to roadmap"
                                 description="The Olympus concept was adopted as the foundation for AthenaHQ's Q1 dashboard redesign. Configurable widgets and the export workflow shipped as the default architecture, replacing the original fixed layout."
+                                svgContent={
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
+                                        <div>
+                                            <h3 className="text-[32px] font-light leading-none" style={{fontFamily: '"Self Modern"'}}>2x</h3>
+                                            <p className="text-[#363636] mt-2">Peak Daily Active Users after the Modular Olympus Dashboard shipped.</p>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-[32px] font-light leading-none" style={{fontFamily: '"Self Modern"'}}>25%</h3>
+                                            <p className="text-[#363636] mt-2">Increase in feature adoption from the Proactive Insights Engine, translating complex AI signals into actionable guidance.</p>
+                                        </div>
+                                        <div>
+                                            <h3 className="text-[32px] font-light leading-none" style={{fontFamily: '"Self Modern"'}}>~2 months</h3>
+                                            <p className="text-[#363636] mt-2">Of engineering time saved by pivoting product strategy through user research before building a low-impact feature.</p>
+                                        </div>
+                                    </div>
+                                }
                             />
                         </AnimatedSection>
 
