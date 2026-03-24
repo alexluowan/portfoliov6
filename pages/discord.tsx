@@ -159,10 +159,10 @@ export default function DiscordCatchup() {
                         <CaseStudyCard
                             videoSrcMp4="/project-covers/discordcatchup.mp4"
                             title="A backlog-triage concept for server-heavy users who fall behind on missed messages."
-                            roles={['Product Designer']}
-                            team={['Myself']}
+                            roles={['Product Designer', 'Prototyper']}
+                            team={['Shania Chacon']}
                             timeline="3 Weeks"
-                            tools={['Figma', 'Prototyping']}
+                            tools={['Figma']}
                         />
                     </motion.div>
 
