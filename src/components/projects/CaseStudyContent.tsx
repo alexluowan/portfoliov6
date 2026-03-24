@@ -122,7 +122,7 @@ const CaseStudyContent: React.FC<CaseStudyContentProps> = ({
             <h1 className="mt-[1.5rem]" style={{fontFamily: '"Self Modern"'}}>
                 {title}
             </h1>
-            <p className="text-[#363636] mt-[0.5rem] max-w-[60ch]">
+            <p className="text-[#363636] mt-[0.5rem]">
                 {description}
             </p>
             {renderMedia()}
