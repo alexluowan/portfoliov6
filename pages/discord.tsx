@@ -159,7 +159,7 @@ export default function DiscordCatchup() {
                         <CaseStudyCard
                             videoSrcWebm="/project-covers/discordcatchup.webm"
                             videoSrcMp4="/project-covers/discordcatchup.mp4"
-                            title="Discord works well when you're already in the moment. The problem starts when you come back later and there's too much to sort through."
+                            title="Most Discord users don’t catch up on missed server activity. They just want it to disappear."
                             roles={['Product Designer', 'Prototyper']}
                             team={['Shania Chacon']}
                             timeline="3 Weeks"
