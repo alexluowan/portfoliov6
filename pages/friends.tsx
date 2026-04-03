@@ -4,6 +4,7 @@
 import {useEffect, useRef} from 'react'
 import Lenis from '@studio-freight/lenis'
 import Link from 'next/link'
+import {refreshCursor} from '@/cursor/useCursor'
 
 interface Person {
     name: string
@@ -15,6 +16,8 @@ const mentors: Person[] = [
     {name: 'Russell Taylor', role: 'Design Teacher, forever grateful'},
     {name: 'Kathy Wang', role: 'Co-Founder, Pressclub', url: 'https://www.linkedin.com/in/kathytwang/'},
     {name: 'Jenny Nguyễn', role: 'Designer, Sultans'},
+    {name: 'Angus Lei', role: 'Former Product Designer, Shopify', url: 'https://www.linkedin.com/in/anguslei/'},
+    {name: 'Sean Leach', role: 'Product Designer, Retro', url: 'https://www.linkedin.com/in/iamseanleach/'},
 ]
 
 const friends: Person[] = [
@@ -64,6 +67,11 @@ export default function Friends() {
         }
         requestAnimationFrame(raf)
         return () => lenis.destroy()
+    }, [])
+
+    useEffect(() => {
+        const id = window.setTimeout(() => refreshCursor(), 0)
+        return () => window.clearTimeout(id)
     }, [])
 
     return (
