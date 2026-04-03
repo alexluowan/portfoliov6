@@ -435,15 +435,15 @@ export default function AthenaHQ() {
                         >
                             <CaseStudyContent
                                 subtitle="solution"
-                                title="Useful by default on first open"
-                                description="Olympus opens with a structured overview: key metrics first, deeper modules below. Users can orient themselves immediately without needing to customize anything."
+                                title="A strong default that works out of the box"
+                                description="Olympus opens with a structured overview: key metrics first, deeper modules below. Users can get oriented immediately without configuring anything."
                                 imageSrc="/work/olympus/images/dashboard.png"
                                 mediaAlt="Olympus default dashboard showing share of voice, brand traits, citation rate, and model-level visibility"
                             />
                             <CaseStudyContent
                                 subtitle=""
-                                title="One system for different roles and different questions"
-                                description="Rather than making separate dashboards for CMOs, SEOs, and PMMs, the system lets teams select, reorder, and remove widgets to match the questions they need to answer."
+                                title="One system for different views and roles"
+                                description="Rather than creating separate dashboards for CMOs, SEOs, and PMMs, the system lets teams select, reorder, and remove widgets to match the questions they care about most."
                                 imageSrc="/work/olympus/images/dashboard-settings.png"
                                 mediaAlt="Dashboard settings panel showing selected and configurable widget modules"
                             />
@@ -569,8 +569,8 @@ export default function AthenaHQ() {
                                             <p className="text-[#363636] mt-2">The dashboard has to feel useful before anyone touches settings. Customization is additive, not required.</p>
                                         </div>
                                         <div>
-                                            <h3 className="text-[16px] font-medium">Widgets built for reporting, not just browsing data</h3>
-                                            <p className="text-[#363636] mt-2">Each module plays a role in a story: summarize, compare, track momentum, or investigate. The goal was not just to show data, but to make it easier to communicate.</p>
+                                            <h3 className="text-[16px] font-medium">Each widget helps tell the story</h3>
+                                            <p className="text-[#363636] mt-2">Each module plays a role: summarize, compare, track momentum, or investigate. The point was not just to show data, but to make it easier to communicate.</p>
                                         </div>
                                         <div>
                                             <h3 className="text-[16px] font-medium">Communication over analysis</h3>
@@ -594,20 +594,20 @@ export default function AthenaHQ() {
                             <CaseStudyContent
                                 subtitle="outcome"
                                 title="From vision to roadmap"
-                                description="The Olympus concept was adopted as the foundation for AthenaHQ's Q1 dashboard redesign. Configurable widgets and the export workflow shipped as the default architecture, replacing the original fixed layout."
+                                description="The Olympus concept became the foundation for AthenaHQ's Q1 dashboard redesign. Configurable widgets and the export workflow shipped as the default architecture, replacing the original fixed layout."
                                 svgContent={
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
                                         <div>
                                             <h3 className="text-[32px] font-light leading-none" style={{fontFamily: '"Self Modern"'}}>2x</h3>
-                                            <p className="text-[#363636] mt-2">Peak Daily Active Users after the Modular Olympus Dashboard shipped.</p>
+                                            <p className="text-[#363636] mt-2">Peak daily active users after the modular Olympus dashboard shipped.</p>
                                         </div>
                                         <div>
                                             <h3 className="text-[32px] font-light leading-none" style={{fontFamily: '"Self Modern"'}}>25%</h3>
-                                            <p className="text-[#363636] mt-2">Increase in feature adoption from the Proactive Insights Engine, translating complex AI signals into actionable guidance.</p>
+                                            <p className="text-[#363636] mt-2">Increase in feature adoption from the Proactive Insights Engine, which translated complex AI signals into actionable guidance.</p>
                                         </div>
                                         <div>
                                             <h3 className="text-[32px] font-light leading-none" style={{fontFamily: '"Self Modern"'}}>~2 months</h3>
-                                            <p className="text-[#363636] mt-2">Of engineering time saved by pivoting product strategy through user research before building a low-impact feature.</p>
+                                            <p className="text-[#363636] mt-2">Of engineering time saved by pivoting through user research before building a low-impact feature.</p>
                                         </div>
                                     </div>
                                 }
