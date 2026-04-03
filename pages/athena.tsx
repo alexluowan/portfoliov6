@@ -266,7 +266,7 @@ export default function AthenaHQ() {
                     <Link href="/" className="w-fit text-[14px] leading-[18px] text-[#575757] font-[350] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
                         ← Back
                     </Link>
-                    <h1 className="text-[18px] leading-[1.3] font-light mt-4" style={{fontFamily: '"Self Modern"'}}>Olympus</h1>
+                    <h1 className="text-[18px] leading-[1.3] font-light mt-4" style={{fontFamily: '"Self Modern"'}}>AthenaHQ</h1>
                 </div>
 
                 <div className="flex flex-col gap-y-[6rem]">
@@ -294,10 +294,56 @@ export default function AthenaHQ() {
                         >
                             <CaseStudyContent
                                 subtitle="before"
-                                title="The original dashboard was overwhelming"
-                                description="Everything on one page, no hierarchy, no way to customize. Users were bouncing off the dashboard more than they were staying on it."
-                                imageSrc="/work/olympus/images/old-dashboard.png"
-                                mediaAlt="Original Olympus dashboard showing an overwhelming wall of charts and data"
+                                title="The original dashboard felt dense before users even knew where to look"
+                                description="The problem was not a lack of data. It was that everything arrived at once: weak hierarchy, too many competing modules, and no clear path from monitoring to reporting."
+                                svgContent={
+                                    <div className="mt-[2.5rem]">
+                                        <div className="relative overflow-hidden border border-[#E5E5E5] bg-[#FAFAFA]">
+                                            <Image
+                                                src="/work/olympus/images/old-dashboard.png"
+                                                alt="Original Athena dashboard showing a dense wall of charts and tables"
+                                                width={1920}
+                                                height={1080}
+                                                className="w-full h-auto"
+                                            />
+
+                                            <div className="absolute left-[4%] top-[8%] max-w-[180px] border border-[#171717] bg-white/95 px-3 py-2 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
+                                                <p className="text-[11px] font-mono uppercase text-[#999]">Problem 01</p>
+                                                <p className="mt-1 text-[13px] text-[#171717]">No clear hierarchy. Every module competes for attention.</p>
+                                            </div>
+
+                                            <div className="absolute right-[4%] top-[18%] max-w-[190px] border border-[#171717] bg-white/95 px-3 py-2 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
+                                                <p className="text-[11px] font-mono uppercase text-[#999]">Problem 02</p>
+                                                <p className="mt-1 text-[13px] text-[#171717]">Too many chart types and tables stacked at once.</p>
+                                            </div>
+
+                                            <div className="absolute left-[8%] bottom-[12%] max-w-[190px] border border-[#171717] bg-white/95 px-3 py-2 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
+                                                <p className="text-[11px] font-mono uppercase text-[#999]">Problem 03</p>
+                                                <p className="mt-1 text-[13px] text-[#171717]">No role-based path for CMOs, SEOs, or analysts.</p>
+                                            </div>
+
+                                            <div className="absolute right-[8%] bottom-[8%] max-w-[210px] border border-[#171717] bg-white/95 px-3 py-2 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
+                                                <p className="text-[11px] font-mono uppercase text-[#999]">Problem 04</p>
+                                                <p className="mt-1 text-[13px] text-[#171717]">Hard to turn what you see into a report teams can reuse.</p>
+                                            </div>
+                                        </div>
+
+                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                                            <div className="border border-[#E5E5E5] p-4 bg-white">
+                                                <p className="text-[12px] font-mono uppercase text-[#999]">Scanning</p>
+                                                <p className="text-[#363636] mt-2">Users had to decode the layout before they could understand the data.</p>
+                                            </div>
+                                            <div className="border border-[#E5E5E5] p-4 bg-white">
+                                                <p className="text-[12px] font-mono uppercase text-[#999]">Investigation</p>
+                                                <p className="text-[#363636] mt-2">The same dashboard tried to serve high-level monitoring and deep analysis at once.</p>
+                                            </div>
+                                            <div className="border border-[#E5E5E5] p-4 bg-white">
+                                                <p className="text-[12px] font-mono uppercase text-[#999]">Reporting</p>
+                                                <p className="text-[#363636] mt-2">There was no clean way to turn insight into an artifact for decks or recurring updates.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
                             />
                         </AnimatedSection>
 
@@ -310,12 +356,33 @@ export default function AthenaHQ() {
                             <CaseStudyContent
                                 subtitle="context"
                                 title="Different stakeholders, different needs, one dashboard"
-                                description="Athena already surfaced powerful AI visibility data. But as the product matured, a tension emerged: CMOs wanted a quick pulse on brand momentum. SEOs wanted prompt-level detail. Analysts needed to package everything into recurring leadership updates. A single fixed dashboard was too generic for some and too dense for others."
+                                description="Athena had strong AI visibility data, but one fixed dashboard was forcing very different users into the same workflow. As the product matured, the real challenge was not getting more data on screen. It was helping each role get to the job they came to do faster."
                             />
                             <CaseStudyContent
                                 subtitle=""
-                                title=""
-                                description=""
+                                title="What users needed"
+                                description="The same product had to support fast executive monitoring, deeper investigation, and repeatable reporting."
+                                svgContent={
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                        <div className="border border-[#E5E5E5] p-5 bg-white">
+                                            <p className="text-[12px] font-mono uppercase text-[#999]">CMOs</p>
+                                            <p className="text-[#171717] mt-2">Needed a fast pulse on brand momentum without wading through the full system.</p>
+                                        </div>
+                                        <div className="border border-[#E5E5E5] p-5 bg-white">
+                                            <p className="text-[12px] font-mono uppercase text-[#999]">SEOs</p>
+                                            <p className="text-[#171717] mt-2">Needed prompt-level visibility so they could investigate what changed and why.</p>
+                                        </div>
+                                        <div className="border border-[#E5E5E5] p-5 bg-white">
+                                            <p className="text-[12px] font-mono uppercase text-[#999]">Analysts</p>
+                                            <p className="text-[#171717] mt-2">Needed reusable outputs they could bring into recurring leadership updates.</p>
+                                        </div>
+                                    </div>
+                                }
+                            />
+                            <CaseStudyContent
+                                subtitle=""
+                                title="Signal from research"
+                                description="One interview line captured the gap between having data and actually being able to use it."
                                 svgContent={
                                     <div className="border-l-2 border-[#171717] pl-6 py-4">
                                         <p className="text-[18px] leading-[1.5]" style={{fontFamily: '"Self Modern"'}}>
@@ -327,37 +394,33 @@ export default function AthenaHQ() {
                             />
                             <CaseStudyContent
                                 subtitle=""
-                                title=""
-                                description=""
+                                title="Design goals"
+                                description="I reframed the opportunity around the three jobs the dashboard actually needed to support: quick monitoring, deeper investigation, and easier reporting."
                                 svgContent={
-                                    <div className="border-l-2 border-[#171717] pl-6 py-4">
-                                        <p className="text-[18px] leading-[1.5]" style={{fontFamily: '"Self Modern"'}}>
-                                            How might we design a dashboard that supports different stakeholder needs while making it easier to turn monitoring into a repeatable story teams can share?
-                                        </p>
-                                    </div>
-                                }
-                            />
-                            <CaseStudyContent
-                                subtitle=""
-                                title=""
-                                description=""
-                                svgContent={
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        <div>
-                                            <h3 className="text-[16px] font-medium">Different slices of data</h3>
-                                            <p className="text-[#363636] mt-2">By brand terms, growth terms, products, and markets.</p>
+                                    <div className="flex flex-col gap-y-6">
+                                        <div className="border-l-2 border-[#171717] pl-6 py-4">
+                                            <p className="text-[18px] leading-[1.5]" style={{fontFamily: '"Self Modern"'}}>
+                                                How might we turn Athena&apos;s AI visibility data into a dashboard that supports quick monitoring, deeper investigation, and easier reporting?
+                                            </p>
                                         </div>
-                                        <div>
-                                            <h3 className="text-[16px] font-medium">A simple reporting rhythm</h3>
-                                            <p className="text-[#363636] mt-2">Data point, insight, next action.</p>
-                                        </div>
-                                        <div>
-                                            <h3 className="text-[16px] font-medium">Easy to export</h3>
-                                            <p className="text-[#363636] mt-2">Screenshot, export, drop into a deck.</p>
-                                        </div>
-                                        <div>
-                                            <h3 className="text-[16px] font-medium">A central source of truth</h3>
-                                            <p className="text-[#363636] mt-2">Shapes how the org understands progress.</p>
+
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                            <div>
+                                                <h3 className="text-[16px] font-medium">Compare the right slices of data</h3>
+                                                <p className="text-[#363636] mt-2">Make it easy to shift between brand terms, products, markets, and growth signals.</p>
+                                            </div>
+                                            <div>
+                                                <h3 className="text-[16px] font-medium">Create a simple reporting rhythm</h3>
+                                                <p className="text-[#363636] mt-2">Support a repeatable flow from data point to insight to next action.</p>
+                                            </div>
+                                            <div>
+                                                <h3 className="text-[16px] font-medium">Export cleanly into decks and docs</h3>
+                                                <p className="text-[#363636] mt-2">Help teams move useful evidence out of the dashboard without reformatting it by hand.</p>
+                                            </div>
+                                            <div>
+                                                <h3 className="text-[16px] font-medium">Create a shared source of truth</h3>
+                                                <p className="text-[#363636] mt-2">Give different roles one system they can trust even if they use it in different ways.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 }
@@ -372,24 +435,67 @@ export default function AthenaHQ() {
                         >
                             <CaseStudyContent
                                 subtitle="solution"
-                                title="A strong default that works out of the box"
-                                description="Olympus opens with a structured overview: key metrics at the top, deeper modules below. Users get oriented immediately without needing to configure anything."
+                                title="Useful by default on first open"
+                                description="Olympus opens with a structured overview: key metrics first, deeper modules below. Users can orient themselves immediately without needing to customize anything."
                                 imageSrc="/work/olympus/images/dashboard.png"
                                 mediaAlt="Olympus default dashboard showing share of voice, brand traits, citation rate, and model-level visibility"
                             />
                             <CaseStudyContent
                                 subtitle=""
-                                title="One system, different views for different roles"
-                                description="Rather than separate dashboards for CMOs, SEOs, and PMMs, users select, reorder, and remove widgets to match the questions they care about most."
+                                title="One system for different roles and different questions"
+                                description="Rather than making separate dashboards for CMOs, SEOs, and PMMs, the system lets teams select, reorder, and remove widgets to match the questions they need to answer."
                                 imageSrc="/work/olympus/images/dashboard-settings.png"
                                 mediaAlt="Dashboard settings panel showing selected and configurable widget modules"
                             />
                             <CaseStudyContent
                                 subtitle=""
                                 title="From dashboard to presentation in one click"
-                                description="CMOs and SEOs don't just consume data inside the product. They carry it into decks and recurring updates. Export lets them package specific widgets directly. Reset keeps customization low-risk."
-                                imageSrc="/work/olympus/images/export-reset.png"
-                                mediaAlt="Export and reset controls for dashboard widgets"
+                                description="The key feature was not the export button itself. It was the artifact users got from it: clean widget graphics they could drop straight into decks and recurring updates. Reset kept that workflow low-risk."
+                                svgContent={
+                                    <div className="mt-[2.5rem] border border-[#E5E5E5] bg-[#FAFAFA] p-4 md:p-6">
+                                        <div className="grid grid-cols-1 md:grid-cols-[1.2fr_auto_1fr] gap-4 md:gap-6 items-center">
+                                            <div className="bg-white border border-[#E5E5E5] p-3">
+                                                <p className="text-[11px] font-mono uppercase text-[#999]">Inside Athena</p>
+                                                <Image
+                                                    src="/work/olympus/images/dashboard.png"
+                                                    alt="Athena dashboard widget view"
+                                                    width={1920}
+                                                    height={1080}
+                                                    className="w-full h-auto mt-3"
+                                                />
+                                            </div>
+
+                                            <div className="flex md:flex-col items-center justify-center gap-3">
+                                                <div className="border border-[#171717] bg-white px-4 py-2 text-[12px] font-mono uppercase tracking-wide">
+                                                    Export PNG
+                                                </div>
+                                                <div className="text-[#999] text-[12px] font-mono uppercase">then</div>
+                                                <div className="border border-[#E5E5E5] bg-white px-4 py-2 text-[12px] font-mono uppercase tracking-wide">
+                                                    Drop into deck
+                                                </div>
+                                            </div>
+
+                                            <div className="relative min-h-[240px] bg-[#F3F1EC] border border-[#E5E5E5] p-4 overflow-hidden">
+                                                <p className="text-[11px] font-mono uppercase text-[#999]">What export creates</p>
+                                                <div className="absolute left-6 top-12 w-[58%] rotate-[-8deg] border border-[#D8D8D8] bg-white p-2 shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
+                                                    <div className="h-[74px] bg-[#F7F7F7] border border-[#ECECEC]" />
+                                                    <p className="text-[11px] text-[#666] mt-2">Share of voice widget</p>
+                                                </div>
+                                                <div className="absolute right-6 top-20 w-[56%] rotate-[6deg] border border-[#D8D8D8] bg-white p-2 shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
+                                                    <div className="h-[74px] bg-[#F7F7F7] border border-[#ECECEC]" />
+                                                    <p className="text-[11px] text-[#666] mt-2">Brand traits widget</p>
+                                                </div>
+                                                <div className="absolute left-10 bottom-5 right-10 border border-[#D8D8D8] bg-white p-3 shadow-[0_12px_30px_rgba(0,0,0,0.08)]">
+                                                    <p className="text-[11px] font-mono uppercase text-[#999]">Slide deck</p>
+                                                    <div className="grid grid-cols-2 gap-2 mt-3">
+                                                        <div className="h-[56px] bg-[#F7F7F7] border border-[#ECECEC]" />
+                                                        <div className="h-[56px] bg-[#F7F7F7] border border-[#ECECEC]" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
                             />
                         </AnimatedSection>
 
@@ -459,12 +565,12 @@ export default function AthenaHQ() {
                                 svgContent={
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                                         <div>
-                                            <h3 className="text-[16px] font-medium">Default-first customization</h3>
+                                            <h3 className="text-[16px] font-medium">Useful by default, customizable when needed</h3>
                                             <p className="text-[#363636] mt-2">The dashboard has to feel useful before anyone touches settings. Customization is additive, not required.</p>
                                         </div>
                                         <div>
-                                            <h3 className="text-[16px] font-medium">Widgets as narrative blocks</h3>
-                                            <p className="text-[#363636] mt-2">Each module plays a role in a story: summarize, compare, track momentum, or investigate. Not just data, but meaning.</p>
+                                            <h3 className="text-[16px] font-medium">Widgets built for reporting, not just browsing data</h3>
+                                            <p className="text-[#363636] mt-2">Each module plays a role in a story: summarize, compare, track momentum, or investigate. The goal was not just to show data, but to make it easier to communicate.</p>
                                         </div>
                                         <div>
                                             <h3 className="text-[16px] font-medium">Communication over analysis</h3>
