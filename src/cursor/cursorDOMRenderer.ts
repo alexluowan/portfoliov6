@@ -6,6 +6,7 @@ export interface CursorDOMElements {
   cursorElm: HTMLDivElement;
   highlightElm: HTMLDivElement;
   containerElm: HTMLDivElement;
+  cursorStyleElm: HTMLStyleElement;
   arrowSvg: SVGSVGElement;
   arrowSvgRight: SVGSVGElement;
   arrowSvgSplit: SVGSVGElement;
@@ -17,31 +18,28 @@ export interface CursorDOMElements {
 
  */
 export function createCursorElements(): [CursorDOMElements, () => void] {
-  // hide cursor
-  // const baseWrapper = document.createElement("div");
-
-  // baseWrapper.classList.add("persist");
-  // baseWrapper.setAttribute("persist-id", "cursor-base-wrapper");
-  // baseWrapper.setAttribute("persist-permanent", "true");
-
-  // stylesheet(baseWrapper, {
-  //   position: "fixed",
-  //   left: "0px",
-  //   top: "0px",
-  //   bottom: "0px",
-  //   right: "0px",
-  //   cursor: "none",
-  //   zIndex: "-1",
-  // });
-
-  // hide cursor on the background
+  // hide the native cursor globally while the custom cursor is active
   stylesheet(document.body, {
+    cursor: "none",
+  });
+  stylesheet(document.documentElement, {
     cursor: "none",
   });
 
   // Remove any existing cursor elements from previous instances
   document.querySelectorAll('[persist-id="cursor"]').forEach(el => el.remove());
   document.querySelectorAll('[persist-id="cursor-highlight"]').forEach(el => el.remove());
+  document.querySelectorAll('[persist-id="cursor-style"]').forEach(el => el.remove());
+
+  const cursorStyleElm = document.createElement("style");
+  cursorStyleElm.setAttribute("persist-id", "cursor-style");
+  cursorStyleElm.setAttribute("persist-permanent", "true");
+  cursorStyleElm.textContent = `
+    html, body, body * {
+      cursor: none !important;
+    }
+  `;
+  document.head.appendChild(cursorStyleElm);
 
   const containerElm = document.createElement("div");
   containerElm.setAttribute("persist-id", "cursor");
@@ -176,7 +174,6 @@ export function createCursorElements(): [CursorDOMElements, () => void] {
   arrowSvgSplit.appendChild(arrowPathSplit);
   arrowElmSplit.appendChild(arrowSvgSplit);
 
-  // document.body.appendChild(baseWrapper);
   containerElm.appendChild(arrowElmRight);
   containerElm.appendChild(arrowElmSplit);
   containerElm.appendChild(arrowElm);
@@ -188,12 +185,15 @@ export function createCursorElements(): [CursorDOMElements, () => void] {
     try {
       containerElm.remove();
       highlightElm.remove();
+      cursorStyleElm.remove();
+      document.body.style.removeProperty("cursor");
+      document.documentElement.style.removeProperty("cursor");
     } catch (_) {
       // Elements may already be removed
     }
   };
 
-  return [{ cursorElm, highlightElm, containerElm, arrowSvg, arrowSvgRight, arrowSvgSplit }, cleanup];
+  return [{ cursorElm, highlightElm, containerElm, cursorStyleElm, arrowSvg, arrowSvgRight, arrowSvgSplit }, cleanup];
 }
 /**
 
