@@ -158,8 +158,7 @@ export default function DiscordCatchup() {
                         animate="visible"
                     >
                         <CaseStudyCard
-                            videoSrcWebm="/project-covers/discordcatchup.webm"
-                            videoSrcMp4="/project-covers/discordcatchup.mp4"
+                            videoSrcWebm="/project-covers/discordcatchup-optimized.webm"
                             title="Most Discord users do not catch up on missed server activity. They just want the backlog to go away."
                             roles={['Product Designer', 'Prototyper']}
                             team={['Shania Chacon']}
@@ -304,6 +303,7 @@ export default function DiscordCatchup() {
                                 subtitle="solution"
                                 title="One card at a time. One decision at a time."
                                 description="Highlights surfaces one missed item at a time. Each card supports a quick decision: open the thread, dismiss it, or mark it as read and move on. A visible count like '4 left' makes the backlog feel bounded instead of endless."
+                                videoSrcWebm="/work/discord/videos/cardswipe.webm"
                                 videoSrcMp4="/work/discord/videos/cardswipe.mov"
                                 mediaClassName="mt-[2.5rem] w-full aspect-[16/10] object-cover bg-[#F5F5F5]"
                             />
@@ -311,6 +311,7 @@ export default function DiscordCatchup() {
                                 subtitle=""
                                 title="Each card gives just enough context to act."
                                 description="Instead of showing a full conversation, the card previews who posted, what they said, and how active the thread feels. That gives users enough signal to judge relevance without recreating the overload inside the card itself."
+                                videoSrcWebm="/work/discord/videos/chatscrollthrough.webm"
                                 videoSrcMp4="/work/discord/videos/chatscrollthrough.mov"
                                 mediaClassName="mt-[2.5rem] w-full aspect-[16/10] object-cover bg-[#F5F5F5]"
                             />
@@ -318,6 +319,7 @@ export default function DiscordCatchup() {
                                 subtitle=""
                                 title="Users can shape what keeps surfacing."
                                 description="Highlights makes an initial relevance guess, but users stay in control. Server-level and channel-level settings let them tune what appears over time instead of relying on a hidden ranking system."
+                                videoSrcWebm="/work/discord/videos/settings.webm"
                                 videoSrcMp4="/work/discord/videos/settings.mov"
                                 mediaClassName="mt-[2.5rem] w-full aspect-[16/10] object-cover bg-[#F5F5F5]"
                             />

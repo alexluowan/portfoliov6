@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import AutoplayVideo from './AutoplayVideo';
 
 interface CaseStudyCardProps {
     videoSrcWebm?: string;
@@ -30,21 +31,17 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
                     alt={title}
                     width={1920}
                     height={1080}
+                    sizes="(max-width: 768px) calc(100vw - 2rem), 768px"
                     className="w-full object-cover"
                 />
             ) : (
-                <video
+                <AutoplayVideo
                     className="w-full"
-                    controls={false}
-                    autoPlay
-                    playsInline
-                    muted
-                    loop
-                >
-                    {videoSrcWebm && <source src={videoSrcWebm} type="video/webm" />}
-                    {videoSrcMp4 && <source src={videoSrcMp4} type="video/mp4" />}
-                    Your browser does not support the video tag.
-                </video>
+                    videoSrcWebm={videoSrcWebm}
+                    videoSrcMp4={videoSrcMp4}
+                    preload="metadata"
+                    eager={true}
+                />
             )}
         </div>
         <h1 className="mt-[2rem]" style={{fontFamily: '"Self Modern"'}}>{title}</h1>

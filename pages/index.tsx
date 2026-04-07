@@ -118,7 +118,7 @@ export default function Home() {
                     <div className="flex flex-col gap-4 md:w-1/2 md:gap-2">
                         <Link href="/discord" className="feed-card hover-target-big transition-opacity duration-200">
                             <ProjectCard
-                                mediaSrc="/project-covers/discordcatchup.webm"
+                                mediaSrc="/project-covers/discordcatchup-optimized.webm"
                                 mediaType="video"
                                 aspect="portrait"
                                 mobileAspect="aspect-[3/4]"
@@ -129,7 +129,7 @@ export default function Home() {
                         </Link>
                         <Link href="/blueberry" className="feed-card hover-target-big transition-opacity duration-200">
                             <ProjectCard
-                                mediaSrc="/project-covers/blueberrysizzle.mp4"
+                                mediaSrc="/project-covers/blueberrysizzle.webm"
                                 mediaType="video"
                                 aspect="landscape"
                                 title="Blueberry Social"

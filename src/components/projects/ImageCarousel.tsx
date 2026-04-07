@@ -6,6 +6,7 @@ interface CarouselSlide {
     alt: string
     label: string
     unoptimized?: boolean
+    sizes?: string
 }
 
 interface ImageCarouselProps {
@@ -140,7 +141,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ slides, className = '' })
                                 alt={slide.alt}
                                 width={0}
                                 height={0}
-                                sizes="100vw"
+                                sizes={slide.sizes || '(max-width: 768px) calc(100vw - 2rem), 768px'}
                                 unoptimized={slide.unoptimized}
                                 className="w-full h-auto pointer-events-none"
                                 draggable={false}

@@ -142,7 +142,6 @@ export default function Rising88() {
                         animate="visible"
                     >
                         <CaseStudyCard
-                            videoSrcWebm="/project-covers/88risingthumbnail.webm"
                             videoSrcMp4="/project-covers/88risingthumbnail.mp4"
                             title="Turning 88rising&apos;s website into a discovery engine for fans across Asia."
                             roles={['Product Designer', 'Prototyper', 'Facilitator']}

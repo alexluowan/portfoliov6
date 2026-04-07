@@ -277,6 +277,7 @@ export default function AthenaHQ() {
                         animate="visible"
                     >
                         <CaseStudyCard
+                            videoSrcWebm="/project-covers/athenahqpreview.webm"
                             videoSrcMp4="/project-covers/athenahqpreview.mp4"
                             title="Designing a modular dashboard for marketers who need to monitor, interpret, and present AI visibility data."
                             roles={['Product Designer']}

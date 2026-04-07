@@ -149,6 +149,7 @@ export default function BouncingMedia({
                         loop
                         playsInline
                         autoPlay
+                        preload="metadata"
                         className="w-full h-full object-cover"
                     />
                 ) : (

@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import AutoplayVideo from './AutoplayVideo';
 
 const MuxPlayer = dynamic(
     () => import('@mux/mux-player-react'),
@@ -59,6 +60,7 @@ const CaseStudyContent: React.FC<CaseStudyContentProps> = ({
                     alt={mediaAlt}
                     width={imageWidth}
                     height={imageHeight}
+                    sizes="(max-width: 768px) calc(100vw - 2rem), 768px"
                     className={mediaClassName}
                 />
             );
@@ -89,18 +91,12 @@ const CaseStudyContent: React.FC<CaseStudyContentProps> = ({
             );
         } else if (videoSrcWebm || videoSrcMp4) {
             return (
-                <video
+                <AutoplayVideo
                     className={mediaClassName}
-                    controls={false}
-                    autoPlay
-                    playsInline
-                    muted
-                    loop
-                >
-                    {videoSrcWebm && <source src={videoSrcWebm} type="video/webm" />}
-                    {videoSrcMp4 && <source src={videoSrcMp4} type="video/mp4" />}
-                    Your browser does not support the video tag.
-                </video>
+                    videoSrcWebm={videoSrcWebm}
+                    videoSrcMp4={videoSrcMp4}
+                    preload="metadata"
+                />
             );
         } else if (svgContent) {
             return (

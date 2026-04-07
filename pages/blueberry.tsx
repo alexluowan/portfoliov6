@@ -132,6 +132,7 @@ export default function BlueberrySocial() {
                         animate="visible"
                     >
                         <CaseStudyCard
+                            videoSrcWebm="/project-covers/blueberrysizzle.webm"
                             videoSrcMp4="/project-covers/blueberrysizzle.mp4"
                             title="Building trust into AI-powered comment management for eCommerce brands."
                             roles={['Product Designer']}

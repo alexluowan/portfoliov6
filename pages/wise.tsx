@@ -187,6 +187,7 @@ export default function WiseCaseStudy() {
                                 subtitle="prototype"
                                 title="Borrower flow"
                                 description="Creating and sharing a multi-currency split without leaving Wise."
+                                videoSrcWebm="/work/wise/borrowerflow.webm"
                                 videoSrcMp4="/work/wise/borrowerflow.mp4"
                                 mediaClassName="mt-[2.5rem] rounded-lg overflow-hidden"
                             />
@@ -200,6 +201,7 @@ export default function WiseCaseStudy() {
                                 subtitle="prototype"
                                 title="Recipient view"
                                 description="Tracking owed amounts, currencies, and payback status from the participant side."
+                                videoSrcWebm="/work/wise/recipient.webm"
                                 videoSrcMp4="/work/wise/recipient.mp4"
                                 mediaClassName="mt-[2.5rem] rounded-lg overflow-hidden"
                             />

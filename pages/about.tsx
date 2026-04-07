@@ -7,8 +7,8 @@ import BouncingMedia from '@/components/BouncingMedia'
 export default function About() {
     const mediaItems = [
         { src: '/about-images/faceprofile.jpg', type: 'image' as const, alt: 'Alex Luowan' },
-        { src: '/about-images/flyfishing.mp4', type: 'video' as const, alt: 'Fly fishing' },
-        { src: '/about-images/designsprintbox.mp4', type: 'video' as const, alt: 'Design sprint' },
+        { src: '/about-images/flyfishing.webm', type: 'video' as const, alt: 'Fly fishing' },
+        { src: '/about-images/designsprintbox.webm', type: 'video' as const, alt: 'Design sprint' },
         { src: '/about-images/Ree.mp4', type: 'video' as const, alt: 'Ree' },
     ]
 
