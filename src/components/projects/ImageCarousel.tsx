@@ -18,6 +18,9 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ slides, className = '' })
     const scrollRef = useRef<HTMLDivElement>(null)
     const [isDragging, setIsDragging] = useState(false)
     const dragState = useRef({ startX: 0, scrollLeft: 0, moved: false })
+    const handleImageLoad = useCallback(() => {
+        window.dispatchEvent(new Event('resize'))
+    }, [])
 
     const scrollTo = useCallback((index: number) => {
         const container = scrollRef.current
@@ -141,6 +144,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ slides, className = '' })
                                 unoptimized={slide.unoptimized}
                                 className="w-full h-auto pointer-events-none"
                                 draggable={false}
+                                onLoad={handleImageLoad}
                             />
                         </div>
                     ))}

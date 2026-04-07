@@ -110,7 +110,7 @@ export default function DiscordCatchup() {
     const sidebarOpacity = isHovered ? 1 : Math.max(0.4, 1 - scrollY / 400)
 
     return (
-        <div className="flex flex-col gap-x-4 px-4 md:flex-row md:h-screen md:overflow-hidden max-w-[1800px] mx-auto">
+        <div className="flex min-h-0 flex-col gap-x-4 px-4 md:h-screen md:flex-row md:overflow-hidden max-w-[1800px] mx-auto">
             <aside
                 className="hidden md:flex w-full shrink-0 pt-4 md:sticky md:top-0 md:h-svh md:w-[320px] md:py-4 flex-col transition-opacity duration-200 ease-out"
                 style={{opacity: sidebarOpacity}}
@@ -140,7 +140,7 @@ export default function DiscordCatchup() {
 
             <main
                 ref={mainRef}
-                className="w-full md:overflow-y-auto overflow-hidden relative pt-4 pb-[70vh] scrollbar-hidden"
+                className="relative w-full min-h-0 overflow-hidden pt-4 pb-[70vh] scrollbar-hidden md:overflow-y-auto"
             >
                 {/* Mobile header */}
                 <div className="flex flex-col md:hidden pt-4 pb-4 max-w-[768px] mx-auto w-full">
