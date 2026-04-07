@@ -7,6 +7,7 @@ import Lenis from '@studio-freight/lenis'
 import WorksNav, {Section} from '@/components/home/WorksNav'
 import CaseStudyCard from '@/components/projects/CaseStudyCard'
 import CaseStudyContent from '@/components/projects/CaseStudyContent'
+import ImageCarousel from '@/components/projects/ImageCarousel'
 import AnimatedSection from '@/components/AnimatedSection'
 import {heroAnimation, fadeInUp, fadeInUpStagger} from '@/animations/animationVariants'
 import Link from 'next/link'
@@ -333,18 +334,33 @@ export default function DiscordCatchup() {
                                 title="The first concept assumed people would go looking for the feature. They did not."
                                 description="Highlights originally lived in the bottom navigation. During testing, people went straight to DMs and never looked down for it. Moving the entry point into the sidebar matched where users already were instead of asking them to learn a new behavior."
                                 svgContent={
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                        <div className="border border-[#E5E5E5] p-4">
-                                            <p className="text-[12px] font-mono uppercase text-[#999]">What I tried</p>
-                                            <p className="text-[14px] mt-2">Placed Highlights in the bottom nav as a dedicated destination.</p>
-                                        </div>
-                                        <div className="border border-[#E5E5E5] p-4">
-                                            <p className="text-[12px] font-mono uppercase text-[#999]">What happened</p>
-                                            <p className="text-[14px] mt-2">Participants defaulted to DMs and missed the feature entirely.</p>
-                                        </div>
-                                        <div className="border border-[#E5E5E5] p-4">
-                                            <p className="text-[12px] font-mono uppercase text-[#999]">What changed</p>
-                                            <p className="text-[14px] mt-2">Moved entry into the sidebar so it sat closer to existing server behavior.</p>
+                                    <div className="flex flex-col gap-y-5">
+                                        <ImageCarousel
+                                            className="mt-[2.5rem]"
+                                                slides={[
+                                                {
+                                                    src: '/work/discord/images/entrypoint-bottom-nav.png',
+                                                    alt: 'Early Highlights entry point placed in the bottom navigation.',
+                                                    label: 'Initial entry point: bottom nav',
+                                                    unoptimized: true,
+                                                },
+                                                {
+                                                    src: '/work/discord/images/entrypoint-sidebar.png',
+                                                    alt: 'Revised Highlights entry point placed in the sidebar.',
+                                                    label: 'Revised entry point: sidebar',
+                                                    unoptimized: true,
+                                                },
+                                            ]}
+                                        />
+                                        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                                            <div className="border border-[#E5E5E5] p-4">
+                                                <p className="text-[12px] font-mono uppercase text-[#999]">What changed</p>
+                                                <p className="text-[14px] mt-2">The entry point moved from the bottom nav to the sidebar.</p>
+                                            </div>
+                                            <div className="border border-[#E5E5E5] p-4">
+                                                <p className="text-[12px] font-mono uppercase text-[#999]">Why it worked better</p>
+                                                <p className="text-[14px] mt-2">The sidebar matched where users already looked instead of asking them to discover a new destination.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 }
