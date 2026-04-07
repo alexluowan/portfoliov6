@@ -184,22 +184,40 @@ export default function DiscordCatchup() {
                                 title=""
                                 description=""
                                 svgContent={
-                                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                                        <div className="border border-[#E5E5E5] p-4">
-                                            <p className="text-[14px] font-medium">Muting servers</p>
-                                            <p className="text-[12px] text-[#999] mt-1">Silence everything, lose the signal too</p>
+                                    <div className="border-y border-[#E5E5E5] py-5">
+                                        <div className="flex items-center justify-between gap-4 border-b border-[#E5E5E5] pb-4">
+                                            <p className="font-mono text-[12px] uppercase tracking-[0.08em] text-[#999]">Common workarounds</p>
+                                            <p className="text-[12px] text-[#7A7A7A]">How people cope when the backlog gets too big</p>
                                         </div>
-                                        <div className="border border-[#E5E5E5] p-4">
-                                            <p className="text-[14px] font-medium">Muting Discord entirely</p>
-                                            <p className="text-[12px] text-[#999] mt-1">The nuclear option</p>
-                                        </div>
-                                        <div className="border border-[#E5E5E5] p-4">
-                                            <p className="text-[14px] font-medium">Ignoring notifications</p>
-                                            <p className="text-[12px] text-[#999] mt-1">Out of sight, out of mind</p>
-                                        </div>
-                                        <div className="border border-[#E5E5E5] p-4">
-                                            <p className="text-[14px] font-medium">Mark all as read</p>
-                                            <p className="text-[12px] text-[#999] mt-1">Inbox zero, context zero</p>
+                                        <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
+                                            <div className="group border border-[#E5E5E5] p-5 transition-colors duration-200 hover:border-[#CFCFCF]">
+                                                <div className="flex items-start justify-between gap-4">
+                                                    <p className="text-[15px] leading-[1.35] font-medium text-[#171717]">Muting servers</p>
+                                                    <span className="font-mono text-[11px] uppercase text-[#B3B3B3]">01</span>
+                                                </div>
+                                                <p className="mt-3 max-w-[26ch] text-[13px] leading-[1.5] text-[#666]">Silence everything, lose the signal too.</p>
+                                            </div>
+                                            <div className="group border border-[#E5E5E5] p-5 transition-colors duration-200 hover:border-[#CFCFCF]">
+                                                <div className="flex items-start justify-between gap-4">
+                                                    <p className="text-[15px] leading-[1.35] font-medium text-[#171717]">Muting Discord entirely</p>
+                                                    <span className="font-mono text-[11px] uppercase text-[#B3B3B3]">02</span>
+                                                </div>
+                                                <p className="mt-3 max-w-[26ch] text-[13px] leading-[1.5] text-[#666]">The nuclear option.</p>
+                                            </div>
+                                            <div className="group border border-[#E5E5E5] p-5 transition-colors duration-200 hover:border-[#CFCFCF]">
+                                                <div className="flex items-start justify-between gap-4">
+                                                    <p className="text-[15px] leading-[1.35] font-medium text-[#171717]">Ignoring notifications</p>
+                                                    <span className="font-mono text-[11px] uppercase text-[#B3B3B3]">03</span>
+                                                </div>
+                                                <p className="mt-3 max-w-[26ch] text-[13px] leading-[1.5] text-[#666]">Out of sight, out of mind.</p>
+                                            </div>
+                                            <div className="group border border-[#E5E5E5] p-5 transition-colors duration-200 hover:border-[#CFCFCF]">
+                                                <div className="flex items-start justify-between gap-4">
+                                                    <p className="text-[15px] leading-[1.35] font-medium text-[#171717]">Mark all as read</p>
+                                                    <span className="font-mono text-[11px] uppercase text-[#B3B3B3]">04</span>
+                                                </div>
+                                                <p className="mt-3 max-w-[26ch] text-[13px] leading-[1.5] text-[#666]">Inbox zero, context zero.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 }
