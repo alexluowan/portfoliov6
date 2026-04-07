@@ -3,7 +3,6 @@
 
 import {useEffect, useRef, useState} from 'react'
 import {motion} from 'framer-motion'
-import Lenis from '@studio-freight/lenis'
 import WorksNav, {Section} from '@/components/home/WorksNav'
 import CaseStudyCard from '@/components/projects/CaseStudyCard'
 import CaseStudyContent from '@/components/projects/CaseStudyContent'
@@ -56,9 +55,11 @@ export default function DiscordCatchup() {
         }
 
         addScrollListener()
+        handleScroll()
 
         const handleResize = () => {
             addScrollListener()
+            handleScroll()
         }
 
         window.addEventListener('resize', handleResize)
@@ -69,41 +70,6 @@ export default function DiscordCatchup() {
             }
             window.removeEventListener('scroll', handleScroll)
             window.removeEventListener('resize', handleResize)
-        }
-    }, [])
-
-    useEffect(() => {
-        if (!mainRef.current) return
-        const mq = window.matchMedia('(min-width: 1200px)')
-        let lenis: Lenis | null = null
-        let rafId: number | null = null
-        function initLenis() {
-            if (!mainRef.current) return
-            lenis = new Lenis({wrapper: mainRef.current, smoothWheel: true})
-            function raf(time: number) {
-                lenis!.raf(time)
-                rafId = requestAnimationFrame(raf)
-            }
-            rafId = requestAnimationFrame(raf)
-        }
-        function destroyLenis() {
-            if (rafId) cancelAnimationFrame(rafId)
-            rafId = null
-            lenis?.destroy()
-            lenis = null
-        }
-        function handleChange() {
-            if (mq.matches) {
-                if (!lenis) initLenis()
-            } else {
-                destroyLenis()
-            }
-        }
-        handleChange()
-        mq.addEventListener('change', handleChange)
-        return () => {
-            mq.removeEventListener('change', handleChange)
-            destroyLenis()
         }
     }, [])
 
@@ -140,7 +106,7 @@ export default function DiscordCatchup() {
 
             <main
                 ref={mainRef}
-                className="relative w-full min-h-0 overflow-hidden pt-4 pb-[70vh] scrollbar-hidden md:overflow-y-auto"
+                className="relative w-full min-h-0 overflow-hidden pt-4 pb-24 md:pb-[24vh] scrollbar-hidden md:overflow-y-auto"
             >
                 {/* Mobile header */}
                 <div className="flex flex-col md:hidden pt-4 pb-4 max-w-[768px] mx-auto w-full">
@@ -189,7 +155,7 @@ export default function DiscordCatchup() {
                                             <p className="font-mono text-[12px] uppercase tracking-[0.08em] text-[#999]">Common workarounds</p>
                                             <p className="text-[12px] text-[#7A7A7A]">How people cope when the backlog gets too big</p>
                                         </div>
-                                        <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
+                                        <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-3">
                                             <div className="group border border-[#E5E5E5] p-5 transition-colors duration-200 hover:border-[#CFCFCF]">
                                                 <div className="flex items-start justify-between gap-4">
                                                     <p className="text-[15px] leading-[1.35] font-medium text-[#171717]">Muting servers</p>
@@ -199,22 +165,15 @@ export default function DiscordCatchup() {
                                             </div>
                                             <div className="group border border-[#E5E5E5] p-5 transition-colors duration-200 hover:border-[#CFCFCF]">
                                                 <div className="flex items-start justify-between gap-4">
-                                                    <p className="text-[15px] leading-[1.35] font-medium text-[#171717]">Muting Discord entirely</p>
-                                                    <span className="font-mono text-[11px] uppercase text-[#B3B3B3]">02</span>
-                                                </div>
-                                                <p className="mt-3 max-w-[26ch] text-[13px] leading-[1.5] text-[#666]">The nuclear option.</p>
-                                            </div>
-                                            <div className="group border border-[#E5E5E5] p-5 transition-colors duration-200 hover:border-[#CFCFCF]">
-                                                <div className="flex items-start justify-between gap-4">
                                                     <p className="text-[15px] leading-[1.35] font-medium text-[#171717]">Ignoring notifications</p>
-                                                    <span className="font-mono text-[11px] uppercase text-[#B3B3B3]">03</span>
+                                                    <span className="font-mono text-[11px] uppercase text-[#B3B3B3]">02</span>
                                                 </div>
                                                 <p className="mt-3 max-w-[26ch] text-[13px] leading-[1.5] text-[#666]">Out of sight, out of mind.</p>
                                             </div>
                                             <div className="group border border-[#E5E5E5] p-5 transition-colors duration-200 hover:border-[#CFCFCF]">
                                                 <div className="flex items-start justify-between gap-4">
                                                     <p className="text-[15px] leading-[1.35] font-medium text-[#171717]">Mark all as read</p>
-                                                    <span className="font-mono text-[11px] uppercase text-[#B3B3B3]">04</span>
+                                                    <span className="font-mono text-[11px] uppercase text-[#B3B3B3]">03</span>
                                                 </div>
                                                 <p className="mt-3 max-w-[26ch] text-[13px] leading-[1.5] text-[#666]">Inbox zero, context zero.</p>
                                             </div>
@@ -441,19 +400,30 @@ export default function DiscordCatchup() {
                                 title="The framing mattered as much as the interface"
                                 description=""
                                 svgContent={
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        <div>
-                                            <h3 className="text-[16px] font-medium">The problem wasn't what I thought it was.</h3>
-                                            <p className="text-[#363636] mt-2">Users were not trying to reconnect. They were trying to reduce effort. Designing for quick sorting instead of catch-up made product choices, interaction patterns, and prioritization much clearer.</p>
+                                    <div className="flex flex-col gap-8">
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                            <div>
+                                                <h3 className="text-[16px] font-medium">The problem wasn't what I thought it was.</h3>
+                                                <p className="text-[#363636] mt-2">Users were not trying to reconnect. They were trying to reduce effort. Designing for quick sorting instead of catch-up made product choices, interaction patterns, and prioritization much clearer.</p>
+                                            </div>
+                                            <div>
+                                                <h3 className="text-[16px] font-medium">The hardest part wasn't the UI.</h3>
+                                                <p className="text-[#363636] mt-2">It was defining who this was for, where it should live in the product, and how to make system-driven relevance feel transparent enough to trust.</p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <h3 className="text-[16px] font-medium">The hardest part wasn't the UI.</h3>
-                                            <p className="text-[#363636] mt-2">It was defining who this was for, where it should live in the product, and how to make system-driven relevance feel transparent enough to trust.</p>
+                                        <div className="border border-[#E5E5E5] bg-[#FAFAFA] p-3">
+                                            <img
+                                                src="/work/discord/images/discordprototypingmess.png"
+                                                alt="Messy Discord prototyping canvas in Figma"
+                                                className="w-full h-auto"
+                                            />
+                                            <p className="mt-3 text-[12px] font-mono uppercase text-[#999]">My messy af process lmfao</p>
                                         </div>
                                     </div>
                                 }
                             />
                         </AnimatedSection>
+
                     </div>
                 </div>
             </main>
