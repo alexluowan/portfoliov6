@@ -346,11 +346,11 @@ export default function DiscordCatchup() {
                                             </div>
                                             <div className="border border-[#E5E5E5] p-4">
                                                 <p className="text-[12px] font-mono uppercase text-[#999]">Issue 2</p>
-                                                <p className="text-[14px] mt-2">Extra metadata and UI details added noise instead of helping people make a quick decision.</p>
+                                                <p className="text-[14px] mt-2">The undo button sat in a weird, inconvenient spot, which added extra effort right when users were supposed to move quickly.</p>
                                             </div>
                                             <div className="border border-[#E5E5E5] p-4">
                                                 <p className="text-[12px] font-mono uppercase text-[#999]">Issue 3</p>
-                                                <p className="text-[14px] mt-2">Icons like the lightbulb and flame suggested importance, but people did not understand what they meant.</p>
+                                                <p className="text-[14px] mt-2">Extra metadata and ambiguous icons like the lightbulb and flame added noise without helping people decide faster.</p>
                                             </div>
                                         </div>
                                     </div>
