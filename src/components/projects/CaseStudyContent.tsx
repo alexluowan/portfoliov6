@@ -118,7 +118,7 @@ const CaseStudyContent: React.FC<CaseStudyContentProps> = ({
             <h2 className="uppercase font-mono text-[12px]">
                 {subtitle}
             </h2>
-            <h1 className="mt-[1.5rem]" style={{fontFamily: '"Self Modern"'}}>
+            <h1 className="mt-[1.5rem]">
                 {title}
             </h1>
             <p className="text-[#363636] mt-[0.5rem]">

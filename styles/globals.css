@@ -24,22 +24,6 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: "Self Modern";
-  src: url("/fonts/selfmodern/SelfModern-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Self Modern Text";
-  src: url("/fonts/selfmodern/self-modern_text.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   --background: #ffffff;
   --foreground: #171717;

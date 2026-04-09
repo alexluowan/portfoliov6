@@ -104,7 +104,7 @@ export default function Rising88() {
                 </Link>
                 <div className="flex flex-col gap-y-4 mt-6">
                     <div className="flex flex-col">
-                        <h1 className="text-[18px] leading-[1.3] font-light" style={{fontFamily: '"Self Modern"'}}>88rising</h1>
+                        <h1 className="text-[18px] leading-[1.3] font-light">88rising</h1>
 
                     </div>
                     <div className="flex items-center gap-x-1">
@@ -131,7 +131,7 @@ export default function Rising88() {
                     <Link href="/" className="w-fit text-[14px] leading-[18px] text-[#575757] font-[350] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
                         ← Back
                     </Link>
-                    <h1 className="text-[18px] leading-[1.3] font-light mt-4" style={{fontFamily: '"Self Modern"'}}>88rising</h1>
+                    <h1 className="text-[18px] leading-[1.3] font-light mt-4">88rising</h1>
                 </div>
 
                 <div className="flex flex-col gap-y-[6rem]">
@@ -189,7 +189,7 @@ export default function Rising88() {
                                             <hr className="border-[#171717] mt-6" />
                                         </div>
                                         <div className="border-l-2 border-[#171717] pl-6 py-4">
-                                            <p className="text-[18px] leading-[1.5]" style={{fontFamily: '"Self Modern"'}}>
+                                            <p className="text-[18px] leading-[1.5]">
                                                 &quot;For Asians, Asian Americans and just Asian youth globally, <span className="font-medium">there&apos;s no real home on the internet</span> or a company consistently putting out things that either include Asian talent or Asian viewpoints in stories.&quot;
                                             </p>
                                             <p className="text-[#999] text-sm mt-4">Sean Miyashiro, Founder of 88rising</p>

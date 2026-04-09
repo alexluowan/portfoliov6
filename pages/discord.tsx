@@ -89,7 +89,7 @@ export default function DiscordCatchup() {
                 </Link>
                 <div className="flex flex-col gap-y-4 mt-6">
                     <div className="flex flex-col">
-                        <h1 className="text-[18px] leading-[1.3] font-light" style={{fontFamily: '"Self Modern"'}}>Discord Highlights</h1>
+                        <h1 className="text-[18px] leading-[1.3] font-light">Discord Highlights</h1>
 
                     </div>
                     <div className="flex items-center gap-x-1">
@@ -114,7 +114,7 @@ export default function DiscordCatchup() {
                     <Link href="/" className="w-fit text-[14px] leading-[18px] text-[#575757] font-[350] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
                         ← Back
                     </Link>
-                    <h1 className="text-[18px] leading-[1.3] font-light mt-4" style={{fontFamily: '"Self Modern"'}}>Discord Highlights</h1>
+                    <h1 className="text-[18px] leading-[1.3] font-light mt-4">Discord Highlights</h1>
                 </div>
 
                 <div className="flex flex-col gap-y-[6rem]">
@@ -190,7 +190,7 @@ export default function DiscordCatchup() {
                                 description=""
                                 svgContent={
                                     <div className="border-l-2 border-[#171717] pl-6 py-4">
-                                        <p className="text-[18px] leading-[1.5]" style={{fontFamily: '"Self Modern"'}}>
+                                        <p className="text-[18px] leading-[1.5]">
                                             How might we help server-heavy Discord users quickly sort through missed activity and decide what deserves attention first?
                                         </p>
                                     </div>

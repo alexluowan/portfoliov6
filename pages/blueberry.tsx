@@ -94,7 +94,7 @@ export default function BlueberrySocial() {
                 </Link>
                 <div className="flex flex-col gap-y-4 mt-6">
                     <div className="flex flex-col">
-                        <h1 className="text-[18px] leading-[1.3] font-light" style={{fontFamily: '"Self Modern"'}}>Blueberry</h1>
+                        <h1 className="text-[18px] leading-[1.3] font-light">Blueberry</h1>
 
                     </div>
                     <div className="flex items-center gap-x-1">
@@ -121,7 +121,7 @@ export default function BlueberrySocial() {
                     <Link href="/" className="w-fit text-[14px] leading-[18px] text-[#575757] font-[350] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
                         ← Back
                     </Link>
-                    <h1 className="text-[18px] leading-[1.3] font-light mt-4" style={{fontFamily: '"Self Modern"'}}>Blueberry</h1>
+                    <h1 className="text-[18px] leading-[1.3] font-light mt-4">Blueberry</h1>
                 </div>
 
                 <div className="flex flex-col gap-y-[6rem]">
@@ -232,7 +232,7 @@ export default function BlueberrySocial() {
                                 description={`Every growth lead we interviewed had tried AI tools and stopped. The output was unreliable and they couldn't trust it to represent their brand.`}
                                 svgContent={
                                     <div className="border-l-2 border-[#171717] pl-6 py-4 mt-[2.5rem]">
-                                        <p className="text-[18px] leading-[1.5]" style={{fontFamily: '"Self Modern"'}}>
+                                        <p className="text-[18px] leading-[1.5]">
                                             &ldquo;Don&apos;t fully trust AI yet, but open to automation once I trust it over time.&rdquo;
                                         </p>
                                         <p className="text-[#999] text-sm mt-4">Growth Lead, $3M DTC skincare brand</p>

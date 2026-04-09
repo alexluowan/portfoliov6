@@ -49,7 +49,7 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
                 />
             )}
         </div>
-        <h1 className="mt-[2rem]" style={{fontFamily: '"Self Modern"'}}>{title}</h1>
+        <h1 className="mt-[2rem]">{title}</h1>
         <div className="flex flex-wrap mt-[0.75rem]">
             <div className="w-1/2 md:w-1/4 pr-4 mb-4">
                 <h4 className="font-mono text-[12px]">ROLE</h4>

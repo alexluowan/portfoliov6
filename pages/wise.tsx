@@ -114,7 +114,7 @@ export default function WiseCaseStudy() {
                 </Link>
                 <div className="flex flex-col gap-y-4 mt-6">
                     <div className="flex flex-col">
-                        <h1 className="text-[18px] leading-[1.3] font-light" style={{fontFamily: '"Self Modern"'}}>Wise</h1>
+                        <h1 className="text-[18px] leading-[1.3] font-light">Wise</h1>
 
                     </div>
                     <div className="flex items-center gap-x-1">
@@ -141,7 +141,7 @@ export default function WiseCaseStudy() {
                     <Link href="/" className="w-fit text-[14px] leading-[18px] text-[#575757] font-[350] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
                         ← Back
                     </Link>
-                    <h1 className="text-[18px] leading-[1.3] font-light mt-4" style={{fontFamily: '"Self Modern"'}}>Wise</h1>
+                    <h1 className="text-[18px] leading-[1.3] font-light mt-4">Wise</h1>
                 </div>
 
                 <div className="flex flex-col gap-y-[6rem]">

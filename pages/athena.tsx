@@ -181,7 +181,7 @@ export default function AthenaHQ() {
                 <main className="w-full h-full flex items-center justify-center">
                     <div className="flex flex-col">
                         <h2 className="uppercase">Protected</h2>
-                        <h1 className="mt-[1.5rem]" style={{fontFamily: '"Self Modern"'}}>This case study is password protected.</h1>
+                        <h1 className="mt-[1.5rem]">This case study is password protected.</h1>
                         <p className="text-[#363636] mt-[0.5rem]">Enter the password to continue.</p>
                         <form onSubmit={handleSubmit} className="mt-6 flex gap-2">
                             <input
@@ -241,7 +241,7 @@ export default function AthenaHQ() {
                 </Link>
                 <div className="flex flex-col gap-y-4 mt-6">
                     <div className="flex flex-col">
-                        <h1 className="text-[18px] leading-[1.3] font-light" style={{fontFamily: '"Self Modern"'}}>AthenaHQ</h1>
+                        <h1 className="text-[18px] leading-[1.3] font-light">AthenaHQ</h1>
 
                     </div>
                     <div className="flex items-center gap-x-1">
@@ -266,7 +266,7 @@ export default function AthenaHQ() {
                     <Link href="/" className="w-fit text-[14px] leading-[18px] text-[#575757] font-[350] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
                         ← Back
                     </Link>
-                    <h1 className="text-[18px] leading-[1.3] font-light mt-4" style={{fontFamily: '"Self Modern"'}}>AthenaHQ</h1>
+                    <h1 className="text-[18px] leading-[1.3] font-light mt-4">AthenaHQ</h1>
                 </div>
 
                 <div className="flex flex-col gap-y-[6rem]">
@@ -386,7 +386,7 @@ export default function AthenaHQ() {
                                 description="One interview line captured the gap between having data and actually being able to use it."
                                 svgContent={
                                     <div className="border-l-2 border-[#171717] pl-6 py-4">
-                                        <p className="text-[18px] leading-[1.5]" style={{fontFamily: '"Self Modern"'}}>
+                                        <p className="text-[18px] leading-[1.5]">
                                             &ldquo;I&apos;ve got all the instruments that I need. But I gotta put together a symphony now.&rdquo;
                                         </p>
                                         <p className="text-[#999] text-sm mt-4">CMO, Coinbase Canada</p>
@@ -400,7 +400,7 @@ export default function AthenaHQ() {
                                 svgContent={
                                     <div className="flex flex-col gap-y-6">
                                         <div className="border-l-2 border-[#171717] pl-6 py-4">
-                                            <p className="text-[18px] leading-[1.5]" style={{fontFamily: '"Self Modern"'}}>
+                                            <p className="text-[18px] leading-[1.5]">
                                                 How might we turn Athena&apos;s AI visibility data into a dashboard that supports quick monitoring, deeper investigation, and easier reporting?
                                             </p>
                                         </div>
@@ -507,7 +507,7 @@ export default function AthenaHQ() {
                         >
                             <div className="w-full max-w-[768px] mx-auto">
                                 <h2 className="uppercase font-mono text-[12px]">Exploration</h2>
-                                <h1 className="mt-[1.5rem]" style={{fontFamily: '"Self Modern"'}}>Full report generation was too heavy</h1>
+                                <h1 className="mt-[1.5rem]">Full report generation was too heavy</h1>
                                 <p className="text-[#363636] mt-[0.5rem] max-w-[60ch]">We explored a multi-step flow for generating PDF reports from dashboard data: pick a goal, select focus areas, and export a formatted document. But the workflow was too tedious. Users didn't want a new artifact. They wanted to pull specific widgets into existing decks and docs. That insight pushed export toward the simpler widget-level action instead.</p>
                                 <ImageCarousel
                                     className="mt-[2.5rem]"
@@ -599,15 +599,15 @@ export default function AthenaHQ() {
                                 svgContent={
                                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
                                         <div>
-                                            <h3 className="text-[32px] font-light leading-none" style={{fontFamily: '"Self Modern"'}}>2x</h3>
+                                            <h3 className="text-[32px] font-light leading-none">2x</h3>
                                             <p className="text-[#363636] mt-2">Peak daily active users after the modular Olympus dashboard shipped.</p>
                                         </div>
                                         <div>
-                                            <h3 className="text-[32px] font-light leading-none" style={{fontFamily: '"Self Modern"'}}>25%</h3>
+                                            <h3 className="text-[32px] font-light leading-none">25%</h3>
                                             <p className="text-[#363636] mt-2">Increase in feature adoption from the Proactive Insights Engine, which translated complex AI signals into actionable guidance.</p>
                                         </div>
                                         <div>
-                                            <h3 className="text-[32px] font-light leading-none" style={{fontFamily: '"Self Modern"'}}>~2 months</h3>
+                                            <h3 className="text-[32px] font-light leading-none">~2 months</h3>
                                             <p className="text-[#363636] mt-2">Of engineering time saved by pivoting through user research before building a low-impact feature.</p>
                                         </div>
                                     </div>
