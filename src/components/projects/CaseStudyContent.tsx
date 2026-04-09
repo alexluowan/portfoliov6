@@ -34,6 +34,7 @@ interface CaseStudyContentProps {
     imageWidth?: number;
     imageHeight?: number;
     mediaClassName?: string;
+    videoClassName?: string;
 }
 
 const CaseStudyContent: React.FC<CaseStudyContentProps> = ({
@@ -50,6 +51,7 @@ const CaseStudyContent: React.FC<CaseStudyContentProps> = ({
                                                                imageWidth = 1920,
                                                                imageHeight = 1080,
                                                                mediaClassName = 'mt-[2.5rem]',
+                                                               videoClassName,
                                                            }) => {
     // Render the appropriate media based on what props were provided
     const renderMedia = () => {
@@ -93,6 +95,7 @@ const CaseStudyContent: React.FC<CaseStudyContentProps> = ({
             return (
                 <AutoplayVideo
                     className={mediaClassName}
+                    videoClassName={videoClassName}
                     videoSrcWebm={videoSrcWebm}
                     videoSrcMp4={videoSrcMp4}
                     preload="metadata"

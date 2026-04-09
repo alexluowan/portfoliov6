@@ -10,6 +10,7 @@ import ImageCarousel from '@/components/projects/ImageCarousel'
 import AnimatedSection from '@/components/AnimatedSection'
 import {heroAnimation, fadeInUp, fadeInUpStagger} from '@/animations/animationVariants'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function DiscordCatchup() {
     const mainRef = useRef<HTMLDivElement>(null)
@@ -266,23 +267,76 @@ export default function DiscordCatchup() {
                                 description="Highlights surfaces one missed item at a time. Each card supports a quick decision: open the thread, dismiss it, or mark it as read and move on. A visible count like '4 left' makes the backlog feel bounded instead of endless."
                                 videoSrcWebm="/work/discord/videos/cardswipe.webm"
                                 videoSrcMp4="/work/discord/videos/cardswipe.mov"
-                                mediaClassName="mt-[2.5rem] w-full aspect-[16/10] object-cover bg-[#F5F5F5]"
+                                mediaClassName="mt-[2.5rem] w-full aspect-square bg-[#F5F5F5]"
+                                videoClassName="h-full w-full object-cover"
                             />
                             <CaseStudyContent
                                 subtitle=""
                                 title="Each card gives just enough context to act."
                                 description="Instead of showing a full conversation, the card previews who posted, what they said, and how active the thread feels. That gives users enough signal to judge relevance without recreating the overload inside the card itself."
-                                videoSrcWebm="/work/discord/videos/chatscrollthrough.webm"
-                                videoSrcMp4="/work/discord/videos/chatscrollthrough.mov"
-                                mediaClassName="mt-[2.5rem] w-full aspect-[16/10] object-cover bg-[#F5F5F5]"
+                                mediaClassName="mt-[2.5rem]"
+                                svgContent={
+                                    <div className="flex flex-col gap-4">
+                                        <Image
+                                            src="/work/discord/images/textinput1.png"
+                                            alt="Text input exploration 1"
+                                            width={1600}
+                                            height={1000}
+                                            sizes="(max-width: 768px) calc(100vw - 2rem), 768px"
+                                            className="w-full border border-[#E5E5E5]"
+                                        />
+                                        <Image
+                                            src="/work/discord/images/textinput2.png"
+                                            alt="Text input exploration 2"
+                                            width={1600}
+                                            height={1000}
+                                            sizes="(max-width: 768px) calc(100vw - 2rem), 768px"
+                                            className="w-full border border-[#E5E5E5]"
+                                        />
+                                        <Image
+                                            src="/work/discord/images/textinput3.png"
+                                            alt="Text input exploration 3"
+                                            width={1600}
+                                            height={1000}
+                                            sizes="(max-width: 768px) calc(100vw - 2rem), 768px"
+                                            className="w-full border border-[#E5E5E5]"
+                                        />
+                                    </div>
+                                }
                             />
                             <CaseStudyContent
                                 subtitle=""
                                 title="Users can shape what keeps surfacing."
                                 description="Highlights makes an initial relevance guess, but users stay in control. Server-level and channel-level settings let them tune what appears over time instead of relying on a hidden ranking system."
-                                videoSrcWebm="/work/discord/videos/settings.webm"
-                                videoSrcMp4="/work/discord/videos/settings.mov"
-                                mediaClassName="mt-[2.5rem] w-full aspect-[16/10] object-cover bg-[#F5F5F5]"
+                                mediaClassName="mt-[2.5rem]"
+                                svgContent={
+                                    <div className="flex flex-col gap-4">
+                                        <Image
+                                            src="/work/discord/images/Settings 1.png"
+                                            alt="Settings exploration 1"
+                                            width={1600}
+                                            height={1000}
+                                            sizes="(max-width: 768px) calc(100vw - 2rem), 768px"
+                                            className="w-full border border-[#E5E5E5]"
+                                        />
+                                        <Image
+                                            src="/work/discord/images/Settings 2.png"
+                                            alt="Settings exploration 2"
+                                            width={1600}
+                                            height={1000}
+                                            sizes="(max-width: 768px) calc(100vw - 2rem), 768px"
+                                            className="w-full border border-[#E5E5E5]"
+                                        />
+                                        <Image
+                                            src="/work/discord/images/Settings 3.png"
+                                            alt="Settings exploration 3"
+                                            width={1600}
+                                            height={1000}
+                                            sizes="(max-width: 768px) calc(100vw - 2rem), 768px"
+                                            className="w-full border border-[#E5E5E5]"
+                                        />
+                                    </div>
+                                }
                             />
                         </AnimatedSection>
 
