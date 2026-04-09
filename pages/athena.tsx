@@ -308,22 +308,22 @@ export default function AthenaHQ() {
                                                 className="w-full h-auto"
                                             />
 
-                                            <div className="absolute left-[4%] top-[8%] max-w-[180px] border border-[#171717] bg-white/95 px-3 py-2 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
+                                            <div className="absolute left-[4%] top-[8%] max-w-[180px] border border-[#171717] bg-white/95 px-3 py-2 shadow-[0_24px_56px_rgba(0,0,0,0.28)]">
                                                 <p className="text-[11px] font-mono uppercase text-[#999]">Problem 01</p>
                                                 <p className="mt-1 text-[13px] text-[#171717]">No clear hierarchy. Every module competes for attention.</p>
                                             </div>
 
-                                            <div className="absolute right-[4%] top-[18%] max-w-[190px] border border-[#171717] bg-white/95 px-3 py-2 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
+                                            <div className="absolute right-[4%] top-[18%] max-w-[190px] border border-[#171717] bg-white/95 px-3 py-2 shadow-[0_24px_56px_rgba(0,0,0,0.28)]">
                                                 <p className="text-[11px] font-mono uppercase text-[#999]">Problem 02</p>
                                                 <p className="mt-1 text-[13px] text-[#171717]">Too many chart types and tables stacked at once.</p>
                                             </div>
 
-                                            <div className="absolute left-[8%] bottom-[12%] max-w-[190px] border border-[#171717] bg-white/95 px-3 py-2 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
+                                            <div className="absolute left-[8%] bottom-[12%] max-w-[190px] border border-[#171717] bg-white/95 px-3 py-2 shadow-[0_24px_56px_rgba(0,0,0,0.28)]">
                                                 <p className="text-[11px] font-mono uppercase text-[#999]">Problem 03</p>
                                                 <p className="mt-1 text-[13px] text-[#171717]">No role-based path for CMOs, SEOs, or analysts.</p>
                                             </div>
 
-                                            <div className="absolute right-[8%] bottom-[8%] max-w-[210px] border border-[#171717] bg-white/95 px-3 py-2 shadow-[0_8px_24px_rgba(0,0,0,0.08)]">
+                                            <div className="absolute right-[8%] bottom-[8%] max-w-[210px] border border-[#171717] bg-white/95 px-3 py-2 shadow-[0_24px_56px_rgba(0,0,0,0.28)]">
                                                 <p className="text-[11px] font-mono uppercase text-[#999]">Problem 04</p>
                                                 <p className="mt-1 text-[13px] text-[#171717]">Hard to turn what you see into a report teams can reuse.</p>
                                             </div>
