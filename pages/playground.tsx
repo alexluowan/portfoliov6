@@ -70,6 +70,14 @@ function VideoCarousel({videos, color}: { videos: string[]; color: string }) {
         container.scrollTo({ left: child.offsetLeft - container.offsetLeft, behavior: 'smooth' })
     }, [videos.length])
 
+    const goPrev = useCallback(() => {
+        goTo(current - 1)
+    }, [current, goTo])
+
+    const goNext = useCallback(() => {
+        goTo(current + 1)
+    }, [current, goTo])
+
     useEffect(() => {
         const container = scrollRef.current
         if (!container) return
@@ -155,6 +163,30 @@ function VideoCarousel({videos, color}: { videos: string[]; color: string }) {
 
     return (
         <div className="relative w-full h-full flex flex-col" style={{backgroundColor: color}}>
+            <button
+                type="button"
+                onClick={goPrev}
+                disabled={current === 0}
+                className="absolute left-3 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#E5E5E5] bg-white/90 text-[#171717] opacity-0 transition-opacity duration-200 group-hover:opacity-100 disabled:opacity-0 md:flex"
+                aria-label="Previous slide"
+            >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+                    <path d="M15 18l-6-6 6-6" />
+                </svg>
+            </button>
+
+            <button
+                type="button"
+                onClick={goNext}
+                disabled={current === videos.length - 1}
+                className="absolute right-3 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#E5E5E5] bg-white/90 text-[#171717] opacity-0 transition-opacity duration-200 group-hover:opacity-100 disabled:opacity-0 md:flex"
+                aria-label="Next slide"
+            >
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75">
+                    <path d="M9 6l6 6-6 6" />
+                </svg>
+            </button>
+
             <div
                 ref={scrollRef}
                 className="flex-1 flex overflow-x-auto scrollbar-hidden select-none"
