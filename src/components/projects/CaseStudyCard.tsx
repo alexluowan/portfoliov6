@@ -6,6 +6,8 @@ interface CaseStudyCardProps {
     videoSrcWebm?: string;
     videoSrcMp4?: string;
     imageSrc?: string;
+    videoContainerClassName?: string;
+    videoClassName?: string;
     title: string;
     roles: string[];
     team: string[];
@@ -17,6 +19,8 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
                                                          videoSrcWebm,
                                                          videoSrcMp4,
                                                          imageSrc,
+                                                         videoContainerClassName,
+                                                         videoClassName,
                                                          title,
                                                          roles,
                                                          team,
@@ -36,7 +40,8 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
                 />
             ) : (
                 <AutoplayVideo
-                    className="w-full"
+                    className={videoContainerClassName || 'w-full'}
+                    videoClassName={videoClassName}
                     videoSrcWebm={videoSrcWebm}
                     videoSrcMp4={videoSrcMp4}
                     preload="metadata"

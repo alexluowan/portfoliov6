@@ -118,10 +118,11 @@ export default function Home() {
                     <div className="flex flex-col gap-4 md:w-1/2 md:gap-2">
                         <Link href="/discord" className="feed-card hover-target-big transition-opacity duration-200">
                             <ProjectCard
-                                mediaSrc="/project-covers/discordcatchup-optimized.webm"
+                                mediaSrc="/project-covers/discordthumbnail.webm"
                                 mediaType="video"
                                 aspect="portrait"
                                 mobileAspect="aspect-[3/4]"
+                                className="md:aspect-[3/4]"
                                 title="Discord"
                                 subtitle="Catching up on missed conversations."
                                 justSeen={lastVisited === 'discord'}

@@ -124,7 +124,9 @@ export default function DiscordCatchup() {
                         animate="visible"
                     >
                         <CaseStudyCard
-                            videoSrcWebm="/project-covers/discordcatchup-optimized.webm"
+                            videoSrcWebm="/project-covers/discordthumbnail.webm"
+                            videoContainerClassName="w-full aspect-square overflow-hidden"
+                            videoClassName="h-full w-full object-cover object-center"
                             title="Most Discord users do not catch up on missed server activity. They just want the backlog to go away."
                             roles={['Product Designer', 'Prototyper']}
                             team={['Shania Chacon']}

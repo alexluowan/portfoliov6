@@ -16,6 +16,7 @@ export type ProjectCardProps = {
     objectPosition?: string;
     justSeen?: boolean;
     mediaClassName?: string;
+    videoClassName?: string;
     mobileAspect?: string;
 };
 
@@ -40,6 +41,7 @@ function ProjectCard({
                          objectPosition,
                          justSeen = false,
                          mediaClassName,
+                         videoClassName,
                          mobileAspect,
                      }: ProjectCardProps) {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -88,7 +90,7 @@ function ProjectCard({
                             loop
                             playsInline
                             preload="metadata"
-                            className={clsx("absolute inset-0 w-full h-full", objectFit === "contain" ? "object-contain" : "object-cover")}
+                            className={clsx("absolute inset-0 w-full h-full", objectFit === "contain" ? "object-contain" : "object-cover", videoClassName)}
                             style={objectPosition ? { objectPosition } : undefined}
                         />
                     ) : mediaSrc && mediaType === "image" ? (

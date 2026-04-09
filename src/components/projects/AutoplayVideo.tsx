@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 
 interface AutoplayVideoProps {
     className?: string
+    videoClassName?: string
     videoSrcWebm?: string
     videoSrcMp4?: string
     preload?: 'none' | 'metadata' | 'auto'
@@ -11,6 +12,7 @@ interface AutoplayVideoProps {
 
 export default function AutoplayVideo({
     className,
+    videoClassName,
     videoSrcWebm,
     videoSrcMp4,
     preload = 'metadata',
@@ -49,7 +51,7 @@ export default function AutoplayVideo({
             {shouldLoad ? (
                 <video
                     ref={videoRef}
-                    className="w-full h-full"
+                    className={videoClassName || 'w-full h-full'}
                     controls={false}
                     autoPlay
                     playsInline
