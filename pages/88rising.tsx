@@ -102,16 +102,9 @@ export default function Rising88() {
                 <Link href="/" className="w-fit text-[14px] leading-[18px] text-[#575757] font-[350] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
                     ← Back
                 </Link>
-                <div className="flex flex-col gap-y-4 mt-6">
-                    <div className="flex flex-col">
-                        <h1 className="text-[18px] leading-[1.3] font-light">88rising</h1>
-
-                    </div>
-                    <div className="flex items-center gap-x-1">
-                        <p className="text-[11px] leading-none font-mono uppercase text-[#999]">Product Design</p>
-                        <div className="bg-[#999] h-[2px] w-[2px] rounded-full" />
-                        <p className="text-[11px] leading-none font-mono uppercase text-[#999]">2023</p>
-                    </div>
+                <div className="flex flex-col gap-y-4 pt-6">
+                    <h1>88rising</h1>
+                    <p className="caption text-[#5e5e5d]">Product Design · 2023</p>
                 </div>
                 <div className="mt-8">
                     <WorksNav
@@ -131,7 +124,8 @@ export default function Rising88() {
                     <Link href="/" className="w-fit text-[14px] leading-[18px] text-[#575757] font-[350] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
                         ← Back
                     </Link>
-                    <h1 className="text-[18px] leading-[1.3] font-light mt-4">88rising</h1>
+                    <h1 className="mt-4">88rising</h1>
+                    <p className="caption text-[#5e5e5d] mt-2">Product Design · 2023</p>
                 </div>
 
                 <div className="flex flex-col gap-y-[6rem]">
@@ -159,14 +153,14 @@ export default function Rising88() {
                             variants={fadeInUp}
                         >
                             <CaseStudyContent
-                                subtitle="the challenge"
+                                subtitle="The Challenge"
                                 title="Fans can&apos;t find new artists"
                                 description="Fans land on the website and bounce. New signings get buried. I led the initial audit and mapped where fans actually spend time vs. where 88rising wanted them, which reframed the brief for the whole team."
                                 imageSrc="/work/88rising/88risingchallenge.png"
                                 mediaAlt="88rising content fragmentation across platforms"
                             />
                             <CaseStudyContent
-                                subtitle="the business problem"
+                                subtitle="The Business Problem"
                                 title="Growth has flatlined"
                                 description="The website wasn&apos;t pulling its weight and new artists weren&apos;t getting the discovery that early stars like Rich Brian and Joji enjoyed. That gap costs streams, ticket sales, and long-term brand momentum."
                                 svgContent={
@@ -262,7 +256,7 @@ export default function Rising88() {
                             variants={fadeInUp}
                         >
                             <CaseStudyContent
-                                subtitle="current state"
+                                subtitle="Current State"
                                 title="The two touchpoints fans have today"
                                 description=""
                                 svgContent={
@@ -294,26 +288,26 @@ export default function Rising88() {
                             variants={fadeInUp}
                         >
                             <CaseStudyContent
-                                subtitle="the key insight"
+                                subtitle="The Key Insight"
                                 title="Fans want discovery, not a storefront"
                                 description="The team conducted 15 user interviews and received 89 survey responses from casual to die-hard fans about their music habits and perception of 88rising. The findings pointed to a lack of awareness within the fanbase of 88rising&apos;s frequent releases, which directly feeds their decline in popularity."
                                 svgContent={
                                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-[2.5rem]">
                                         <div>
-                                            <p className="text-[48px] leading-none tracking-tight">62%</p>
-                                            <p className="text-[#363636] text-sm mt-3">of fans unaware of weekly releases</p>
+                                            <h1 className="text-black">62%</h1>
+                                            <p className="text-[#5e5e5d] mt-3">of fans unaware of weekly releases</p>
                                         </div>
                                         <div>
-                                            <p className="text-[48px] leading-none tracking-tight">93%</p>
-                                            <p className="text-[#363636] text-sm mt-3">of interviewees unaware of most signed artists</p>
+                                            <h1 className="text-black">93%</h1>
+                                            <p className="text-[#5e5e5d] mt-3">of interviewees unaware of most signed artists</p>
                                         </div>
                                         <div>
-                                            <p className="text-[48px] leading-none tracking-tight">75%</p>
-                                            <p className="text-[#363636] text-sm mt-3">believe 88rising is declining in popularity</p>
+                                            <h1 className="text-black">75%</h1>
+                                            <p className="text-[#5e5e5d] mt-3">believe 88rising is declining in popularity</p>
                                         </div>
                                         <div>
-                                            <p className="text-[48px] leading-none tracking-tight">41%</p>
-                                            <p className="text-[#363636] text-sm mt-3">attributed decline to lack of brand engagement</p>
+                                            <h1 className="text-black">41%</h1>
+                                            <p className="text-[#5e5e5d] mt-3">attributed decline to lack of brand engagement</p>
                                         </div>
                                     </div>
                                 }
@@ -326,7 +320,7 @@ export default function Rising88() {
                             variants={fadeInUp}
                         >
                             <CaseStudyContent
-                                subtitle="design principles"
+                                subtitle="Design Principles"
                                 title="Three principles that shaped every decision"
                                 description="We first considered the realities of a global, multi‑platform music ecosystem, balancing the needs of fans, artists, and the business before shaping the end‑to‑end experience."
                                 imageSrc="/work/88rising/designprinciples.svg"
@@ -341,7 +335,7 @@ export default function Rising88() {
                             variants={fadeInUp}
                         >
                             <CaseStudyContent
-                                subtitle="explorations"
+                                subtitle="Explorations"
                                 title="Lat-long navigation"
                                 description="An early direction I explored: a stripped-down world map where neon-red bars sit at the actual latitude of each region in the 88rising roster. It tested well conceptually but added friction because fans had to learn a new mental model before discovering anything. We killed it."
                                 imageSrc="/work/88rising/exploration1.png"
@@ -359,7 +353,7 @@ export default function Rising88() {
                             variants={fadeInUp}
                         >
                             <CaseStudyContent
-                                subtitle="outcome"
+                                subtitle="Outcome"
                                 title="What this created"
                                 description=""
                                 mediaClassName="mt-[1.5rem]"

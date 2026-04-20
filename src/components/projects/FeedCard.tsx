@@ -61,7 +61,7 @@ function FeedCard({
             >
                 {justSeen && (
                     <div className="absolute inset-0 z-[2] flex items-center justify-center bg-black/40 pointer-events-none">
-                        <span className="flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-wider text-white/80">
+                        <span className="flex items-center gap-1.5 caption text-white/80">
                             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                                 <path d="M20 6L9 17l-5-5" />
                             </svg>
@@ -95,19 +95,9 @@ function FeedCard({
             </div>
 
             <div className="mt-4 flex flex-col gap-[4px]">
-                {meta && (
-                    <p className="text-[12px] leading-[16px] font-[350] text-black">
-                        {meta}
-                    </p>
-                )}
-                <p className="text-[24px] leading-[30px] font-[400] text-black">
-                    {title}
-                </p>
-                {subtitle && (
-                    <p className="text-[14px] leading-[20px] font-[400] text-[#5e5e5d]">
-                        {subtitle}
-                    </p>
-                )}
+                {meta && <p className="caption text-black">{meta}</p>}
+                <h2 className="text-black">{title}</h2>
+                {subtitle && <p className="text-[#5e5e5d]">{subtitle}</p>}
             </div>
         </div>
     );

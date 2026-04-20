@@ -115,15 +115,21 @@ const CaseStudyContent: React.FC<CaseStudyContentProps> = ({
 
     return (
         <div className="w-full max-w-[768px] mx-auto">
-            <h2 className="uppercase font-mono text-[12px]">
-                {subtitle}
-            </h2>
-            <h1 className="mt-[1.5rem]">
-                {title}
-            </h1>
-            <p className="text-[#363636] mt-[0.5rem]">
-                {description}
-            </p>
+            {subtitle && (
+                <p className="caption text-[#5e5e5d]">
+                    {subtitle}
+                </p>
+            )}
+            {title && (
+                <h2 className="text-black mt-[0.5rem]">
+                    {title}
+                </h2>
+            )}
+            {description && (
+                <p className="text-[#5e5e5d] mt-[1rem]">
+                    {description}
+                </p>
+            )}
             {renderMedia()}
         </div>
     );

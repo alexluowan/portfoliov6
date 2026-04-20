@@ -187,7 +187,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ slides, className = '' })
 
             {/* Label + dots */}
             <div className="flex items-center justify-between mt-3">
-                <p className="text-[12px] text-[#999] font-mono">{slides[activeIndex]?.label}</p>
+                <p className="caption text-[#5e5e5d]">{slides[activeIndex]?.label}</p>
                 <div className="flex gap-1.5">
                     {slides.map((_, i) => (
                         <button

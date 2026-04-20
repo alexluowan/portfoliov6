@@ -3,14 +3,19 @@
 
 import {useEffect, useRef, useState} from 'react'
 import {motion} from 'framer-motion'
+import dynamic from 'next/dynamic'
 import WorksNav, {Section} from '@/components/home/WorksNav'
 import CaseStudyCard from '@/components/projects/CaseStudyCard'
 import CaseStudyContent from '@/components/projects/CaseStudyContent'
-import ImageCarousel from '@/components/projects/ImageCarousel'
 import AnimatedSection from '@/components/AnimatedSection'
-import {heroAnimation, fadeInUp, fadeInUpStagger} from '@/animations/animationVariants'
+import {heroAnimation, fadeInUp} from '@/animations/animationVariants'
 import Link from 'next/link'
 import Image from 'next/image'
+
+const DotLottieReact = dynamic(
+    () => import('@lottiefiles/dotlottie-react').then((mod) => mod.DotLottieReact),
+    {ssr: false}
+)
 
 export default function DiscordCatchup() {
     const mainRef = useRef<HTMLDivElement>(null)
@@ -19,12 +24,13 @@ export default function DiscordCatchup() {
 
     const sections: Section[] = [
         {label: 'Intro', sectionId: 'hero'},
-        {label: 'Problem', sectionId: 'context'},
-        {label: 'Learnings', sectionId: 'shift'},
+        {label: 'Mission', sectionId: 'mission'},
         {label: 'Solution', sectionId: 'solution'},
-        {label: 'Iteration', sectionId: 'exploration'},
+        {label: 'Decisions', sectionId: 'decisions'},
+        {label: 'Research', sectionId: 'research'},
+        {label: 'Ideation', sectionId: 'ideation'},
         {label: 'Testing', sectionId: 'testing'},
-        {label: 'Reflection', sectionId: 'reflection'},
+        {label: 'Reflections', sectionId: 'reflection'},
     ]
 
     useEffect(() => {
@@ -84,19 +90,14 @@ export default function DiscordCatchup() {
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
-                <Link href="/" className="w-fit text-[14px] leading-[18px] text-[#575757] font-[350] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
+                <Link href="/" className="w-fit text-[14px] text-[#575757] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
                     ← Back
                 </Link>
-                <div className="flex flex-col gap-y-4 mt-6">
-                    <div className="flex flex-col">
-                        <h1 className="text-[18px] leading-[1.3] font-light">Discord Highlights</h1>
-
-                    </div>
-                    <div className="flex items-center gap-x-1">
-                        <p className="text-[11px] leading-none font-mono uppercase text-[#999]">Product Design</p>
-                    </div>
+                <div className="flex flex-col gap-y-4 pt-6">
+                    <h1>Discord Highlights</h1>
+                    <p className="caption text-[#5e5e5d]">Product Design / Concept Feature</p>
                 </div>
-                <div className="mt-8">
+                <div className="pt-8">
                     <WorksNav
                         scrollContainerRef={mainRef}
                         sections={sections}
@@ -111,376 +112,342 @@ export default function DiscordCatchup() {
             >
                 {/* Mobile header */}
                 <div className="flex flex-col md:hidden pt-4 pb-4 max-w-[768px] mx-auto w-full">
-                    <Link href="/" className="w-fit text-[14px] leading-[18px] text-[#575757] font-[350] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
+                    <Link href="/" className="w-fit text-[14px] text-[#575757] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
                         ← Back
                     </Link>
-                    <h1 className="text-[18px] leading-[1.3] font-light mt-4">Discord Highlights</h1>
+                    <h1 className="mt-4">Discord Highlights</h1>
+                    <p className="caption text-[#5e5e5d] mt-2">Product Design / Concept Feature</p>
                 </div>
 
-                <div className="flex flex-col gap-y-[6rem]">
-                    <motion.div
-                        data-section="hero"
-                        variants={heroAnimation}
-                        initial="hidden"
-                        animate="visible"
-                    >
-                        <CaseStudyCard
-                            videoSrcWebm="/project-covers/discordthumbnail.webm"
-                            videoContainerClassName="w-full aspect-square overflow-hidden"
-                            videoClassName="h-full w-full object-cover object-center"
-                            title="Most Discord users do not catch up on missed server activity. They just want the backlog to go away."
-                            roles={['Product Designer', 'Prototyper']}
-                            team={['Shania Chacon']}
-                            timeline="3 Weeks"
-                            tools={['Figma']}
+                {/* Intro / Hero */}
+                <motion.section
+                    data-section="hero"
+                    variants={heroAnimation}
+                    initial="hidden"
+                    animate="visible"
+                >
+                    <CaseStudyCard
+                        videoSrcWebm="/project-covers/discordhighlights.mp4"
+                        videoContainerClassName="w-full aspect-[657/797] overflow-hidden"
+                        videoClassName="h-full w-full object-cover object-center"
+                        title="700 unread messages. You don't catch up. You just want the number gone."
+                        roles={['Product Designer']}
+                        team={['Shania Chacon', 'User Testing']}
+                        timeline="4 Weeks"
+                        tools={['Figma']}
+                    />
+                </motion.section>
+
+                <div className="h-24" />
+
+                {/* Mission */}
+                <div data-section="mission">
+                    <AnimatedSection variants={fadeInUp} rootMargin="0px 0px -10% 0px">
+                        <CaseStudyContent
+                            subtitle="The Mission"
+                            title="Helping server-heavy Discord users decide what's actually worth their time."
+                            description="Discord is built around communities but it was never built for coming back to them. Once activity piles up across channels, most users do the same thing: mark all as read without opening a single message. My goal was to design a feature that makes re-entry feel worth it, one decision at a time."
                         />
-                    </motion.div>
+                    </AnimatedSection>
 
-                    <div className="flex flex-col gap-y-[8rem]">
-                        {/* 1. Context */}
-                        <AnimatedSection
-                            data-section="context"
-                            className="flex flex-col gap-y-[4rem]"
-                            variants={fadeInUp}
-                        >
-                            <CaseStudyContent
-                                subtitle="the problem"
-                                title="You open Discord after a weekend away. 47 unread channels across 8 servers."
-                                description="You skim two channels, skip the rest, and hit 'Mark All as Read.' Server activity piles up fast, mixes signal with noise, and past a certain point most people stop trying to catch up."
-                            />
-                            <CaseStudyContent
-                                subtitle=""
-                                title=""
-                                description=""
-                                svgContent={
-                                    <div className="border-y border-[#E5E5E5] py-5">
-                                        <div className="flex items-center justify-between gap-4 border-b border-[#E5E5E5] pb-4">
-                                            <p className="font-mono text-[12px] uppercase tracking-[0.08em] text-[#999]">Common workarounds</p>
-                                            <p className="text-[12px] text-[#7A7A7A]">How people cope when the backlog gets too big</p>
-                                        </div>
-                                        <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-3">
-                                            <div className="group border border-[#E5E5E5] p-5 transition-colors duration-200 hover:border-[#CFCFCF]">
-                                                <div className="flex items-start justify-between gap-4">
-                                                    <p className="text-[15px] leading-[1.35] font-medium text-[#171717]">Muting servers</p>
-                                                    <span className="font-mono text-[11px] uppercase text-[#B3B3B3]">01</span>
-                                                </div>
-                                                <p className="mt-3 max-w-[26ch] text-[13px] leading-[1.5] text-[#666]">Silence everything, lose the signal too.</p>
-                                            </div>
-                                            <div className="group border border-[#E5E5E5] p-5 transition-colors duration-200 hover:border-[#CFCFCF]">
-                                                <div className="flex items-start justify-between gap-4">
-                                                    <p className="text-[15px] leading-[1.35] font-medium text-[#171717]">Ignoring notifications</p>
-                                                    <span className="font-mono text-[11px] uppercase text-[#B3B3B3]">02</span>
-                                                </div>
-                                                <p className="mt-3 max-w-[26ch] text-[13px] leading-[1.5] text-[#666]">Out of sight, out of mind.</p>
-                                            </div>
-                                            <div className="group border border-[#E5E5E5] p-5 transition-colors duration-200 hover:border-[#CFCFCF]">
-                                                <div className="flex items-start justify-between gap-4">
-                                                    <p className="text-[15px] leading-[1.35] font-medium text-[#171717]">Mark all as read</p>
-                                                    <span className="font-mono text-[11px] uppercase text-[#B3B3B3]">03</span>
-                                                </div>
-                                                <p className="mt-3 max-w-[26ch] text-[13px] leading-[1.5] text-[#666]">Inbox zero, context zero.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                }
-                            />
-                            <CaseStudyContent
-                                subtitle="the question"
-                                title=""
-                                description=""
-                                svgContent={
-                                    <div className="border-l-2 border-[#171717] pl-6 py-4">
-                                        <p className="text-[18px] leading-[1.5]">
-                                            How might we help server-heavy Discord users quickly sort through missed activity and decide what deserves attention first?
-                                        </p>
-                                    </div>
-                                }
-                            />
-                        </AnimatedSection>
+                    <div className="h-16" />
 
-                        {/* 2. The Shift */}
-                        <AnimatedSection
-                            data-section="shift"
-                            className="flex flex-col gap-y-[4rem]"
-                            variants={fadeInUp}
-                        >
-                            <CaseStudyContent
-                                subtitle="key learning"
-                                title="My initial framing was wrong."
-                                description="I started by assuming the problem was about helping people reconnect with their communities. Interviews showed something more practical: when unread server activity piles up, most people are not trying to reconnect. They are trying to reduce effort and get back to a manageable state."
-                            />
-                            <CaseStudyContent
-                                subtitle=""
-                                title="That shifted the concept from catch-up to quick sorting."
-                                description="Instead of designing a better way to read everything, I focused on helping people make faster decisions: open it now, skip it, or clear it and move on. That change made the product direction sharper and the interface easier to justify."
-                                svgContent={
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        <div className="border border-[#E5E5E5] p-5">
-                                            <p className="text-[12px] font-mono uppercase text-[#999]">Initial assumption</p>
-                                            <h3 className="text-[16px] font-medium mt-3">People want help catching up with their communities.</h3>
-                                            <p className="text-[#363636] mt-2">This framing pointed toward a reading and summarization problem.</p>
-                                        </div>
-                                        <div className="border border-[#E5E5E5] p-5">
-                                            <p className="text-[12px] font-mono uppercase text-[#999]">What I learned</p>
-                                            <h3 className="text-[16px] font-medium mt-3">People want help deciding what is worth their time.</h3>
-                                            <p className="text-[#363636] mt-2">This reframed the product as a way to quickly sort through what matters, not a full catch-up system.</p>
-                                        </div>
+                    {/* Key Insights — two columns, each pairs text + image */}
+                    <AnimatedSection variants={fadeInUp} rootMargin="0px 0px -10% 0px">
+                        <div className="w-full max-w-[768px] mx-auto">
+                            <div className="flex flex-col md:flex-row gap-8 md:gap-4">
+                                <div className="flex-1 flex flex-col gap-4">
+                                    <div className="flex flex-col gap-2">
+                                        <p className="caption text-[#5e5e5d]">Key Insight</p>
+                                        <h3 className="text-black">Users have already written off most of their servers.</h3>
                                     </div>
-                                }
-                            />
-                            <CaseStudyContent
-                                subtitle="research learnings"
-                                title="Four patterns kept repeating."
-                                description="The methods mattered less than the consistency of what people described. These patterns directly shaped the feature."
-                                svgContent={
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        <div>
-                                            <h3 className="text-[16px] font-medium">DMs always came first.</h3>
-                                            <p className="text-[#363636] mt-2">Every participant checked DMs before anything else. Server activity was something they got to later — if they had the energy left.</p>
-                                        </div>
-                                        <div>
-                                            <h3 className="text-[16px] font-medium">Too much unread led to giving up.</h3>
-                                            <p className="text-[#363636] mt-2">Nobody carefully caught up. They muted, ignored, or marked everything as read just to make the backlog disappear.</p>
-                                        </div>
-                                        <div>
-                                            <h3 className="text-[16px] font-medium">People skim. They don't read.</h3>
-                                            <p className="text-[#363636] mt-2">A glance at who posted, a keyword, a timestamp — that's all it took for users to decide if something was worth opening.</p>
-                                        </div>
-                                        <div>
-                                            <h3 className="text-[16px] font-medium">Users wanted a say in what surfaced.</h3>
-                                            <p className="text-[#363636] mt-2">Less noise wasn't enough. They wanted to shape what kept appearing — without having to mute entire communities.</p>
-                                        </div>
+                                    <p className="text-[#5e5e5d]">
+                                        Users actively check 3 to 5 servers out of dozens they&apos;ve joined. The rest exist in a permanent backlog that never gets opened. The problem isn&apos;t volume. It&apos;s that the cost of figuring out what matters feels higher than the value of finding out.
+                                    </p>
+                                    <div className="relative bg-[#f3f3f3] aspect-square overflow-hidden md:mt-auto">
+                                        <Image
+                                            src="/work/discord/images/relevancyscale.png"
+                                            alt="Relevancy scale"
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 384px"
+                                            className="object-contain"
+                                        />
                                     </div>
-                                }
-                            />
-                        </AnimatedSection>
+                                </div>
+                                <div className="flex-1 flex flex-col gap-4">
+                                    <div className="flex flex-col gap-2">
+                                        <p className="caption text-[#5e5e5d]">Key Insight</p>
+                                        <h3 className="text-black">When everything looks urgent, nothing gets read.</h3>
+                                    </div>
+                                    <p className="text-[#5e5e5d]">
+                                        An @everyone ping and a direct mention look identical in Discord today. The only way to know if something actually matters is to open it manually. Most people don&apos;t. They mark it read and move on.
+                                    </p>
+                                    <div className="relative bg-[#f3f3f3] aspect-square overflow-hidden md:mt-auto">
+                                        <Image
+                                            src="/work/discord/images/annoucementfatigue.png"
+                                            alt="Announcement fatigue"
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 384px"
+                                            className="object-contain"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </AnimatedSection>
+                </div>
 
-                        {/* 3. Solution */}
-                        <AnimatedSection
-                            data-section="solution"
-                            className="flex flex-col gap-y-[4rem]"
-                            variants={fadeInUpStagger}
-                        >
-                            <CaseStudyContent
-                                subtitle="solution"
-                                title="One card at a time. One decision at a time."
-                                description="Highlights surfaces one missed item at a time. Each card supports a quick decision: open the thread, dismiss it, or mark it as read and move on. A visible count like '4 left' makes the backlog feel bounded instead of endless."
-                                videoSrcWebm="/work/discord/videos/cardswipe.webm"
-                                videoSrcMp4="/work/discord/videos/cardswipe.mov"
-                                mediaClassName="mt-[2.5rem] w-full aspect-square bg-[#F5F5F5]"
-                                videoClassName="h-full w-full object-cover"
-                            />
-                            <CaseStudyContent
-                                subtitle=""
-                                title="Each card gives just enough context to act."
-                                description="Instead of showing a full conversation, the card previews who posted, what they said, and how active the thread feels. That gives users enough signal to judge relevance without recreating the overload inside the card itself."
-                                mediaClassName="mt-[2.5rem]"
-                                svgContent={
-                                    <div className="flex flex-col gap-4">
-                                        <Image
-                                            src="/work/discord/images/textinput1.png"
-                                            alt="Text input exploration 1"
-                                            width={1600}
-                                            height={1000}
-                                            sizes="(max-width: 768px) calc(100vw - 2rem), 768px"
-                                            className="w-full border border-[#E5E5E5]"
-                                        />
-                                        <Image
-                                            src="/work/discord/images/textinput2.png"
-                                            alt="Text input exploration 2"
-                                            width={1600}
-                                            height={1000}
-                                            sizes="(max-width: 768px) calc(100vw - 2rem), 768px"
-                                            className="w-full border border-[#E5E5E5]"
-                                        />
-                                        <Image
-                                            src="/work/discord/images/textinput3.png"
-                                            alt="Text input exploration 3"
-                                            width={1600}
-                                            height={1000}
-                                            sizes="(max-width: 768px) calc(100vw - 2rem), 768px"
-                                            className="w-full border border-[#E5E5E5]"
-                                        />
-                                    </div>
-                                }
-                            />
-                            <CaseStudyContent
-                                subtitle=""
-                                title="Users can shape what keeps surfacing."
-                                description="Highlights makes an initial relevance guess, but users stay in control. Server-level and channel-level settings let them tune what appears over time instead of relying on a hidden ranking system."
-                                mediaClassName="mt-[2.5rem]"
-                                svgContent={
-                                    <div className="flex flex-col gap-4">
-                                        <Image
-                                            src="/work/discord/images/Settings 1.png"
-                                            alt="Settings exploration 1"
-                                            width={1600}
-                                            height={1000}
-                                            sizes="(max-width: 768px) calc(100vw - 2rem), 768px"
-                                            className="w-full border border-[#E5E5E5]"
-                                        />
-                                        <Image
-                                            src="/work/discord/images/Settings 2.png"
-                                            alt="Settings exploration 2"
-                                            width={1600}
-                                            height={1000}
-                                            sizes="(max-width: 768px) calc(100vw - 2rem), 768px"
-                                            className="w-full border border-[#E5E5E5]"
-                                        />
-                                        <Image
-                                            src="/work/discord/images/Settings 3.png"
-                                            alt="Settings exploration 3"
-                                            width={1600}
-                                            height={1000}
-                                            sizes="(max-width: 768px) calc(100vw - 2rem), 768px"
-                                            className="w-full border border-[#E5E5E5]"
-                                        />
-                                    </div>
-                                }
-                            />
-                        </AnimatedSection>
+                <div className="h-16" />
 
-                        {/* 4. Exploration */}
-                        <AnimatedSection
-                            data-section="exploration"
-                            className="flex flex-col gap-y-[4rem]"
-                            variants={fadeInUp}
-                        >
-                            <CaseStudyContent
-                                subtitle="iteration"
-                                title="The first concept assumed people would go looking for the feature. They did not."
-                                description="Highlights originally lived in the bottom navigation. During testing, people went straight to DMs and never looked down for it. Moving the entry point into the sidebar matched where users already were instead of asking them to learn a new behavior."
-                                svgContent={
-                                    <div className="flex flex-col gap-y-5">
-                                        <ImageCarousel
-                                            className="mt-[2.5rem]"
-                                                slides={[
-                                                {
-                                                    src: '/work/discord/images/entrypoint-bottom-nav.png',
-                                                    alt: 'Early Highlights entry point placed in the bottom navigation.',
-                                                    label: 'Initial entry point: bottom nav',
-                                                    unoptimized: true,
-                                                },
-                                                {
-                                                    src: '/work/discord/images/entrypoint-sidebar.png',
-                                                    alt: 'Revised Highlights entry point placed in the sidebar.',
-                                                    label: 'Revised entry point: sidebar',
-                                                    unoptimized: true,
-                                                },
-                                            ]}
-                                        />
-                                        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                                            <div className="border border-[#E5E5E5] p-4">
-                                                <p className="text-[12px] font-mono uppercase text-[#999]">What changed</p>
-                                                <p className="text-[14px] mt-2">The entry point moved from the bottom nav to the sidebar.</p>
-                                            </div>
-                                            <div className="border border-[#E5E5E5] p-4">
-                                                <p className="text-[12px] font-mono uppercase text-[#999]">Why it worked better</p>
-                                                <p className="text-[14px] mt-2">The sidebar matched where users already looked instead of asking them to discover a new destination.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                }
-                            />
-                            <CaseStudyContent
-                                subtitle=""
-                                title="The first card design recreated the same overload it was supposed to reduce."
-                                description="The problem was not just volume. The hierarchy was unclear. There was too much metadata, too many competing icons, and not enough visual focus on what users actually needed to decide. Instead of feeling fast, the card felt noisy and confusing."
-                                svgContent={
-                                    <div className="flex flex-col gap-y-6">
-                                        <div className="mt-[2.5rem] w-full aspect-[4/3] bg-[#E8E8E8] flex items-center justify-center">
-                                            <img
-                                                src="/work/discord/images/full-card-iteration.png"
-                                                alt="Early full-card iteration showing too much conversation context and awkward undo placement"
-                                                className="h-[90%] w-auto object-contain"
+                {/* Solution */}
+                <div data-section="solution">
+                    {/* Solution 1: Hero screen */}
+                    <AnimatedSection variants={fadeInUp} rootMargin="0px 0px -10% 0px">
+                        <CaseStudyContent
+                            subtitle="Solution"
+                            title="One decision at a time."
+                            description="Highlights surfaces one missed item at a time. Each card shows who posted, what they said, and how active the thread feels. That gives users enough signal to make a quick call. A visible count like '4 left' makes the backlog feel bounded instead of endless."
+                            videoSrcWebm="/work/discord/videos/cardswipe.webm"
+                            videoSrcMp4="/work/discord/videos/cardswipe.mov"
+                            mediaClassName="mt-6 w-full aspect-[576/568] overflow-hidden bg-[#f3f3f3]"
+                            videoClassName="h-full w-full object-cover"
+                        />
+                    </AnimatedSection>
+
+                    <div className="h-16" />
+
+                    {/* Solution 2: Card detail */}
+                    <AnimatedSection variants={fadeInUp} rootMargin="0px 0px -10% 0px">
+                        <CaseStudyContent
+                            subtitle="Solution"
+                            title="Each card gives enough context to act."
+                            description="Instead of showing a full conversation, the card previews who posted, what they said, and how active the thread feels. That gives users enough signal to judge relevance without recreating the overload inside the card itself."
+                            mediaClassName="mt-6"
+                            svgContent={
+                                <div className="flex flex-col gap-4">
+                                    {['textinput1.png', 'textinput2.png', 'textinput3.png'].map((file) => (
+                                        <div key={file} className="relative w-full aspect-[576/568] overflow-hidden bg-[#f3f3f3]">
+                                            <Image
+                                                src={`/work/discord/images/${file}`}
+                                                alt=""
+                                                fill
+                                                sizes="(max-width: 768px) 100vw, 768px"
+                                                className="object-cover"
                                             />
                                         </div>
-                                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                            <div className="border border-[#E5E5E5] p-4">
-                                                <p className="text-[12px] font-mono uppercase text-[#999]">Issue 1</p>
-                                                <p className="text-[14px] mt-2">The visual hierarchy was weak, so it was hard to tell what mattered first at a glance.</p>
-                                            </div>
-                                            <div className="border border-[#E5E5E5] p-4">
-                                                <p className="text-[12px] font-mono uppercase text-[#999]">Issue 2</p>
-                                                <p className="text-[14px] mt-2">The undo button sat in a weird, inconvenient spot, which added extra effort right when users were supposed to move quickly.</p>
-                                            </div>
-                                            <div className="border border-[#E5E5E5] p-4">
-                                                <p className="text-[12px] font-mono uppercase text-[#999]">Issue 3</p>
-                                                <p className="text-[14px] mt-2">Extra metadata and ambiguous icons like the lightbulb and flame added noise without helping people decide faster.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                }
-                            />
-                        </AnimatedSection>
+                                    ))}
+                                </div>
+                            }
+                        />
+                    </AnimatedSection>
 
-                        {/* 5. Testing */}
-                        <AnimatedSection
-                            data-section="testing"
-                            variants={fadeInUp}
-                        >
-                            <CaseStudyContent
-                                subtitle="testing"
-                                title="Testing did more than validate the feature. It clarified the audience."
-                                description="DM-first users had already solved overload by muting most of Discord, so Highlights did not resonate with them. The strongest signal came from server-heavy users who fall behind often and already rely on blunt workarounds. Once I stopped designing for everyone, the concept got sharper."
-                                svgContent={
-                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-[2.5rem]">
-                                        <div>
-                                            <h3 className="text-[16px] font-medium">The audience got smaller — and sharper.</h3>
-                                            <p className="text-[#363636] mt-2">From "all Discord users" to server-heavy users who regularly fall behind and resort to blunt workarounds.</p>
-                                        </div>
-                                        <div>
-                                            <h3 className="text-[16px] font-medium">The story changed.</h3>
-                                            <p className="text-[#363636] mt-2">This wasn't about reconnecting with communities. It was about giving people a faster way to decide what matters.</p>
-                                        </div>
-                                        <div>
-                                            <h3 className="text-[16px] font-medium">Relevance controls weren't a nice-to-have.</h3>
-                                            <p className="text-[#363636] mt-2">Users didn't just want less noise — they wanted a say in what kept surfacing. That made controls core, not optional.</p>
-                                        </div>
-                                        <div>
-                                            <h3 className="text-[16px] font-medium">Decision tool, not feed.</h3>
-                                            <p className="text-[#363636] mt-2">Framing it as a tool for making quick decisions made every design choice easier to justify than calling it a catch-up feature.</p>
-                                        </div>
-                                    </div>
-                                }
-                            />
-                        </AnimatedSection>
+                    <div className="h-16" />
 
-                        {/* 5. Reflection */}
-                        <AnimatedSection
-                            data-section="reflection"
-                            variants={fadeInUp}
-                        >
-                            <CaseStudyContent
-                                subtitle="reflection"
-                                title="The framing mattered as much as the interface"
-                                description=""
-                                svgContent={
-                                    <div className="flex flex-col gap-8">
-                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                            <div>
-                                                <h3 className="text-[16px] font-medium">The problem wasn't what I thought it was.</h3>
-                                                <p className="text-[#363636] mt-2">Users were not trying to reconnect. They were trying to reduce effort. Designing for quick sorting instead of catch-up made product choices, interaction patterns, and prioritization much clearer.</p>
-                                            </div>
-                                            <div>
-                                                <h3 className="text-[16px] font-medium">The hardest part wasn't the UI.</h3>
-                                                <p className="text-[#363636] mt-2">It was defining who this was for, where it should live in the product, and how to make system-driven relevance feel transparent enough to trust.</p>
-                                            </div>
-                                        </div>
-                                        <div className="border border-[#E5E5E5] bg-[#FAFAFA] p-3">
-                                            <img
-                                                src="/work/discord/images/discordprototypingmess.png"
-                                                alt="Messy Discord prototyping canvas in Figma"
-                                                className="w-full h-auto"
+                    {/* Solution 3: Filtering */}
+                    <AnimatedSection variants={fadeInUp} rootMargin="0px 0px -10% 0px">
+                        <CaseStudyContent
+                            subtitle="Solution"
+                            title="Users can shape what keeps surfacing."
+                            description="Highlights makes an initial relevance guess but users stay in control. Server level and channel level settings let them tune what appears over time instead of relying on a ranking system they can't see or adjust."
+                            mediaClassName="mt-6"
+                            svgContent={
+                                <div className="flex flex-col gap-4">
+                                    {['Settings 1.png', 'Settings 2.png', 'Settings 3.png'].map((file) => (
+                                        <div key={file} className="relative w-full aspect-[576/568] overflow-hidden bg-[#f3f3f3]">
+                                            <Image
+                                                src={`/work/discord/images/${encodeURIComponent(file)}`}
+                                                alt=""
+                                                fill
+                                                sizes="(max-width: 768px) 100vw, 768px"
+                                                className="object-cover"
                                             />
-                                            <p className="mt-3 text-[12px] font-mono uppercase text-[#999]">My messy af process lmfao</p>
                                         </div>
-                                    </div>
-                                }
-                            />
-                        </AnimatedSection>
+                                    ))}
+                                </div>
+                            }
+                        />
+                    </AnimatedSection>
+                </div>
 
-                    </div>
+                <div className="h-16" />
+
+                {/* Design Decisions */}
+                <div data-section="decisions">
+                    {/* Decision: Showing the why */}
+                    <AnimatedSection variants={fadeInUp} rootMargin="0px 0px -10% 0px">
+                        <CaseStudyContent
+                            subtitle="Design Decision"
+                            title="Showing the why, not just the what."
+                            description="Every card surfaces a reason alongside the message. Not just what was posted, but why Highlights thinks it matters to you. If that reason is wrong, the three dots let you adjust that channel's preferences directly from the card without hunting through settings. Transparency and control in the same gesture."
+                            mediaClassName="mt-6"
+                            svgContent={
+                                <div className="relative w-full aspect-square bg-[#f3f3f3] overflow-hidden">
+                                    <Image
+                                        src="/work/discord/images/card-anatomy.png"
+                                        alt="Card anatomy: server and channel name, attribute line, channel settings"
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, 768px"
+                                        className="object-contain"
+                                    />
+                                </div>
+                            }
+                        />
+                    </AnimatedSection>
+                </div>
+
+                <div className="h-16" />
+
+                {/* Research */}
+                <div data-section="research">
+                    <AnimatedSection variants={fadeInUp} rootMargin="0px 0px -10% 0px">
+                        <CaseStudyContent
+                            subtitle="Research"
+                            title="Where does re-entry break down?"
+                            description="I ran 8 interviews and collected 63 survey responses to understand why server backlogs pile up untouched. It wasn't a notification problem. It was a triage problem."
+                            mediaClassName="mt-6"
+                            svgContent={
+                                <div className="relative w-full aspect-[576/360] bg-[#f3f3f3] overflow-hidden" />
+                            }
+                        />
+                    </AnimatedSection>
+
+                    <div className="h-16" />
+
+                    <AnimatedSection variants={fadeInUp} rootMargin="0px 0px -10% 0px">
+                        <div className="w-full max-w-[768px] mx-auto">
+                            <p className="caption text-[#5e5e5d]">Research</p>
+                            <h2 className="text-black mt-[0.5rem]">Three patterns that shaped the design.</h2>
+                            <div className="flex flex-col gap-6 mt-8">
+                                <div className="flex flex-col gap-2">
+                                    <h3 className="text-black">The backlog number itself creates paralysis.</h3>
+                                    <p className="text-[#5e5e5d]">Once it crosses a certain threshold, most users stop trying entirely.</p>
+                                </div>
+                                <div className="flex flex-col gap-2">
+                                    <h3 className="text-black">People skim. They don&apos;t read.</h3>
+                                    <p className="text-[#5e5e5d]">A glance at who posted, a keyword, a timestamp. That&apos;s all it took to decide if something was worth opening.</p>
+                                </div>
+                                <div className="flex flex-col gap-2">
+                                    <h3 className="text-black">Users wanted a say in what surfaced.</h3>
+                                    <p className="text-[#5e5e5d]">Less noise wasn&apos;t enough. They wanted to shape what kept appearing without having to mute entire communities.</p>
+                                </div>
+                            </div>
+
+                            {/* North Star — embedded inside Research */}
+                            <div className="mt-10 w-full bg-[#f3f3f3] px-6 py-12 md:py-16 flex flex-col items-center">
+                                <div className="w-[180px] h-[180px]">
+                                    <DotLottieReact
+                                        src="https://lottie.host/29db9a53-397f-4d28-8db2-c91a90faac01/9Jm1Bfvtxd.lottie"
+                                        loop
+                                        autoplay
+                                    />
+                                </div>
+                                <p className="mt-6 text-black font-medium text-center">Our North Star</p>
+                                <p className="mt-3 text-[#5e5e5d] text-center max-w-[52ch]">The problem wasn&apos;t missing messages. It was that deciding what&apos;s worth reading felt harder than just giving up.</p>
+                            </div>
+                        </div>
+                    </AnimatedSection>
+
+                </div>
+
+                <div className="h-16" />
+
+                {/* Solution Ideation */}
+                <div data-section="ideation">
+                    <AnimatedSection variants={fadeInUp} rootMargin="0px 0px -10% 0px">
+                        <CaseStudyContent
+                            subtitle="Solution Ideation"
+                            title="First iteration: right intent, wrong execution."
+                            description="The first iteration went full screen. One card, full conversation context, reply input, Skip and Mark as Read at the bottom. Two things broke it in practice. Getting to anything relevant felt slow because the full context recreated the overload inside the card itself. And the button placement didn't account for one-handed use. The actions sat where Discord's native elements already lived, which created confusion about what was part of the feature and what wasn't."
+                            mediaClassName="mt-6"
+                            svgContent={
+                                <div className="relative w-full aspect-[576/568] bg-[#f3f3f3] overflow-hidden">
+                                    <Image
+                                        src="/work/discord/images/full-card-iteration.png"
+                                        alt="First iteration"
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, 768px"
+                                        className="object-contain"
+                                    />
+                                </div>
+                            }
+                        />
+                    </AnimatedSection>
+
+                    <div className="h-16" />
+
+                    <AnimatedSection variants={fadeInUp} rootMargin="0px 0px -10% 0px">
+                        <CaseStudyContent
+                            subtitle="Solution Ideation"
+                            title="Faster to skim, harder to trust."
+                            description="An earlier exploration used a stacked list view. Users moved through it quickly but felt like they might miss something important. Without enough context per item, skimming fast came at the cost of confidence."
+                            mediaClassName="mt-6"
+                            svgContent={
+                                <div className="relative w-full aspect-[576/568] bg-[#f3f3f3] overflow-hidden">
+                                    <Image
+                                        src="/work/discord/images/listviewiteration.png"
+                                        alt="List view iteration"
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, 768px"
+                                        className="object-contain"
+                                    />
+                                </div>
+                            }
+                        />
+                    </AnimatedSection>
+                </div>
+
+                <div className="h-16" />
+
+                {/* Testing */}
+                <div data-section="testing">
+                    <AnimatedSection variants={fadeInUp} rootMargin="0px 0px -10% 0px">
+                        <CaseStudyContent
+                            subtitle="Testing"
+                            title="&ldquo;Is this not already on Discord?&rdquo;"
+                            description="That question came up across multiple sessions without prompting. Participants assumed it must be in beta. One said it looked like it already belonged in the app. That kind of reaction is the closest a concept test can get to a green light."
+                        />
+                    </AnimatedSection>
+
+                    <div className="h-8" />
+
+                    <AnimatedSection variants={fadeInUp} rootMargin="0px 0px -10% 0px">
+                        <div className="w-full max-w-[768px] mx-auto">
+                            <p className="text-[#5e5e5d]">The filtering screen scored highest across the board. Users called out the server and channel level granularity as the most useful part. One participant said they would set it up immediately. Another noted that silencing a server without leaving it solved something they had been working around for years.</p>
+                            <p className="text-[#5e5e5d] mt-4">The main friction was icon clarity. The lightbulb and fire indicators confused several participants before any context was given. Once explained they landed quickly, but relying on explanation is a gap worth closing in the next iteration.</p>
+
+                            <div className="flex flex-col md:flex-row gap-4 mt-8">
+                                <div className="flex-1 flex flex-col gap-2 p-6 bg-[#f3f3f3]">
+                                    <p className="caption text-[#5e5e5d]">Highlights average</p>
+                                    <h3 className="text-black">4.2/5</h3>
+                                </div>
+                                <div className="flex-1 flex flex-col gap-2 p-6 bg-[#f3f3f3]">
+                                    <p className="caption text-[#5e5e5d]">Filtering average</p>
+                                    <h3 className="text-black">4.8/5</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </AnimatedSection>
+                </div>
+
+                <div className="h-16" />
+
+                {/* Reflections */}
+                <div data-section="reflection">
+                    <AnimatedSection variants={fadeInUp} rootMargin="0px 0px -10% 0px">
+                        <CaseStudyContent
+                            subtitle="Key Learnings"
+                            title="The framing mattered as much as the interface."
+                            description="The most important shift in this project wasn't a design decision. It was realizing the product I was designing wasn't a catch-up tool. It was a triage tool. That reframe made every subsequent decision easier to justify and harder to second-guess."
+                        />
+                    </AnimatedSection>
+
+                    <div className="h-6" />
+
+                    <AnimatedSection variants={fadeInUp} rootMargin="0px 0px -10% 0px">
+                        <div className="w-full max-w-[768px] mx-auto">
+                            <p className="text-[#5e5e5d]">The open question I&apos;d carry forward is trust and relevance. Users were comfortable with Highlights making an initial guess during testing, but several asked why a specific message was shown to them. The Not Interested signal is a start. But a feature like this only earns long term use if people feel the feed is getting smarter. I&apos;d want to make the ranking logic more legible through small signals so users understand why something appeared rather than just accepting that it did.</p>
+                        </div>
+                    </AnimatedSection>
                 </div>
             </main>
 

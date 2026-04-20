@@ -112,16 +112,9 @@ export default function WiseCaseStudy() {
                 <Link href="/" className="w-fit text-[14px] leading-[18px] text-[#575757] font-[350] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
                     ← Back
                 </Link>
-                <div className="flex flex-col gap-y-4 mt-6">
-                    <div className="flex flex-col">
-                        <h1 className="text-[18px] leading-[1.3] font-light">Wise</h1>
-
-                    </div>
-                    <div className="flex items-center gap-x-1">
-                        <p className="text-[11px] leading-none font-mono uppercase text-[#999]">UI Design</p>
-                        <div className="bg-[#999] h-[2px] w-[2px] rounded-full" />
-                        <p className="text-[11px] leading-none font-mono uppercase text-[#999]">2025</p>
-                    </div>
+                <div className="flex flex-col gap-y-4 pt-6">
+                    <h1>Wise</h1>
+                    <p className="caption text-[#5e5e5d]">UI Design · 2025</p>
                 </div>
                 <div className="mt-8">
                     <WorksNav
@@ -141,7 +134,8 @@ export default function WiseCaseStudy() {
                     <Link href="/" className="w-fit text-[14px] leading-[18px] text-[#575757] font-[350] hover:text-[#F25410] transition-colors duration-200 ease-in-out hover-target-small">
                         ← Back
                     </Link>
-                    <h1 className="text-[18px] leading-[1.3] font-light mt-4">Wise</h1>
+                    <h1 className="mt-4">Wise</h1>
+                    <p className="caption text-[#5e5e5d] mt-2">UI Design · 2025</p>
                 </div>
 
                 <div className="flex flex-col gap-y-[6rem]">

@@ -49,29 +49,35 @@ const CaseStudyCard: React.FC<CaseStudyCardProps> = ({
                 />
             )}
         </div>
-        <h1 className="mt-[2rem]">{title}</h1>
-        <div className="flex flex-wrap mt-[0.75rem]">
-            <div className="w-1/2 md:w-1/4 pr-4 mb-4">
-                <h4 className="font-mono text-[12px]">ROLE</h4>
-                {roles.map(role => (
-                    <p key={role}>{role}</p>
-                ))}
+        <h2 className="mt-[2rem] text-black">{title}</h2>
+        <div className="flex flex-wrap gap-y-4 mt-4">
+            <div className="w-1/2 md:w-1/4 pr-4 flex flex-col gap-y-2">
+                <p className="caption text-[#5e5e5d]">Role</p>
+                <div className="flex flex-col">
+                    {roles.map(role => (
+                        <p key={role} className="text-[#5e5e5d]">{role}</p>
+                    ))}
+                </div>
             </div>
-            <div className="w-1/2 md:w-1/4 pr-4 mb-4">
-                <h4 className="font-mono text-[12px]">TEAM</h4>
-                {team.map(member => (
-                    <p key={member}>{member}</p>
-                ))}
+            <div className="w-1/2 md:w-1/4 pr-4 flex flex-col gap-y-2">
+                <p className="caption text-[#5e5e5d]">Team</p>
+                <div className="flex flex-col">
+                    {team.map(member => (
+                        <p key={member} className="text-[#5e5e5d]">{member}</p>
+                    ))}
+                </div>
             </div>
-            <div className="w-1/2 md:w-1/4 pr-4 mb-4">
-                <h4 className="font-mono text-[12px]">TIMELINE</h4>
-                <p>{timeline}</p>
+            <div className="w-1/2 md:w-1/4 pr-4 flex flex-col gap-y-2">
+                <p className="caption text-[#5e5e5d]">Timeline</p>
+                <p className="text-[#5e5e5d]">{timeline}</p>
             </div>
-            <div className="w-1/2 md:w-1/4 mb-4">
-                <h4 className="font-mono text-[12px]">TOOLS</h4>
-                {tools.map(tool => (
-                    <p key={tool}>{tool}</p>
-                ))}
+            <div className="w-1/2 md:w-1/4 flex flex-col gap-y-2">
+                <p className="caption text-[#5e5e5d]">Tools</p>
+                <div className="flex flex-col">
+                    {tools.map(tool => (
+                        <p key={tool} className="text-[#5e5e5d]">{tool}</p>
+                    ))}
+                </div>
             </div>
         </div>
     </div>
