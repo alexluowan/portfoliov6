@@ -434,18 +434,24 @@ export default function DiscordCatchup() {
                 {/* Reflections */}
                 <div data-section="reflection">
                     <AnimatedSection variants={fadeInUp} rootMargin="0px 0px -10% 0px">
-                        <CaseStudyContent
-                            subtitle="Key Learnings"
-                            title="The framing mattered as much as the interface."
-                            description="The most important shift in this project wasn't a design decision. It was realizing the product I was designing wasn't a catch-up tool. It was a triage tool. That reframe made every subsequent decision easier to justify and harder to second-guess."
-                        />
-                    </AnimatedSection>
-
-                    <div className="h-6" />
-
-                    <AnimatedSection variants={fadeInUp} rootMargin="0px 0px -10% 0px">
                         <div className="w-full max-w-[768px] mx-auto">
-                            <p className="text-[#5e5e5d]">The open question I&apos;d carry forward is trust and relevance. Users were comfortable with Highlights making an initial guess during testing, but several asked why a specific message was shown to them. The Not Interested signal is a start. But a feature like this only earns long term use if people feel the feed is getting smarter. I&apos;d want to make the ranking logic more legible through small signals so users understand why something appeared rather than just accepting that it did.</p>
+                            <p className="caption text-[#5e5e5d]">Reflection</p>
+                            <h2 className="text-black mt-[0.5rem]">Designing for triage is really designing for trust.</h2>
+
+                            <div className="flex flex-col md:flex-row gap-8 md:gap-4 mt-8">
+                                <div className="flex-1 flex flex-col gap-4">
+                                    <h3 className="text-black">The framing mattered as much as the interface.</h3>
+                                    <p className="text-[#5e5e5d]">
+                                        The most important shift in this project wasn&apos;t a design decision. It was realizing the product I was designing wasn&apos;t a catch-up tool. It was a triage tool. That reframe made every subsequent decision easier to justify and harder to second-guess.
+                                    </p>
+                                </div>
+                                <div className="flex-1 flex flex-col gap-4">
+                                    <h3 className="text-black">Trust grows when the system is legible.</h3>
+                                    <p className="text-[#5e5e5d]">
+                                        Users were comfortable with Highlights making an initial guess, but several asked why a specific message was shown to them. The Not Interested signal is a start, but a feature like this only earns long term use if people feel the feed is getting smarter. The ranking logic has to be legible through small signals so users understand why something appeared rather than just accepting that it did.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </AnimatedSection>
                 </div>

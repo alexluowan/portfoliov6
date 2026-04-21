@@ -144,7 +144,7 @@ export default function BlueberrySocial() {
                             variants={fadeInUpStagger}
                         >
                             <CaseStudyContent
-                                subtitle="my focus"
+                                subtitle="My Focus"
                                 title="I owned rules, brand voice, and the final inbox"
                                 description={`I focused on the highest-risk areas: the features that determined whether the AI's output would be reliable enough for operators to trust with real customers.`}
                                 svgContent={
@@ -156,7 +156,7 @@ export default function BlueberrySocial() {
                                 }
                             />
                             <CaseStudyContent
-                                subtitle="what shipped"
+                                subtitle="What Shipped"
                                 title="Automation: plain language over technical logic"
                                 description={`Rules that read like sentences, not code. "When someone asks about shipping, reply with tracking info." A dedicated builder with mandatory sandbox testing before going live.`}
                                 videoSrcMp4="/work/blueberry/videos/Automation.mp4"
@@ -185,21 +185,21 @@ export default function BlueberrySocial() {
                             variants={fadeInUp}
                         >
                             <CaseStudyContent
-                                subtitle="explorations"
+                                subtitle="Explorations"
                                 title="Early directions I killed"
                                 description={`Two directions I explored and abandoned based on user feedback.`}
                                 svgContent={
                                     <div className="flex flex-col gap-12 mt-[2.5rem]">
                                         <div>
-                                            <h3 className="text-[16px] font-medium mb-2">Rules that felt like programming</h3>
-                                            <p className="text-[#363636] mb-4">My first designs looked like logic builders with if/then statements. Users froze. I was designing for flexibility when I should have been designing for confidence.</p>
+                                            <h3 className="text-black mb-2">Rules that felt like programming</h3>
+                                            <p className="text-[#5e5e5d] mb-4">My first designs looked like logic builders with if/then statements. Users froze. I was designing for flexibility when I should have been designing for confidence.</p>
                                             <video className="w-full" controls={false} autoPlay playsInline muted loop>
                                                 <source src="/work/blueberry/videos/programmablerulesbuilder.mp4" type="video/mp4" />
                                             </video>
                                         </div>
                                         <div>
-                                            <h3 className="text-[16px] font-medium mb-2">Brand voice: real-time testing split attention</h3>
-                                            <p className="text-[#363636] mb-4">A split interface with voice guidelines on the left and live testing on the right. Users got stuck constantly context-switching.</p>
+                                            <h3 className="text-black mb-2">Brand voice: real-time testing split attention</h3>
+                                            <p className="text-[#5e5e5d] mb-4">A split interface with voice guidelines on the left and live testing on the right. Users got stuck constantly context-switching.</p>
                                             <Image src="/work/blueberry/images/brandvoice-exploration1.png" alt="Split interface exploration for brand voice" width={0} height={0} sizes="100vw" className="w-full h-auto" />
                                         </div>
                                     </div>
@@ -214,22 +214,22 @@ export default function BlueberrySocial() {
                             variants={fadeInUp}
                         >
                             <CaseStudyContent
-                                subtitle="context"
+                                subtitle="Context"
                                 title="Every unanswered comment is a lost sale"
                                 description={`A customer asks if a best-seller is back in stock. 47 people are watching. By morning, 12 bought from a competitor who replied first.`}
                                 imageSrc="/work/blueberry/images/unansweredcomment.png"
                                 mediaAlt="Unanswered Instagram comment showing lost sales opportunity"
                             />
                             <CaseStudyContent
-                                subtitle="the real problem"
+                                subtitle="The Real Problem"
                                 title="It's not capability. It's reliability."
                                 description={`Every growth lead we interviewed had tried AI tools and stopped. The output was unreliable and they couldn't trust it to represent their brand.`}
                                 svgContent={
                                     <div className="border-l-2 border-[#171717] pl-6 py-4 mt-[2.5rem]">
-                                        <p className="text-[18px] leading-[1.5]">
+                                        <h1 className="text-black">
                                             &ldquo;Don&apos;t fully trust AI yet, but open to automation once I trust it over time.&rdquo;
-                                        </p>
-                                        <p className="text-[#999] text-sm mt-4">Growth Lead, $3M DTC skincare brand</p>
+                                        </h1>
+                                        <p className="caption text-[#5e5e5d] mt-4">Growth Lead, $3M DTC skincare brand</p>
                                     </div>
                                 }
                             />
@@ -242,31 +242,31 @@ export default function BlueberrySocial() {
                             variants={fadeInUp}
                         >
                             <CaseStudyContent
-                                subtitle="the pivot"
+                                subtitle="The Pivot"
                                 title="Our entire ICP flipped halfway through"
                                 description={`Mid-project, we learned mid-sized eCommerce teams were the real opportunity, not startup founders. We chose speed: V0 for rapid prototypes, weekly testing, and reducing ambiguity fast enough to ship.`}
                                 svgContent={
                                     <div className="flex flex-col md:flex-row gap-4 mt-[2.5rem]">
-                                        <div className="flex-1 border border-[#E5E5E5] p-6">
-                                            <p className="text-xs text-[#999] uppercase tracking-wider mb-2">Assumed</p>
-                                            <p className="font-medium text-lg">Startup founders</p>
-                                            <p className="text-sm text-[#666] mt-2">Solo operators, low volume, price-sensitive</p>
+                                        <div className="flex-1 flex flex-col gap-2 p-6 bg-[#f3f3f3]">
+                                            <p className="caption text-[#5e5e5d]">Assumed</p>
+                                            <h3 className="text-black">Startup founders</h3>
+                                            <p className="text-[#5e5e5d]">Solo operators, low volume, price-sensitive</p>
                                         </div>
-                                        <div className="hidden md:flex items-center justify-center text-[#999]">
+                                        <div className="hidden md:flex items-center justify-center text-[#5e5e5d]">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                                                 <path d="M5 12h14M12 5l7 7-7 7"/>
                                             </svg>
                                         </div>
-                                        <div className="flex-1 border border-[#000] p-6">
-                                            <p className="text-xs text-[#999] uppercase tracking-wider mb-2">Discovered</p>
-                                            <p className="font-medium text-lg">Mid-sized eComm teams</p>
-                                            <p className="text-sm text-[#666] mt-2">$2M+ revenue, high volume, trust-focused</p>
+                                        <div className="flex-1 flex flex-col gap-2 p-6 bg-[#f3f3f3]">
+                                            <p className="caption text-[#5e5e5d]">Discovered</p>
+                                            <h3 className="text-black">Mid-sized eComm teams</h3>
+                                            <p className="text-[#5e5e5d]">$2M+ revenue, high volume, trust-focused</p>
                                         </div>
                                     </div>
                                 }
                             />
                             <CaseStudyContent
-                                subtitle="design principle"
+                                subtitle="Design Principle"
                                 title="AI assists first. Automates only when trusted."
                                 description={`Every feature had to guarantee the AI's output was consistent, on-brand, and something operators would confidently send to real customers.`}
                             />
@@ -278,26 +278,26 @@ export default function BlueberrySocial() {
                             variants={fadeInUp}
                         >
                             <CaseStudyContent
-                                subtitle="impact"
+                                subtitle="Impact"
                                 title="The numbers that matter"
                                 description={`Over 10 weeks and 6 testing iterations. By the end, users weren't just approving AI suggestions. They were asking how to scale them.`}
                                 svgContent={
                                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-[2.5rem]">
                                         <div>
-                                            <p className="text-[48px] leading-none tracking-tight">33%</p>
-                                            <p className="text-[#363636] text-sm mt-3">improvement in usability score</p>
+                                            <h1 className="text-black">33%</h1>
+                                            <p className="text-[#5e5e5d] mt-3">improvement in usability score</p>
                                         </div>
                                         <div>
-                                            <p className="text-[48px] leading-none tracking-tight">72.5</p>
-                                            <p className="text-[#363636] text-sm mt-3">average SUS score, above industry benchmark</p>
+                                            <h1 className="text-black">72.5</h1>
+                                            <p className="text-[#5e5e5d] mt-3">average SUS score, above industry benchmark</p>
                                         </div>
                                         <div>
-                                            <p className="text-[48px] leading-none tracking-tight">7/7</p>
-                                            <p className="text-[#363636] text-sm mt-3">ease rating on final onboarding</p>
+                                            <h1 className="text-black">7/7</h1>
+                                            <p className="text-[#5e5e5d] mt-3">ease rating on final onboarding</p>
                                         </div>
                                         <div>
-                                            <p className="text-[48px] leading-none tracking-tight">6</p>
-                                            <p className="text-[#363636] text-sm mt-3">weekly testing rounds</p>
+                                            <h1 className="text-black">6</h1>
+                                            <p className="text-[#5e5e5d] mt-3">weekly testing rounds</p>
                                         </div>
                                     </div>
                                 }
@@ -311,19 +311,21 @@ export default function BlueberrySocial() {
                             variants={fadeInUpStagger}
                         >
                             <CaseStudyContent
-                                subtitle="reflection"
+                                subtitle="Reflection"
                                 title="What I learned"
                                 description=""
                                 mediaClassName="mt-[1.5rem]"
                                 svgContent={
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                        <div>
-                                            <h3 className="text-[16px] font-medium">Reliability beats intelligence.</h3>
-                                            <p className="text-[#363636] mt-2">Users don't care how smart the AI is. They care whether it sounds like their brand every single time. Consistent, predictable output is what earns the trust to automate.</p>
+                                        <div className="flex flex-col gap-2">
+                                            <p className="caption text-[#5e5e5d]">Key Learning</p>
+                                            <h3 className="text-black">Reliability beats intelligence.</h3>
+                                            <p className="text-[#5e5e5d]">Users don&apos;t care how smart the AI is. They care whether it sounds like their brand every single time. Consistent, predictable output is what earns the trust to automate.</p>
                                         </div>
-                                        <div>
-                                            <h3 className="text-[16px] font-medium">Pivots are a design skill.</h3>
-                                            <p className="text-[#363636] mt-2">When our ICP flipped mid-project, the instinct was to start over. Instead we identified what transferred and what didn't, then moved fast on the delta. Speed came from clarity, not panic.</p>
+                                        <div className="flex flex-col gap-2">
+                                            <p className="caption text-[#5e5e5d]">Key Learning</p>
+                                            <h3 className="text-black">Pivots are a design skill.</h3>
+                                            <p className="text-[#5e5e5d]">When our ICP flipped mid-project, the instinct was to start over. Instead we identified what transferred and what didn&apos;t, then moved fast on the delta. Speed came from clarity, not panic.</p>
                                         </div>
                                     </div>
                                 }

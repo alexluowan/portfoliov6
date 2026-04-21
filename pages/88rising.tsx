@@ -169,15 +169,15 @@ export default function Rising88() {
                                             <div className="flex items-end gap-3">
                                                 <div className="w-[180px] h-[180px] md:w-[300px] md:h-[300px] rounded-full border border-[#171717] bg-[#171717]/5 shrink-0" />
                                                 <div className="pb-4">
-                                                    <p className="text-lg font-medium tracking-tight leading-none">3 billion views</p>
-                                                    <p className="text-[#999] text-sm tracking-tight leading-none mt-1">2016 — 2019</p>
+                                                    <h3 className="text-black">3 billion views</h3>
+                                                    <p className="caption text-[#5e5e5d] mt-1">2016 — 2019</p>
                                                 </div>
                                             </div>
                                             <div className="flex items-end gap-4 mt-6 ml-[50%] md:ml-[55%]">
                                                 <div className="w-[36px] h-[36px] md:w-[44px] md:h-[44px] rounded-full border border-[#171717] bg-[#171717]/5 shrink-0" />
                                                 <div className="pb-1">
-                                                    <p className="text-lg font-medium tracking-tight leading-none">0.43 billion views</p>
-                                                    <p className="text-[#999] text-sm tracking-tight leading-none mt-1">2020 — 2023</p>
+                                                    <h3 className="text-black">0.43 billion views</h3>
+                                                    <p className="caption text-[#5e5e5d] mt-1">2020 — 2023</p>
                                                 </div>
                                             </div>
                                             <hr className="border-[#171717] mt-6" />
