@@ -183,10 +183,10 @@ export default function Rising88() {
                                             <hr className="border-[#171717] mt-6" />
                                         </div>
                                         <div className="border-l-2 border-[#171717] pl-6 py-4">
-                                            <p className="text-[18px] leading-[1.5]">
-                                                &quot;For Asians, Asian Americans and just Asian youth globally, <span className="font-medium">there&apos;s no real home on the internet</span> or a company consistently putting out things that either include Asian talent or Asian viewpoints in stories.&quot;
-                                            </p>
-                                            <p className="text-[#999] text-sm mt-4">Sean Miyashiro, Founder of 88rising</p>
+                                            <h1 className="text-black">
+                                                &ldquo;For Asians, Asian Americans and just Asian youth globally, <span className="font-medium">there&apos;s no real home on the internet</span> or a company consistently putting out things that either include Asian talent or Asian viewpoints in stories.&rdquo;
+                                            </h1>
+                                            <p className="caption text-[#5e5e5d] mt-4">Sean Miyashiro, Founder of 88rising</p>
                                         </div>
                                     </div>
                                 }

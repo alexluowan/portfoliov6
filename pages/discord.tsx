@@ -300,15 +300,27 @@ export default function DiscordCatchup() {
                 {/* Research */}
                 <div data-section="research">
                     <AnimatedSection variants={fadeInUp} rootMargin="0px 0px -10% 0px">
-                        <CaseStudyContent
-                            subtitle="Research"
-                            title="Where does re-entry break down?"
-                            description="I ran 8 interviews and collected 63 survey responses to understand why server backlogs pile up untouched. It wasn't a notification problem. It was a triage problem."
-                            mediaClassName="mt-6"
-                            svgContent={
-                                <div className="relative w-full aspect-[576/360] bg-[#f3f3f3] overflow-hidden" />
-                            }
-                        />
+                        <div className="w-full max-w-[768px] mx-auto">
+                            <p className="caption text-[#5e5e5d]">Research</p>
+                            <h2 className="text-black mt-[0.5rem]">Where does re-entry break down?</h2>
+                            <p className="text-[#5e5e5d] mt-[1rem]">
+                                I ran 8 interviews and 63 survey responses with heavy Discord users, focused on four questions.
+                            </p>
+
+                            <div className="relative w-full aspect-square bg-[#f3f3f3] overflow-hidden mt-8">
+                                <Image
+                                    src="/work/discord/images/research-questions.png"
+                                    alt="Three research questions from the interview guide"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 768px"
+                                    className="object-contain"
+                                />
+                            </div>
+
+                            <p className="text-[#5e5e5d] mt-8">
+                                What I heard wasn&apos;t a notification problem. It was a triage problem.
+                            </p>
+                        </div>
                     </AnimatedSection>
 
                     <div className="h-16" />
@@ -341,7 +353,7 @@ export default function DiscordCatchup() {
                                         autoplay
                                     />
                                 </div>
-                                <p className="mt-6 text-black font-medium text-center">Our North Star</p>
+                                <h3 className="mt-6 text-black text-center">Our North Star</h3>
                                 <p className="mt-3 text-[#5e5e5d] text-center max-w-[52ch]">The problem wasn&apos;t missing messages. It was that deciding what&apos;s worth reading felt harder than just giving up.</p>
                             </div>
                         </div>
@@ -357,7 +369,7 @@ export default function DiscordCatchup() {
                         <CaseStudyContent
                             subtitle="Solution Ideation"
                             title="First iteration: right intent, wrong execution."
-                            description="The first iteration went full screen. One card, full conversation context, reply input, Skip and Mark as Read at the bottom. Two things broke it in practice. Getting to anything relevant felt slow because the full context recreated the overload inside the card itself. And the button placement didn't account for one-handed use. The actions sat where Discord's native elements already lived, which created confusion about what was part of the feature and what wasn't."
+                            description="The first iteration stuffed the whole conversation into one full-screen card. Without a clear hierarchy, users had no entry point — the card just looked like more of what they were trying to escape."
                             mediaClassName="mt-6"
                             svgContent={
                                 <div className="relative w-full aspect-[576/568] bg-[#f3f3f3] overflow-hidden">
