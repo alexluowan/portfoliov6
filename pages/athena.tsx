@@ -11,6 +11,7 @@ import {heroAnimation, fadeInUp, fadeInUpStagger} from '@/animations/animationVa
 import Link from 'next/link'
 import Image from 'next/image'
 import ImageCarousel from '@/components/projects/ImageCarousel'
+import AutoplayVideo from '@/components/projects/AutoplayVideo'
 import {refreshCursor} from '@/cursor/useCursor'
 
 export default function AthenaHQ() {
@@ -396,12 +397,13 @@ export default function AthenaHQ() {
                                 svgContent={
                                     <div className="flex flex-col gap-y-6">
                                         <div className="w-full bg-[#f3f3f3] px-6 py-12 md:py-16 flex flex-col items-center">
-                                            <svg className="mb-6" width="64" height="64" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M2 29.5L5 23.4218M23.7778 15.8427C23.7778 15.8427 23 13.5 16.2593 13.5C9.51852 13.5 8.74074 15.8427 8.74074 15.8427L6.87037 19.6322M30 29.5L26.5 22" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                                <path d="M16 12.3077V7.46154M19.5 13V7.46154M19.5 7.46154H21L16 4L11 7.46154H12.5M19.5 7.46154H12.5M12.5 7.46154V13" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                                <path d="M22.1035 21.5506H27.6035C28.3535 21.2175 29.6035 20.1512 28.6035 18.5509C27.8223 17.3009 26.1868 17.7172 25.6035 18.3006C25.8534 16.302 22.6036 15.3018 21.1035 16.5506C18.7893 18.4771 20.6034 21.0515 22.1035 21.5506Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                                <path d="M7.10347 25.5506H12.6035C13.3535 25.2175 14.6035 24.1512 13.6035 22.5509C12.8223 21.3009 11.1868 21.7172 10.6035 22.3006C10.8534 20.302 7.60364 19.3018 6.10347 20.5506C3.78926 22.4771 5.60336 25.0515 7.10347 25.5506Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                                            </svg>
+                                            <AutoplayVideo
+                                                className="mb-6 w-[96px] h-[96px]"
+                                                videoClassName="w-full h-full object-contain mix-blend-multiply"
+                                                videoSrcWebm="/work/olympus/videos/loadingAnimWhite.webm"
+                                                videoSrcMp4="/work/olympus/videos/loadingAnimWhite.mp4"
+                                                eager
+                                            />
                                             <h3 className="text-black text-center">How might we</h3>
                                             <p className="mt-3 text-[#5e5e5d] text-center max-w-[52ch]">Turn Athena&apos;s AI visibility data into a dashboard that supports quick monitoring, deeper investigation, and easier reporting?</p>
                                         </div>
