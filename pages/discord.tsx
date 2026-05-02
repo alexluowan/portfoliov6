@@ -132,7 +132,7 @@ export default function DiscordCatchup() {
                         videoClassName="h-full w-full object-cover object-center"
                         title="700 unread messages. You don't catch up. You just want the number gone."
                         roles={['Product Designer']}
-                        team={['Shania Chacon', 'User Testing']}
+                        team={['Shania Chacon']}
                         timeline="4 Weeks"
                         tools={['Figma']}
                     />
