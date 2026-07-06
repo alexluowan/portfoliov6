@@ -5,6 +5,7 @@ import { Analytics } from '@vercel/analytics/react'
 import '../styles/globals.css'
 import PageTransition from '../src/components/PageTransition'
 import { useCursor } from '../src/cursor/useCursor'
+import { InterfaceKit } from 'interface-kit/react'
 
 export default function App({ Component, pageProps, router }: AppProps) {
   useCursor()
@@ -21,6 +22,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
           <Component {...pageProps} />
         </PageTransition>
       </AnimatePresence>
+      {process.env.NODE_ENV === 'development' && <InterfaceKit />}
       <Analytics />
     </>
   )
