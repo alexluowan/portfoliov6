@@ -10,7 +10,6 @@ import AnimatedSection from '@/components/AnimatedSection'
 import {heroAnimation, fadeInUp, fadeInUpStagger} from '@/animations/animationVariants'
 import Link from 'next/link'
 import Image from 'next/image'
-import ImageCarousel from '@/components/projects/ImageCarousel'
 import AutoplayVideo from '@/components/projects/AutoplayVideo'
 import {refreshCursor} from '@/cursor/useCursor'
 
@@ -27,8 +26,6 @@ export default function AthenaHQ() {
         {label: 'Before', sectionId: 'before'},
         {label: 'Context', sectionId: 'context'},
         {label: 'Solution', sectionId: 'solution'},
-        {label: 'Exploration', sectionId: 'exploration'},
-        {label: 'Precedent', sectionId: 'precedent'},
         {label: 'Decisions', sectionId: 'decisions'},
         {label: 'Outcome', sectionId: 'outcome'},
         {label: 'Reflection', sectionId: 'reflection'},
@@ -276,7 +273,7 @@ export default function AthenaHQ() {
                         <CaseStudyCard
                             videoSrcWebm="/project-covers/athenahqpreview.webm"
                             videoSrcMp4="/project-covers/athenahqpreview.mp4"
-                            title="Designing a modular dashboard for marketers who need to monitor, interpret, and present AI visibility data."
+                            title="Create a dashboard where every marketer can turn AI visibility data into answers on their own terms."
                             roles={['Product Designer']}
                             team={['1 Designer', '4 Developers']}
                             timeline="5 Weeks"
@@ -501,59 +498,6 @@ export default function AthenaHQ() {
                                     </div>
                                 }
                             />
-                        </AnimatedSection>
-
-                        {/* 4. Exploration — a direction we cut */}
-                        <AnimatedSection
-                            data-section="exploration"
-                            variants={fadeInUp}
-                        >
-                            <div className="w-full max-w-[768px] mx-auto">
-                                <p className="caption text-[#5e5e5d]">Exploration</p>
-                                <h2 className="text-black mt-[0.5rem]">Full report generation was too heavy</h2>
-                                <p className="text-[#5e5e5d] mt-[1rem] max-w-[60ch]">We explored a multi-step flow for generating PDF reports from dashboard data: pick a goal, select focus areas, and export a formatted document. But the workflow was too tedious. Users didn&apos;t want a new artifact. They wanted to pull specific widgets into existing decks and docs. That insight pushed export toward the simpler widget-level action instead.</p>
-                                <ImageCarousel
-                                    className="mt-[2.5rem]"
-                                    slides={[
-                                        { src: '/work/olympus/images/report-goal.png', alt: 'Report goal selection with templates', label: 'Choose a report goal' },
-                                        { src: '/work/olympus/images/report-templates.png', alt: 'Report templates and custom prompt', label: 'Templates or write your own' },
-                                        { src: '/work/olympus/images/report-prompt.png', alt: 'Custom prompt input for report generation', label: 'Custom prompt input' },
-                                        { src: '/work/olympus/images/report-focus.png', alt: 'Focus areas selection with draggable modules', label: 'Select focus areas' },
-                                        { src: '/work/olympus/images/report-output.png', alt: 'Generated report with high-impact insights', label: 'Generated report output' },
-                                    ]}
-                                />
-                            </div>
-                        </AnimatedSection>
-
-                        {/* 5. Precedent — industry validation */}
-                        <AnimatedSection
-                            data-section="precedent"
-                            className="flex flex-col gap-y-[4rem]"
-                            variants={fadeInUp}
-                        >
-                            <CaseStudyContent
-                                subtitle="Precedent"
-                                title="This pattern already works at scale"
-                                description="Stripe and Shopify both use modular, customizable dashboards. Strong defaults with the ability to add, remove, and rearrange widgets."
-                            />
-                            <div className="w-full max-w-[768px] mx-auto">
-                                <h3 className="text-[16px] font-medium">Stripe</h3>
-                                <p className="text-[#363636] mt-[0.5rem] max-w-[60ch]">Default overview with + Add and Edit controls. Edit mode lets users remove widgets. + Add opens a picker to pull in new ones.</p>
-                                <ImageCarousel
-                                    className="mt-[2.5rem]"
-                                    slides={[
-                                        { src: '/work/olympus/images/precedent/stripe-default.png', alt: 'Stripe default dashboard overview', label: 'Default dashboard' },
-                                        { src: '/work/olympus/images/precedent/stripe-edit.png', alt: 'Stripe edit mode with removable widgets', label: 'Edit mode' },
-                                        { src: '/work/olympus/images/precedent/stripe-add.png', alt: 'Stripe widget picker modal', label: 'Add widgets from picker' },
-                                    ]}
-                                />
-                            </div>
-                            <div className="w-full max-w-[768px] mx-auto">
-                                <h3 className="text-[16px] font-medium">Shopify</h3>
-                                <p className="text-[#363636] mt-[0.5rem] max-w-[60ch]">Users can drag, reposition, and resize displayed analytics to their liking.</p>
-                                <Image src="/work/olympus/images/precedent/shopify-customize.png" alt="Shopify analytics library for drag, reposition, and resize" width={0} height={0} sizes="100vw" className="w-full h-auto mt-[2.5rem]" />
-                                <p className="caption text-[#5e5e5d] mt-2">Analytics dashboard customization</p>
-                            </div>
                         </AnimatedSection>
 
                         {/* 4. Key Design Decisions */}
