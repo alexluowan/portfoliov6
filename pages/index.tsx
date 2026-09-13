@@ -124,9 +124,9 @@ export default function Home() {
                     <div className="flex flex-col gap-8 md:w-1/2 md:gap-6">
                         <Link href="/athena" className="feed-card hover-target-big transition-opacity duration-200">
                             <FeedCard
-                                mediaSrc="/project-covers/athenathumbnail.png"
+                                mediaSrc="/project-covers/athena-olympus-thumbnail.png"
                                 mediaType="image"
-                                aspectClass="aspect-[657/611]"
+                                aspectClass="aspect-square"
                                 meta="AthenaHQ — 2026"
                                 title="Modular Dashboards"
                                 subtitle="Redesigning the command centre for AI search visibility."
